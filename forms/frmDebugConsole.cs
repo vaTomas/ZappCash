@@ -30,7 +30,11 @@ namespace ZappCash.forms
             
             foreach(var item in accounts)
             {
-                content += $"{item.id} \r\n";
+
+                foreach (var txn in item.transactions)
+                {
+                    content += $"{txn.id} \r\n";
+                }
             }
             txtOutput.Text = content;
         }

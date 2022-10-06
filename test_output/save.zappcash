@@ -3,7 +3,7 @@
       "id": "000007E6A040D335",
       "attributes": {
         "name": "Wallet",
-        "code": "",
+        "code": "MYWAL",
         "desc": "",
         "col": "#0000ff",
         "not": ""
@@ -29,7 +29,7 @@
       "id": "000007E6A040D346",
       "attributes": {
         "name": "Man Outside",
-        "code": "",
+        "code": "MO",
         "desc": "",
         "col": "#0000ff",
         "not": ""

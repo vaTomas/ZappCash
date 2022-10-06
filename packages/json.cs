@@ -39,7 +39,7 @@ namespace ZappCash.packages.json
         public void read()
         {
             jsonContent = File.ReadAllText(jsonPath);
-            jsonDeserialized = JsonConvert.DeserializeObject(File.ReadAllText(jsonContent));
+            jsonDeserialized = JsonConvert.DeserializeObject(jsonContent);
         }
 
         public void write()
