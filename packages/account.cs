@@ -24,10 +24,11 @@ namespace ZappCash.packages
         public string description { get; set; }
         public string color { get; set; }
         public string notes { get; set; }
-        public string type { get; set; }
+        public string assetType { get; set; }
         public bool placeholder { get; set; }
-        public string parent { get; set; }
-        public byte smallest_fraction { get; set; }
+        public string parentId { get; set; }
+        public byte decimals { get; set; }
         public long balance { get; set; }
+        public Transaction[] transactions { get; set; }
     }
 }

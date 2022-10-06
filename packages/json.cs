@@ -18,6 +18,11 @@ namespace ZappCash.packages.json
 
     class jsonFile
     {
+        public jsonFile(string filePath)
+        {
+            jsonPath = filePath;
+        }
+        
         public dynamic jsonDeserialized { get; set; }
         public string jsonDeserializedText { get; set; }
         public string jsonPath { get; set; }

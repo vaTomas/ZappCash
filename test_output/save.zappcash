@@ -1,0 +1,56 @@
+{
+  "accounts": [
+    {
+      "id": "000007E6A040D335",
+      "attributes": {
+        "name": "Wallet",
+        "code": "",
+        "desc": "",
+        "col": "#0000ff",
+        "not": ""
+      },
+      "type": "PHP",
+      "placeholder": false,
+      "parent": "0000000000000000",
+      "frac": 2,
+      "bal": -10000,
+      "txns": [
+        {
+          "id": "FF2C07E6A040CF0B",
+          "date": "10/04/2022",
+          "num": "EECE20221004001",
+          "desc": "Bribe",
+          "transfer": "000007E6A040D346",
+          "amount": -10000,
+          "balance": -10000
+        }
+      ]
+    },
+    {
+      "id": "000007E6A040D346",
+      "attributes": {
+        "name": "Man Outside",
+        "code": "",
+        "desc": "",
+        "col": "#0000ff",
+        "not": ""
+      },
+      "type": "PHP",
+      "placeholder": false,
+      "parent": "0000000000000000",
+      "frac": 2,
+      "bal": 10000,
+      "txns": [
+        {
+          "id": "FF2C07E6A040CF0B",
+          "date": "10/04/2022",
+          "num": "EECE20221004001",
+          "desc": "Bribe",
+          "transfer": "000007E6A040D335",
+          "amount": 10000,
+          "balance": 10000
+        }
+      ]
+    }
+  ]
+}
