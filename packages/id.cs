@@ -9,8 +9,6 @@ namespace ZappCash.packages
 {
     internal class IdGenerator
     {
-
-
         public string GenerateID(string parentID) //outputs non-random 16-char ID
         {
 

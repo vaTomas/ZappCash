@@ -18,9 +18,16 @@ namespace ZappCash
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            
-            Application.Run(new frmDebugConsole());
-            //Application.Run(new frmHome());
+            bool DebugMode = true;
+
+            if (!DebugMode)
+            {
+                Application.Run(new frmHome());
+            }
+            else
+            {
+                Application.Run(new frmDebugConsole());
+            }
         }
     }
 }

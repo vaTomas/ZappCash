@@ -77,6 +77,7 @@
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
     <Compile Include="packages\account.cs" />
+    <Compile Include="src\AccountsControl.cs" />
     <Compile Include="packages\id.cs" />
     <Compile Include="packages\json.cs" />
     <Compile Include="packages\transaction.cs" />

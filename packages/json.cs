@@ -11,31 +11,35 @@ using Newtonsoft.Json.Linq;
 
 namespace ZappCash.packages.json
 {
-    internal class json
-    {
-    }
+    //internal class json
+    //{
+    //}
 
 
     class jsonFile
     {
+        //Initialize
         public jsonFile(string filePath)
         {
             jsonPath = filePath;
+            read();
+
         }
-        
+        //Variables
         public dynamic jsonDeserialized { get; set; }
         public string jsonDeserializedText { get; set; }
         public string jsonPath { get; set; }
         public string jsonSerialized { get; set; }
 
         public string jsonPathSave { get; set; }
+        public string jsonContent { get; set; }
 
 
 
         public void read()
         {
-            jsonDeserializedText = (string)(File.ReadAllText(jsonPath));
-            jsonDeserialized = JsonConvert.DeserializeObject(File.ReadAllText(jsonPath));
+            jsonContent = File.ReadAllText(jsonPath);
+            jsonDeserialized = JsonConvert.DeserializeObject(File.ReadAllText(jsonContent));
         }
 
         public void write()
@@ -44,6 +48,9 @@ namespace ZappCash.packages.json
             File.WriteAllText(jsonPathSave, jsonSerialized);
         }
 
+        public void ConvertToList()
+        {
+        }
     }
 
 

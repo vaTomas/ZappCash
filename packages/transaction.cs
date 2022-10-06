@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ZappCash.packages
 {
-    internal class transaction
-    {
-    }
+    //internal class transaction
+    //{
+    //}
 
     class Transaction
     {

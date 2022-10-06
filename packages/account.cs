@@ -10,9 +10,9 @@ using System.Data.SqlClient;
 
 namespace ZappCash.packages
 {
-    internal class account
-    {
-    }
+    //internal class account
+    //{
+    //}
 
 
     [Serializable]

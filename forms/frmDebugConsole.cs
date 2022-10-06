@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using ZappCash.packages;
-using ZappCash.packages.json;
+using Newtonsoft.Json;
+
 
 namespace ZappCash.forms
 {
@@ -24,10 +24,14 @@ namespace ZappCash.forms
         {
             string content = txtOutput.Text;
 
-            jsonFile myFile = new jsonFile(@"C:\Users\vince\source\repos\ZappCash\test_output\save.zappcash");
-            myFile.read();
+            string fileLocation = @"C:\Users\vince\source\repos\ZappCash\test_output\save.zappcash";
+            AccountsControl instance = new AccountsControl(fileLocation);
+            var accounts = instance.OpenAccounts();
             
-            content += $"{myFile.jsonDeserialized}";
+            foreach(var item in accounts)
+            {
+                content += $"{item.id} \r\n";
+            }
             txtOutput.Text = content;
         }
     }
