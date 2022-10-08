@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
-namespace ZappCash.packages
+namespace ZappCash.classes
 {
     //internal class transaction
     //{
@@ -20,7 +20,7 @@ namespace ZappCash.packages
         public string Id { get; set; }
 
         [JsonProperty("date")]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [JsonProperty("num")]
         public string Number { get; set; }
@@ -39,7 +39,7 @@ namespace ZappCash.packages
 
 
         //Initialization
-        public Transaction(string Id, string Date = "", string Number = "", string Description = "", string TransferId = "", long Amount = 0, long Balance = 0)
+        public Transaction(string Id, DateTime Date, string Number = "", string Description = "", string TransferId = "", long Amount = 0, long Balance = 0)
         {
             this.Id = Id;
             this.Date = Date;
@@ -49,5 +49,6 @@ namespace ZappCash.packages
             this.Amount = Amount;
             this.Balance = Balance;
         }
+
     }
 }

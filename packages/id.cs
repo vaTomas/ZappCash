@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ZappCash.packages
 {
-    internal class IdGenerator
+    static class IdGenerator
     {
-        public string GenerateID(string parentID) //outputs non-random 16-char ID
+        public static string GenerateID(string parentID = "0000000000000000") //outputs non-random 16-char ID
         {
 
             DateTime dateToday = DateTime.Now;

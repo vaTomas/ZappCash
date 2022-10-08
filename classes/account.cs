@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using Newtonsoft.Json;
 
 
-namespace ZappCash.packages
+namespace ZappCash.classes
 {
     //internal class account
     //{
@@ -43,10 +43,19 @@ namespace ZappCash.packages
         
         [JsonProperty("bal")]
         public long Balance { get; set; }
-        
-        
+
         [JsonProperty("txns")]
         public List<Transaction> Transactions { get; set; }
+
+        public Account(string id, AccountAttributes attributes, string assetType, bool isPlaceholder, string parentId, byte decimals)
+        {
+            Id = id;
+            Attributes = attributes;
+            AssetType = assetType;
+            IsPlaceholder = isPlaceholder;
+            ParentId = parentId;
+            Decimals = decimals;
+        }
     }
 
     class AccountAttributes
@@ -65,5 +74,14 @@ namespace ZappCash.packages
 
         [JsonProperty("note")]
         public string Notes { get; set; }
+
+        public AccountAttributes(string name, string code, string description, string color, string notes)
+        {
+            Name = name;
+            Code = code;
+            Description = description;
+            Color = color;
+            Notes = notes;
+        }
     }
 }

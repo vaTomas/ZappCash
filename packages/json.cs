@@ -9,7 +9,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace ZappCash.packages.json
+namespace ZappCash.classes
 {
     //internal class json
     //{

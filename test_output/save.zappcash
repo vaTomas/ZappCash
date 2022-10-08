@@ -1,54 +1,71 @@
 [
-    {
-      "id": "000007E6A040D335",
-      "attributes": {
-        "name": "Wallet",
-        "code": "MYWAL",
-        "desc": "",
-        "col": "#0000ff",
-        "note": ""
-      },
-      "type": "PHP",
-      "placeholder": false,
-      "parent": "0000000000000000",
-      "frac": 2,
-      "bal": -10000,
-      "txns": [
-        {
-          "id": "FF2C07E6A040CF0B",
-          "date": "10/04/2022",
-          "num": "EECE20221004001",
-          "desc": "Bribe",
-          "trans": "000007E6A040D346",
-          "amnt": -10000,
-          "balance": -10000
-        }
-      ]
+  
+  {
+    "id": "000007E6A040D335",
+    "attributes": {
+      "name": "Wallet",
+      "code": "MYWAL",
+      "desc": "",
+      "col": "#0000ff",
+      "note": ""
     },
-    {
-      "id": "000007E6A040D346",
-      "attributes": {
-        "name": "Man Outside",
-        "code": "MO",
-        "desc": "",
-        "col": "#0000ff",
-        "note": ""
-      },
-      "type": "PHP",
-      "placeholder": false,
-      "parent": "0000000000000000",
-      "frac": 2,
-      "bal": 10000,
-      "txns": [
-        {
-          "id": "FF2C07E6A040CF0B",
-          "date": "10/04/2022",
-          "num": "EECE20221004001",
-          "desc": "Bribe",
-          "trans": "000007E6A040D335",
-          "amnt": 10000,
-          "balance": 10000
-        }
-      ]
-    }
-  ]
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "0000000000000000",
+    "frac": 2,
+    "bal": -10000,
+    "txns": [
+      {
+        "id": "FF2C07E6A040CF0B",
+        "date": "2022-04-10T00:00:00",
+        "num": "EECE20221004001",
+        "desc": "Bribe",
+        "trans": "000007E6A040D346",
+        "amnt": -10000,
+        "bal": -10000
+      }
+    ]
+  },
+  {
+    "id": "000007E6A040D346",
+    "attributes": {
+      "name": "Man Outside",
+      "code": "MO",
+      "desc": "",
+      "col": "#0000ff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "0000000000000000",
+    "frac": 2,
+    "bal": 10000,
+    "txns": [
+      {
+        "id": "FF2C07E6A040CF0B",
+        "date": "2022-04-10T00:00:00",
+        "num": "EECE20221004001",
+        "desc": "Bribe",
+        "trans": "000007E6A040D335",
+        "amnt": 10000,
+        "bal": 10000
+      }
+    ]
+  },
+  {
+    "id": "3507E6A087381ABF0",
+    "attributes": {
+      "name": "Her Wallet",
+      "code": "HERS",
+      "desc": "My girl's wallet",
+      "col": "#463843",
+      "note": "Nope"
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "000007E6A040D335",
+    "frac": 0,
+    "bal": 0,
+    "txns": null
+  }
+]

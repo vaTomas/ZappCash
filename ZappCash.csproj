@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\Database.cs" />
     <Compile Include="forms\frmDebugConsole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +77,13 @@
     <Compile Include="forms\frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="packages\account.cs" />
-    <Compile Include="src\AccountsControl.cs" />
+    <Compile Include="classes\account.cs" />
+    <Compile Include="classes\file.cs" />
+    <Compile Include="src\FileManager.cs" />
+    <Compile Include="src\AccountsManager.cs" />
     <Compile Include="packages\id.cs" />
     <Compile Include="packages\json.cs" />
-    <Compile Include="packages\transaction.cs" />
+    <Compile Include="classes\transaction.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\frmDebugConsole.resx">
@@ -105,6 +108,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="test_output\save.tmp" />
     <None Include="test_output\save.zappcash" />
     <None Include="test_output\save_test.zappcash" />
   </ItemGroup>
