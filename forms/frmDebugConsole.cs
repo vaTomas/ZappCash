@@ -26,16 +26,11 @@ namespace ZappCash.forms
 
             string fileLocation = @"C:\Users\vince\source\repos\ZappCash\test_output\save.zappcash";
             AccountsControl instance = new AccountsControl(fileLocation);
-            var accounts = instance.OpenAccounts();
-            
-            foreach(var item in accounts)
-            {
 
-                foreach (var txn in item.transactions)
-                {
-                    content += $"{txn.id} \r\n";
-                }
-            }
+            instance.GetTransaction(AccountID: "000007E6A040D346", TransactionID: "FF2C07E6A040CF0B");
+
+            content += $"{instance.SelectedAccount.Attributes.Name}: {instance.SelectedTransaction.Description}\r\n";
+
             txtOutput.Text = content;
         }
     }

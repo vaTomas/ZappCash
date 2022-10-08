@@ -14,7 +14,12 @@ namespace ZappCash
     internal class AccountsControl
     {
         //variables
-        public string FileLocation;
+        protected string FileLocation { get; set; }
+        protected List<Account> Accounts { get; set; }
+        public Account SelectedAccount { get; set; }
+        protected int SelectedAccountIndex { get; set; }
+        public Transaction SelectedTransaction { get; set; }
+        protected int SelectedTransactionID { get; set; }
         
         //initialize
         public AccountsControl()
@@ -24,20 +29,56 @@ namespace ZappCash
         public AccountsControl(string filePath)
         {
             FileLocation = filePath;
-            open();
+            Read();
         }
 
 
         //methods
-        public void open()
+        public void Read()
         {
+            GetAccounts();
         }
 
-        public List<Account> OpenAccounts()
+        public List<Account> GetAccounts()
         {
-            jsonFile hi = new jsonFile(FileLocation);
-            List<Account> accounts = JsonConvert.DeserializeObject<List<Account>>(hi.jsonContent);
-            return accounts;
+            jsonFile myFile = new jsonFile(FileLocation);
+
+            Accounts = JsonConvert.DeserializeObject<List<Account>>(myFile.jsonContent);
+            return Accounts;
+        }
+
+
+        public Account GetAccount(string AccountID)
+        {
+            SelectedAccountIndex = Accounts.FindIndex(x => x.Id.Equals(AccountID));
+            SelectedAccount = Accounts[SelectedAccountIndex];
+            return SelectedAccount;
+        }
+
+        public Transaction GetTransaction(string TransactionID)
+        {
+            SelectedTransactionID = SelectedAccount.Transactions.FindIndex(x => x.Id.Equals(TransactionID));
+            SelectedTransaction = Accounts[SelectedAccountIndex].Transactions[SelectedTransactionID];
+            return SelectedTransaction;
+        }
+
+        public Transaction GetTransaction(string TransactionID, string AccountID)
+        {
+            GetAccount(AccountID);
+            return GetTransaction(TransactionID);
+        }
+
+        public void NewTransaction()
+        {
+            Transaction newTransaction = new Transaction("");
+            SelectedAccount.Transactions.Add(newTransaction);
+        }
+
+        protected void Overwrite()
+        {
+            //Accounts.FindIndex;
+
+            Accounts[1].Transactions.Clear();
         }
     }
 }

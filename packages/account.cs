@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System;
 using System.Data.SqlClient;
 
+using Newtonsoft.Json;
+
 
 namespace ZappCash.packages
 {
@@ -18,22 +20,50 @@ namespace ZappCash.packages
     [Serializable]
     class Account
     {
-        public string id { get; set; }
-        public AccountAttributes attributes { get; set; }
-        public string assetType { get; set; }
-        public bool placeholder { get; set; }
-        public string parentId { get; set; }
-        public byte decimals { get; set; }
-        public long balance { get; set; }
-        public Transaction[] transactions { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
+        
+        [JsonProperty("attributes")]
+        public AccountAttributes Attributes { get; set; }
+
+        [JsonProperty("type")]
+        public string AssetType { get; set; }
+        
+        
+        [JsonProperty("placeholder")]
+        public bool IsPlaceholder { get; set; }
+        
+        [JsonProperty("parent")]
+        public string ParentId { get; set; }
+        
+        
+        [JsonProperty("frac")]
+        public byte Decimals { get; set; }
+        
+        
+        [JsonProperty("bal")]
+        public long Balance { get; set; }
+        
+        
+        [JsonProperty("txns")]
+        public List<Transaction> Transactions { get; set; }
     }
 
     class AccountAttributes
     {
-        public string name { get; set; }
-        public string code { get; set; }
-        public string description { get; set; }
-        public string color { get; set; }
-        public string notes { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        
+        [JsonProperty("code")]
+        public string Code { get; set; }
+
+        [JsonProperty("desc")]
+        public string Description { get; set; }
+
+        [JsonProperty("col")]
+        public string Color { get; set; }
+
+        [JsonProperty("note")]
+        public string Notes { get; set; }
     }
 }

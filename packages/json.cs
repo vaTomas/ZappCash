@@ -22,7 +22,7 @@ namespace ZappCash.packages.json
         public jsonFile(string filePath)
         {
             jsonPath = filePath;
-            read();
+            Read();
 
         }
         //Variables
@@ -36,13 +36,13 @@ namespace ZappCash.packages.json
 
 
 
-        public void read()
+        public void Read()
         {
             jsonContent = File.ReadAllText(jsonPath);
             jsonDeserialized = JsonConvert.DeserializeObject(jsonContent);
         }
 
-        public void write()
+        public void Write()
         {
             jsonSerialized = JsonConvert.SerializeObject(jsonDeserialized);
             File.WriteAllText(jsonPathSave, jsonSerialized);
