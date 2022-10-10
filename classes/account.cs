@@ -59,7 +59,7 @@ namespace ZappCash.classes
         }
     }
 
-    class AccountAttributes
+    public class AccountAttributes
     {
         [JsonProperty("name")]
         public string Name { get; set; }

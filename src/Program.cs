@@ -15,6 +15,8 @@ namespace ZappCash
         [STAThread]
         static void Main()
         {
+            FileManager.ReloadDefaults();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
