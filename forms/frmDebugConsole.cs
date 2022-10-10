@@ -40,14 +40,14 @@ namespace ZappCash.forms
             //}
 
             //content += $"{instance.SelectedAccount.Attributes.Name}: {instance.SelectedTransaction.Description}\r\n";
-            
+
             //txtOutput.Text = content;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtOutput.Clear();
-            
+
         }
 
         private void txtCommand_TextChanged(object sender, EventArgs e)
@@ -62,6 +62,7 @@ namespace ZappCash.forms
 
         private void frmDebugConsole_Load(object sender, EventArgs e)
         {
+            FileManager.OpenFile();
         }
 
         private void btnTempSave_Click(object sender, EventArgs e)
@@ -72,6 +73,8 @@ namespace ZappCash.forms
         private void btnSave_Click(object sender, EventArgs e)
         {
             FileManager.Save();
+
+            txtOutput.AppendText($"Successfully Saved to {db_ZappCash.AccessFile.Path} \r\n");
         }
 
         private void btnNewAccount_Click(object sender, EventArgs e)
@@ -92,6 +95,57 @@ namespace ZappCash.forms
 
             txtOutput.AppendText($"New account {account.Id} successfuly Created \r\n");
 
+        }
+
+        private void btnNewTransaction_Click(object sender, EventArgs e)
+        {
+            string accountId = txtTransactionAccountId.Text;
+            DateTime date = dateTransactionDate.Value.Date;
+            string number = txtTransactionNumber.Text;
+            string description = txtTransactionDescription.Text;
+            string transferId = txtTransactionTransferAccountId.Text;
+            long amount = Convert.ToInt64(txtTransactionAmount.Text);
+
+            AccountsManager.NewTransaction(accountId, transferId, date, number, description, amount);
+
+            Account account = AccountsManager.GetAccount(accountId);
+
+            Transaction transaction = account.Transactions.Last();
+
+            txtOutput.AppendText($"New transaction {transaction.Id} successfuly Created \r\n");
+        }
+
+        private void btnTransactionDelete_Click(object sender, EventArgs e)
+        {
+            string transactionId = txtDeleteTransactionId.Text;
+            AccountsManager.DeleteTransaction(transactionId);
+
+            txtOutput.AppendText($"Transaction {transactionId} successfuly Deleted \r\n");
+        }
+
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            string accountId = txtDeleteAccountId.Text;
+            AccountsManager.DeleteAccount(accountId);
+
+            txtOutput.AppendText($"Account {accountId} and all of its transaction successfuly Deleted \r\n");
+        }
+
+        private void btnSaveAs_Click(object sender, EventArgs e)
+        {
+            FileManager.SaveAs();
+
+            txtOutput.AppendText($"Successfully Saved to {db_ZappCash.AccessFile.Path} \r\n");
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateBalances_Click(object sender, EventArgs e)
+        {
+            AccountsManager.UpdateBalances();
         }
     }
 }

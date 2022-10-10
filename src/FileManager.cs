@@ -62,7 +62,6 @@ namespace ZappCash
             File.WriteAllText(path: tempFilePath, contents: jsonSerialized);
         }
 
-
         public static void Save()
         {
             string accessFilePath = db_ZappCash.AccessFile.Path; //import from database
@@ -73,15 +72,28 @@ namespace ZappCash
             File.Copy(tempFilePath, accessFilePath, true);
         }
 
+        public static void SaveAs()
+        {
+            string filePath = "";
+            {
+                SaveFileDialog dlg = new SaveFileDialog();
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = dlg.FileName;
+                }
+            }
+            db_ZappCash.AccessFile = new fileRecord(filePath);
+            string tempFilePath = db_ZappCash.TempFile.Path;
 
+            File.Copy(tempFilePath, filePath, true);
 
-        public static void Read()
+        }
+
+        private static void Read()
         {
             string filePath = db_ZappCash.TempFile.Path; //import from database
 
-            jsonFile myFile = new jsonFile(filePath);
-
-            List<Account> accounts = JsonConvert.DeserializeObject<List<Account>>(myFile.jsonContent);
+            List<Account> accounts = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(filePath));
 
             db_ZappCash.Accounts = accounts; //export to database
         }

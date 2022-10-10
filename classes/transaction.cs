@@ -39,7 +39,7 @@ namespace ZappCash.classes
 
 
         //Initialization
-        public Transaction(string Id, DateTime Date, string Number = "", string Description = "", string TransferId = "", long Amount = 0, long Balance = 0)
+        public Transaction(string Id, string TransferId, DateTime Date, string Number = "", string Description = "", long Amount = 0, long Balance = 0)
         {
             this.Id = Id;
             this.Date = Date;

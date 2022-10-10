@@ -82,7 +82,6 @@
     <Compile Include="src\FileManager.cs" />
     <Compile Include="src\AccountsManager.cs" />
     <Compile Include="packages\id.cs" />
-    <Compile Include="packages\json.cs" />
     <Compile Include="classes\transaction.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

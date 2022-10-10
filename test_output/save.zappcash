@@ -23,6 +23,15 @@
         "trans": "000007E6A040D346",
         "amnt": -10000,
         "bal": -10000
+      },
+      {
+        "id": "3507E6A0946349090",
+        "date": "2022-10-09T00:00:00+08:00",
+        "num": "41964196",
+        "desc": "More Bribe",
+        "trans": "000007E6A040D346",
+        "amnt": -123400,
+        "bal": 0
       }
     ]
   },
@@ -49,6 +58,15 @@
         "trans": "000007E6A040D335",
         "amnt": 10000,
         "bal": 10000
+      },
+      {
+        "id": "3507E6A0946349090",
+        "date": "2022-10-09T00:00:00+08:00",
+        "num": "41964196",
+        "desc": "More Bribe",
+        "trans": "000007E6A040D335",
+        "amnt": 123400,
+        "bal": 0
       }
     ]
   },
@@ -66,6 +84,42 @@
     "parent": "000007E6A040D335",
     "frac": 0,
     "bal": 0,
-    "txns": null
+    "txns": [
+      {
+        "id": "6807E6A094E046D68",
+        "date": "2022-10-09T00:00:00+08:00",
+        "num": "546a684d96aw5",
+        "desc": "Payment for flowers",
+        "trans": "4607E6A094DB35F68",
+        "amnt": 4191600,
+        "bal": 0
+      }
+    ]
+  },
+  {
+    "id": "4607E6A094DB35F68",
+    "attributes": {
+      "name": "Man Outside Wife",
+      "code": "MOW",
+      "desc": "Stranger's Wife",
+      "col": "#5f6a4e",
+      "note": "It's fine"
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "000007E6A040D346",
+    "frac": 2,
+    "bal": 0,
+    "txns": [
+      {
+        "id": "6807E6A094E046D68",
+        "date": "2022-10-09T00:00:00+08:00",
+        "num": "546a684d96aw5",
+        "desc": "Payment for flowers",
+        "trans": "3507E6A087381ABF0",
+        "amnt": -4191600,
+        "bal": 0
+      }
+    ]
   }
 ]

@@ -55,6 +55,7 @@ namespace ZappCash.classes
             IsPlaceholder = isPlaceholder;
             ParentId = parentId;
             Decimals = decimals;
+            Transactions = new List<Transaction>();
         }
     }
 
