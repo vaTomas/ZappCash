@@ -15,7 +15,7 @@ namespace ZappCash.database
         public static List<Account> Accounts { get; set; }
         public static fileRecord AccessFile { get; set; }
         public static fileRecord TempFile { get; set; }
-        public static defaults Defaults { get; set; }
+        public static zc_Defaults Defaults { get; set; }
 
 
         public static void CheckIntegrity()
@@ -23,7 +23,7 @@ namespace ZappCash.database
             if (AccessFile == null) { AccessFile = new fileRecord(); }
             if (TempFile == null) { TempFile = new fileRecord(); }
             if (Accounts == null) { Accounts = new List<Account>(); }
-            if (Defaults == null) { Accounts = new List<Account>(); }
+            if (Defaults == null) { Defaults = new zc_Defaults(); }
         }
     }
 }

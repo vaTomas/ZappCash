@@ -30,6 +30,8 @@ namespace ZappCash
             {
                 Application.Run(new frmDebugConsole());
             }
+
+            FileManager.TempDelete();
         }
     }
 }

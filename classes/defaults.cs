@@ -8,10 +8,31 @@ using Newtonsoft.Json;
 
 namespace ZappCash.classes
 {
-    class defaults
+    class zc_Defaults
+    {
+        [JsonProperty("account_defaults")]
+        public zc_DefaultAccountSettings AccountDefaults { get; set; }
+    }
+
+    class zc_DefaultAccountSettings
     {
         [JsonProperty("name")]
         public string Name { get; set; }
+        
+        [JsonProperty("code")]
+        public string Code { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("color")]
+        public string Color { get; set; }
+
+        [JsonProperty("note")]
+        public string Notes { get; set; }
+
+        [JsonProperty("parent")]
+        public string ParentId { get; set; }
 
         [JsonProperty("asset_type")]
         public string AssetType { get; set; }
@@ -23,10 +44,10 @@ namespace ZappCash.classes
         public byte Decimals { get; set; }
 
         [JsonProperty("accounts")]
-        public List<_defaultAccount> Accounts { get; set; }
+        public List<zc_DefaultAccountsProperty> Accounts { get; set; }
     }
 
-    class _defaultAccount
+    class zc_DefaultAccountsProperty
     {
         [JsonProperty("name")]
         public string name { get; set; }

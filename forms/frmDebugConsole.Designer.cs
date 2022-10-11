@@ -76,8 +76,14 @@
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.btnEditTransaction = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTransactionId = new System.Windows.Forms.TextBox();
             this.btnUpdateBalances = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnShowAccounts = new System.Windows.Forms.Button();
+            this.btnShowTransactions = new System.Windows.Forms.Button();
+            this.txtShowTransactionsAccountId = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnTransactionGet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCommand
@@ -93,7 +99,8 @@
             this.txtOutput.Location = new System.Drawing.Point(9, 47);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(666, 437);
+            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtOutput.Size = new System.Drawing.Size(666, 587);
             this.txtOutput.TabIndex = 1;
             // 
             // btnSubmit
@@ -118,7 +125,7 @@
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(12, 12);
+            this.btnOpenFile.Location = new System.Drawing.Point(91, 12);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
             this.btnOpenFile.TabIndex = 4;
@@ -129,7 +136,7 @@
             // btnTempSave
             // 
             this.btnTempSave.AccessibleDescription = "";
-            this.btnTempSave.Location = new System.Drawing.Point(93, 12);
+            this.btnTempSave.Location = new System.Drawing.Point(172, 12);
             this.btnTempSave.Name = "btnTempSave";
             this.btnTempSave.Size = new System.Drawing.Size(75, 23);
             this.btnTempSave.TabIndex = 5;
@@ -139,7 +146,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(174, 12);
+            this.btnSave.Location = new System.Drawing.Point(253, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 6;
@@ -149,7 +156,7 @@
             // 
             // txtAccountParentId
             // 
-            this.txtAccountParentId.Location = new System.Drawing.Point(826, 47);
+            this.txtAccountParentId.Location = new System.Drawing.Point(797, 47);
             this.txtAccountParentId.Name = "txtAccountParentId";
             this.txtAccountParentId.Size = new System.Drawing.Size(121, 20);
             this.txtAccountParentId.TabIndex = 7;
@@ -157,7 +164,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(733, 50);
+            this.lblName.Location = new System.Drawing.Point(704, 50);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(52, 13);
             this.lblName.TabIndex = 8;
@@ -165,7 +172,7 @@
             // 
             // btnNewAccount
             // 
-            this.btnNewAccount.Location = new System.Drawing.Point(749, 278);
+            this.btnNewAccount.Location = new System.Drawing.Point(741, 278);
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.Size = new System.Drawing.Size(116, 23);
             this.btnNewAccount.TabIndex = 9;
@@ -176,7 +183,7 @@
             // lblAccountDecimal
             // 
             this.lblAccountDecimal.AutoSize = true;
-            this.lblAccountDecimal.Location = new System.Drawing.Point(733, 76);
+            this.lblAccountDecimal.Location = new System.Drawing.Point(704, 76);
             this.lblAccountDecimal.Name = "lblAccountDecimal";
             this.lblAccountDecimal.Size = new System.Drawing.Size(87, 13);
             this.lblAccountDecimal.TabIndex = 11;
@@ -185,7 +192,7 @@
             // lblAccountName
             // 
             this.lblAccountName.AutoSize = true;
-            this.lblAccountName.Location = new System.Drawing.Point(733, 102);
+            this.lblAccountName.Location = new System.Drawing.Point(704, 102);
             this.lblAccountName.Name = "lblAccountName";
             this.lblAccountName.Size = new System.Drawing.Size(35, 13);
             this.lblAccountName.TabIndex = 13;
@@ -193,7 +200,7 @@
             // 
             // txtAccountName
             // 
-            this.txtAccountName.Location = new System.Drawing.Point(826, 99);
+            this.txtAccountName.Location = new System.Drawing.Point(797, 99);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Size = new System.Drawing.Size(121, 20);
             this.txtAccountName.TabIndex = 12;
@@ -208,7 +215,7 @@
             "1/1000",
             "1/10000",
             "1/100000"});
-            this.cmbAccountDecimal.Location = new System.Drawing.Point(826, 72);
+            this.cmbAccountDecimal.Location = new System.Drawing.Point(797, 72);
             this.cmbAccountDecimal.Name = "cmbAccountDecimal";
             this.cmbAccountDecimal.Size = new System.Drawing.Size(121, 21);
             this.cmbAccountDecimal.TabIndex = 14;
@@ -216,7 +223,7 @@
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(733, 128);
+            this.lblCode.Location = new System.Drawing.Point(704, 128);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(32, 13);
             this.lblCode.TabIndex = 16;
@@ -224,7 +231,7 @@
             // 
             // txtAccountCode
             // 
-            this.txtAccountCode.Location = new System.Drawing.Point(826, 125);
+            this.txtAccountCode.Location = new System.Drawing.Point(797, 125);
             this.txtAccountCode.Name = "txtAccountCode";
             this.txtAccountCode.Size = new System.Drawing.Size(121, 20);
             this.txtAccountCode.TabIndex = 15;
@@ -232,7 +239,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(733, 154);
+            this.label3.Location = new System.Drawing.Point(704, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 18;
@@ -240,7 +247,7 @@
             // 
             // txtAccountDescription
             // 
-            this.txtAccountDescription.Location = new System.Drawing.Point(826, 151);
+            this.txtAccountDescription.Location = new System.Drawing.Point(797, 151);
             this.txtAccountDescription.Name = "txtAccountDescription";
             this.txtAccountDescription.Size = new System.Drawing.Size(121, 20);
             this.txtAccountDescription.TabIndex = 17;
@@ -248,7 +255,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(733, 180);
+            this.label1.Location = new System.Drawing.Point(704, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 20;
@@ -256,7 +263,7 @@
             // 
             // txtAccountColor
             // 
-            this.txtAccountColor.Location = new System.Drawing.Point(826, 177);
+            this.txtAccountColor.Location = new System.Drawing.Point(797, 177);
             this.txtAccountColor.Name = "txtAccountColor";
             this.txtAccountColor.Size = new System.Drawing.Size(121, 20);
             this.txtAccountColor.TabIndex = 19;
@@ -264,7 +271,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(733, 206);
+            this.label2.Location = new System.Drawing.Point(704, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 22;
@@ -272,7 +279,7 @@
             // 
             // txtAccountNotes
             // 
-            this.txtAccountNotes.Location = new System.Drawing.Point(826, 203);
+            this.txtAccountNotes.Location = new System.Drawing.Point(797, 203);
             this.txtAccountNotes.Name = "txtAccountNotes";
             this.txtAccountNotes.Size = new System.Drawing.Size(121, 20);
             this.txtAccountNotes.TabIndex = 21;
@@ -280,7 +287,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(733, 232);
+            this.label4.Location = new System.Drawing.Point(704, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 24;
@@ -289,7 +296,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(733, 258);
+            this.label5.Location = new System.Drawing.Point(704, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 26;
@@ -300,7 +307,7 @@
             this.cmbAccountAssetType.FormattingEnabled = true;
             this.cmbAccountAssetType.Items.AddRange(new object[] {
             "PHP"});
-            this.cmbAccountAssetType.Location = new System.Drawing.Point(826, 229);
+            this.cmbAccountAssetType.Location = new System.Drawing.Point(797, 229);
             this.cmbAccountAssetType.Name = "cmbAccountAssetType";
             this.cmbAccountAssetType.Size = new System.Drawing.Size(121, 21);
             this.cmbAccountAssetType.TabIndex = 27;
@@ -308,7 +315,7 @@
             // chkAccountPlaceholder
             // 
             this.chkAccountPlaceholder.AutoSize = true;
-            this.chkAccountPlaceholder.Location = new System.Drawing.Point(826, 258);
+            this.chkAccountPlaceholder.Location = new System.Drawing.Point(797, 258);
             this.chkAccountPlaceholder.Name = "chkAccountPlaceholder";
             this.chkAccountPlaceholder.Size = new System.Drawing.Size(15, 14);
             this.chkAccountPlaceholder.TabIndex = 28;
@@ -317,16 +324,15 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1025, 184);
+            this.label8.Location = new System.Drawing.Point(951, 185);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 13);
             this.label8.TabIndex = 43;
             this.label8.Text = "Amount (e)";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtTransactionAmount
             // 
-            this.txtTransactionAmount.Location = new System.Drawing.Point(1150, 181);
+            this.txtTransactionAmount.Location = new System.Drawing.Point(1076, 182);
             this.txtTransactionAmount.Name = "txtTransactionAmount";
             this.txtTransactionAmount.Size = new System.Drawing.Size(121, 20);
             this.txtTransactionAmount.TabIndex = 42;
@@ -334,7 +340,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1025, 157);
+            this.label9.Location = new System.Drawing.Point(951, 158);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 13);
             this.label9.TabIndex = 41;
@@ -342,7 +348,7 @@
             // 
             // txtTransactionTransferAccountId
             // 
-            this.txtTransactionTransferAccountId.Location = new System.Drawing.Point(1150, 154);
+            this.txtTransactionTransferAccountId.Location = new System.Drawing.Point(1076, 155);
             this.txtTransactionTransferAccountId.Name = "txtTransactionTransferAccountId";
             this.txtTransactionTransferAccountId.Size = new System.Drawing.Size(121, 20);
             this.txtTransactionTransferAccountId.TabIndex = 40;
@@ -350,7 +356,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1025, 131);
+            this.label10.Location = new System.Drawing.Point(951, 132);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 13);
             this.label10.TabIndex = 39;
@@ -358,7 +364,7 @@
             // 
             // txtTransactionDescription
             // 
-            this.txtTransactionDescription.Location = new System.Drawing.Point(1150, 128);
+            this.txtTransactionDescription.Location = new System.Drawing.Point(1076, 129);
             this.txtTransactionDescription.Name = "txtTransactionDescription";
             this.txtTransactionDescription.Size = new System.Drawing.Size(121, 20);
             this.txtTransactionDescription.TabIndex = 38;
@@ -366,7 +372,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1025, 99);
+            this.label11.Location = new System.Drawing.Point(951, 100);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 13);
             this.label11.TabIndex = 37;
@@ -374,7 +380,7 @@
             // 
             // txtTransactionNumber
             // 
-            this.txtTransactionNumber.Location = new System.Drawing.Point(1150, 96);
+            this.txtTransactionNumber.Location = new System.Drawing.Point(1076, 97);
             this.txtTransactionNumber.Name = "txtTransactionNumber";
             this.txtTransactionNumber.Size = new System.Drawing.Size(121, 20);
             this.txtTransactionNumber.TabIndex = 36;
@@ -382,7 +388,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1025, 72);
+            this.label12.Location = new System.Drawing.Point(951, 73);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(45, 13);
             this.label12.TabIndex = 34;
@@ -390,7 +396,7 @@
             // 
             // btnNewTransaction
             // 
-            this.btnNewTransaction.Location = new System.Drawing.Point(1092, 222);
+            this.btnNewTransaction.Location = new System.Drawing.Point(1018, 223);
             this.btnNewTransaction.Name = "btnNewTransaction";
             this.btnNewTransaction.Size = new System.Drawing.Size(143, 23);
             this.btnNewTransaction.TabIndex = 31;
@@ -401,7 +407,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1025, 46);
+            this.label14.Location = new System.Drawing.Point(951, 47);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 13);
             this.label14.TabIndex = 30;
@@ -409,21 +415,21 @@
             // 
             // txtTransactionAccountId
             // 
-            this.txtTransactionAccountId.Location = new System.Drawing.Point(1150, 43);
+            this.txtTransactionAccountId.Location = new System.Drawing.Point(1076, 44);
             this.txtTransactionAccountId.Name = "txtTransactionAccountId";
             this.txtTransactionAccountId.Size = new System.Drawing.Size(121, 20);
             this.txtTransactionAccountId.TabIndex = 29;
             // 
             // dateTransactionDate
             // 
-            this.dateTransactionDate.Location = new System.Drawing.Point(1150, 69);
+            this.dateTransactionDate.Location = new System.Drawing.Point(1076, 70);
             this.dateTransactionDate.Name = "dateTransactionDate";
             this.dateTransactionDate.Size = new System.Drawing.Size(200, 20);
             this.dateTransactionDate.TabIndex = 48;
             // 
             // txtDeleteTransactionId
             // 
-            this.txtDeleteTransactionId.Location = new System.Drawing.Point(815, 353);
+            this.txtDeleteTransactionId.Location = new System.Drawing.Point(786, 353);
             this.txtDeleteTransactionId.Name = "txtDeleteTransactionId";
             this.txtDeleteTransactionId.Size = new System.Drawing.Size(121, 20);
             this.txtDeleteTransactionId.TabIndex = 49;
@@ -431,7 +437,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(724, 356);
+            this.label6.Location = new System.Drawing.Point(695, 356);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 50;
@@ -439,7 +445,7 @@
             // 
             // btnTransactionDelete
             // 
-            this.btnTransactionDelete.Location = new System.Drawing.Point(770, 379);
+            this.btnTransactionDelete.Location = new System.Drawing.Point(741, 379);
             this.btnTransactionDelete.Name = "btnTransactionDelete";
             this.btnTransactionDelete.Size = new System.Drawing.Size(116, 23);
             this.btnTransactionDelete.TabIndex = 51;
@@ -449,7 +455,7 @@
             // 
             // btnDeleteAccount
             // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(760, 448);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(731, 448);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(116, 23);
             this.btnDeleteAccount.TabIndex = 54;
@@ -460,7 +466,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(714, 425);
+            this.label7.Location = new System.Drawing.Point(685, 425);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 53;
@@ -468,14 +474,14 @@
             // 
             // txtDeleteAccountId
             // 
-            this.txtDeleteAccountId.Location = new System.Drawing.Point(805, 422);
+            this.txtDeleteAccountId.Location = new System.Drawing.Point(776, 422);
             this.txtDeleteAccountId.Name = "txtDeleteAccountId";
             this.txtDeleteAccountId.Size = new System.Drawing.Size(121, 20);
             this.txtDeleteAccountId.TabIndex = 52;
             // 
             // btnSaveAs
             // 
-            this.btnSaveAs.Location = new System.Drawing.Point(255, 12);
+            this.btnSaveAs.Location = new System.Drawing.Point(334, 12);
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(75, 23);
             this.btnSaveAs.TabIndex = 55;
@@ -485,28 +491,29 @@
             // 
             // btnEditTransaction
             // 
-            this.btnEditTransaction.Location = new System.Drawing.Point(1092, 287);
+            this.btnEditTransaction.Location = new System.Drawing.Point(969, 288);
             this.btnEditTransaction.Name = "btnEditTransaction";
             this.btnEditTransaction.Size = new System.Drawing.Size(116, 23);
             this.btnEditTransaction.TabIndex = 56;
             this.btnEditTransaction.Text = "Edit Transaction";
             this.btnEditTransaction.UseVisualStyleBackColor = true;
+            this.btnEditTransaction.Click += new System.EventHandler(this.btnEditTransaction_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1025, 264);
+            this.label13.Location = new System.Drawing.Point(951, 265);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(101, 13);
             this.label13.TabIndex = 58;
             this.label13.Text = "Transaction ID (e o)";
             // 
-            // textBox1
+            // txtTransactionId
             // 
-            this.textBox1.Location = new System.Drawing.Point(1150, 261);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 57;
+            this.txtTransactionId.Location = new System.Drawing.Point(1076, 262);
+            this.txtTransactionId.Name = "txtTransactionId";
+            this.txtTransactionId.Size = new System.Drawing.Size(121, 20);
+            this.txtTransactionId.TabIndex = 57;
             // 
             // btnUpdateBalances
             // 
@@ -518,14 +525,76 @@
             this.btnUpdateBalances.UseVisualStyleBackColor = true;
             this.btnUpdateBalances.Click += new System.EventHandler(this.btnUpdateBalances_Click);
             // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(10, 12);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.TabIndex = 60;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnShowAccounts
+            // 
+            this.btnShowAccounts.Location = new System.Drawing.Point(689, 612);
+            this.btnShowAccounts.Name = "btnShowAccounts";
+            this.btnShowAccounts.Size = new System.Drawing.Size(112, 23);
+            this.btnShowAccounts.TabIndex = 61;
+            this.btnShowAccounts.Text = "Show All Accounts";
+            this.btnShowAccounts.UseVisualStyleBackColor = true;
+            this.btnShowAccounts.Click += new System.EventHandler(this.btnShowAccounts_Click);
+            // 
+            // btnShowTransactions
+            // 
+            this.btnShowTransactions.Location = new System.Drawing.Point(836, 612);
+            this.btnShowTransactions.Name = "btnShowTransactions";
+            this.btnShowTransactions.Size = new System.Drawing.Size(154, 23);
+            this.btnShowTransactions.TabIndex = 62;
+            this.btnShowTransactions.Text = "Show All Transactions";
+            this.btnShowTransactions.UseVisualStyleBackColor = true;
+            this.btnShowTransactions.Click += new System.EventHandler(this.btnShowTransactions_Click);
+            // 
+            // txtShowTransactionsAccountId
+            // 
+            this.txtShowTransactionsAccountId.Location = new System.Drawing.Point(869, 586);
+            this.txtShowTransactionsAccountId.Name = "txtShowTransactionsAccountId";
+            this.txtShowTransactionsAccountId.Size = new System.Drawing.Size(121, 20);
+            this.txtShowTransactionsAccountId.TabIndex = 63;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(796, 589);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 13);
+            this.label15.TabIndex = 64;
+            this.label15.Text = "Account ID";
+            // 
+            // btnTransactionGet
+            // 
+            this.btnTransactionGet.Location = new System.Drawing.Point(1091, 288);
+            this.btnTransactionGet.Name = "btnTransactionGet";
+            this.btnTransactionGet.Size = new System.Drawing.Size(141, 23);
+            this.btnTransactionGet.TabIndex = 65;
+            this.btnTransactionGet.Text = "Get Transaction";
+            this.btnTransactionGet.UseVisualStyleBackColor = true;
+            this.btnTransactionGet.Click += new System.EventHandler(this.btnTransactionGet_Click);
+            // 
             // frmDebugConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1412, 676);
+            this.ClientSize = new System.Drawing.Size(1307, 676);
+            this.Controls.Add(this.btnTransactionGet);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtShowTransactionsAccountId);
+            this.Controls.Add(this.btnShowTransactions);
+            this.Controls.Add(this.btnShowAccounts);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnUpdateBalances);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTransactionId);
             this.Controls.Add(this.btnEditTransaction);
             this.Controls.Add(this.btnSaveAs);
             this.Controls.Add(this.btnDeleteAccount);
@@ -574,7 +643,7 @@
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.txtCommand);
             this.Name = "frmDebugConsole";
-            this.Text = "frmDebugConsole";
+            this.Text = "Debug Console";
             this.Load += new System.EventHandler(this.frmDebugConsole_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -631,7 +700,13 @@
         private System.Windows.Forms.Button btnSaveAs;
         private System.Windows.Forms.Button btnEditTransaction;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTransactionId;
         private System.Windows.Forms.Button btnUpdateBalances;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnShowAccounts;
+        private System.Windows.Forms.Button btnShowTransactions;
+        private System.Windows.Forms.TextBox txtShowTransactionsAccountId;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnTransactionGet;
     }
 }

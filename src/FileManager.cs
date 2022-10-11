@@ -1,9 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using ZappCash.classes;
 using ZappCash.database;
+using ZappCash.packages.encryption;
 
 namespace ZappCash
 {
@@ -23,6 +25,7 @@ namespace ZappCash
 
                 CreateTempFile();
                 Read();
+                SaveBackup();
             }
         }
 
@@ -60,7 +63,8 @@ namespace ZappCash
 
             string jsonSerialized = JsonConvert.SerializeObject(accounts);
 
-            File.WriteAllText(path: tempFilePath, contents: jsonSerialized);
+            File.WriteAllText(path: tempFilePath, contents: AdvancedEncryptionStandard.Encrypt(jsonSerialized));
+
         }
 
         public static void Save()
@@ -88,6 +92,7 @@ namespace ZappCash
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Filter = "ZappCash Files (*.zappcash)|*.zappcash";
             dlg.DefaultExt = "zappcash";
+            dlg.FileName = "Untitled";
             dlg.AddExtension = true;
 
             string tempFilePath = db_ZappCash.TempFile.Path;
@@ -112,8 +117,8 @@ namespace ZappCash
             {
                 List<Account> accounts = db_ZappCash.Accounts;
                 string jsonSerialized = JsonConvert.SerializeObject(accounts);
-                File.WriteAllText(path: tempFilePath, contents: jsonSerialized);
-                TempSave();
+                File.WriteAllText(path: accessFilePath, contents: AdvancedEncryptionStandard.Encrypt(jsonSerialized));
+                CreateTempFile();
                 return;
             }
         }
@@ -122,7 +127,9 @@ namespace ZappCash
         {
             string filePath = db_ZappCash.TempFile.Path; //import from database
 
-            List<Account> accounts = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(filePath));
+            string fileContent = File.ReadAllText(filePath);
+
+            List<Account> accounts = JsonConvert.DeserializeObject<List<Account>>(AdvancedEncryptionStandard.Decrypt(fileContent));
 
             db_ZappCash.Accounts = accounts; //export to database
         }
@@ -139,11 +146,36 @@ namespace ZappCash
             string configPath = @"data\ZappCash.config";
             configPath = System.IO.Path.Combine(rootPath, configPath);
 
-            defaults defaults = JsonConvert.DeserializeObject<defaults>(File.ReadAllText(configPath));
+            zc_Defaults defaults = JsonConvert.DeserializeObject<zc_Defaults>(File.ReadAllText(configPath));
 
             db_ZappCash.Defaults = defaults; //export to database
         }
 
-    }
+        public static void TempDelete()
+        {
+            db_ZappCash.CheckIntegrity();
+            string tempPath = db_ZappCash.TempFile.Path;
+            if (File.Exists(tempPath))
+            {
+                File.Delete(tempPath);
+            }
+        }
 
+        public static void SaveBackup()
+        {
+            return;
+            
+            DatabaseIntegrityCheck();
+
+            string tempFilePath = db_ZappCash.AccessFile.Path; //import from database
+            string accessFilePath = db_ZappCash.AccessFile.Path;
+            string accessFileExpention = db_ZappCash.AccessFile.Extension;
+
+            string autoSaveDate = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}";
+
+            string autoSavePath = $"{accessFilePath}.{autoSaveDate}{accessFileExpention}";
+
+            File.Copy(tempFilePath, autoSavePath, true);
+        }
+    }
 }

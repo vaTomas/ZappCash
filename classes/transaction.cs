@@ -50,5 +50,7 @@ namespace ZappCash.classes
             this.Balance = Balance;
         }
 
+        public Transaction() { }
+
     }
 }

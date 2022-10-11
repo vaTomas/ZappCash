@@ -11,23 +11,29 @@ using ZappCash.database;
 namespace ZappCash
 {
     internal class AccountsManager
-    {        
-        //Database
+    {
         public static List<Account> GetAccounts()
         {
             return db_ZappCash.Accounts;
         }
+
         private static void setAccounts(List<Account> accounts)
         {
             db_ZappCash.Accounts = accounts;
         }
-        
+
         public static void New()
         {
             db_ZappCash.CheckIntegrity();
+            deleteAccounts();
 
-            
+            List<zc_DefaultAccountsProperty> defaultAccounts = db_ZappCash.Defaults.AccountDefaults.Accounts;
 
+            foreach (zc_DefaultAccountsProperty defaultAccountProperties in defaultAccounts)
+            {
+                string parentId = GetAccountId(defaultAccountProperties.parent);
+                NewAccount(Name: defaultAccountProperties.name, IsPlaceholder: defaultAccountProperties.isPlaceholder, ParentId: parentId);
+            }
         }
 
         //General Actions
@@ -47,10 +53,12 @@ namespace ZappCash
             }
 
             setAccounts(accounts);
+            FileManager.TempSave();
         }
 
 
         //Accounts
+        //get
         public static Account GetAccount(string AccountId)
         {
             UpdateBalances();
@@ -66,6 +74,25 @@ namespace ZappCash
             List<Account> accounts = GetAccounts();
             return accounts.FindIndex(x => x.Id.Equals(accountId));
         }
+        private static string GetAccountId(string accountName)
+        {
+            List<Account> accounts = GetAccounts();
+            foreach (Account account in accounts)
+            {
+                if (account.Attributes.Name == accountName)
+                {
+                    return account.Id;
+                }
+            }
+            return null;
+        }
+        //new
+        private static void NewAccount(Account Account)
+        {
+            List<Account> accounts = GetAccounts();
+            accounts.Add(Account);
+            setAccounts(accounts);
+        }
         public static void NewAccount(string ParentId = "0000000000000000", byte Decimals = 2, string Name = "", string Code = "", string Description = "", string Color = "#ffffff", string Notes = "", string AssetType = "PHP", bool IsPlaceholder = false)
         {
             AccountAttributes accountAttributes = new AccountAttributes(name: Name, code: Code, description: Description, color: Color, notes: Notes);
@@ -76,48 +103,73 @@ namespace ZappCash
 
             NewAccount(account);
         }
-        private static void NewAccount(Account Account)
+
+        //delete
+        private static void deleteAccount(string accountId) //raw delete an account from database
         {
-            List<Account> accounts = GetAccounts();
-            accounts.Add(Account);
-            setAccounts(accounts);
+            List<Account> accounts = GetAccounts(); //get from database
+            int accountIndex = GetAccountIndex(accountId); //get account index
+            accounts.RemoveAt(accountIndex); //delete account
+            setAccounts(accounts); //write to database
             UpdateBalances();
         }
-        public static void DeleteAccount(string AccountId, bool DeleteTransactions = true)
+        
+        private static void deleteAccounts()
         {
-            if (!DeleteTransactions)
+            db_ZappCash.Accounts = new List<Account>();
+        } //delete all acocunts
+        
+        private static void deleteAccounts(string[] accountIds)
+        {
+            foreach (string accountId in accountIds)
             {
-                List<Account> accounts1 = GetAccounts();
-                int accountIndex1 = GetAccountIndex(AccountId);
-                accounts1.RemoveAt(accountIndex1);
-                setAccounts(accounts1);
-                return;
+                deleteAccount(accountId);
+            }
+        } //delete selected accounts
+
+        public static void DeleteAccount(string AccountId, bool DeleteTransactions = true, bool DeleteChildren = true)
+        {
+            List<Account> accounts = GetAccounts(); //read from database
+            List<string> selectedAccounts = new List<string>();
+
+            if (DeleteChildren)
+            {
+                foreach (Account account in accounts)
+                {
+                    if (account.ParentId == AccountId)
+                    {
+                        selectedAccounts.Add(account.Id);
+                    }
+                }
+                
+                foreach (string accountId in selectedAccounts)
+                {
+                    DeleteAccount(AccountId: accountId, DeleteTransactions = true, DeleteChildren = true);
+                }
+
             }
 
-            List<string> accountTransactionIds = new List<string>();
-
+            if (DeleteTransactions)
             {
-                Account account = GetAccount(AccountId);
-
-                foreach (Transaction transaction in account.Transactions)
+                List<string> selectedtransactions = new List<string>();
                 {
-                    accountTransactionIds.Add(transaction.Id);
+                    foreach (Transaction transaction in GetTransactions(AccountId))
+                    {
+                        selectedtransactions.Add(transaction.Id);
+                    }
+                }
+
+                foreach (string transactionid in selectedtransactions)
+                {
+                    DeleteTransaction(transactionid);
                 }
             }
 
-            int accountIndex = GetAccountIndex(AccountId);
-
-            List<Account> accounts = db_ZappCash.Accounts; //import from database
-            accounts.RemoveAt(accountIndex);
-
-            foreach (string transactionId in accountTransactionIds)
-            {
-                DeleteTransaction(transactionId);
-            }
-
-            db_ZappCash.Accounts = accounts;
-            UpdateBalances();
+            deleteAccount(AccountId);
         }
+        
+
+        //edit
         public static void EditAccount(string AccountId, string Name = null, string Code = null, string Description = null, string Color = null, string Notes = null, bool? IsPlaceholder = null, string ParentId = null, byte? Decimals = null)
         {
             Account account = GetAccount(AccountId);
@@ -150,6 +202,14 @@ namespace ZappCash
 
             return transaction;
         }
+        
+        public static List<Transaction> GetTransactions(string AccountId)
+        {
+            Account account = GetAccount(AccountId);
+            List<Transaction> transactions = account.Transactions;
+            return transactions;
+        }
+        
         private static int getTransactionIndex(string accountId, string transactionId)
         {
             List<Account> accounts = GetAccounts(); //import from database
@@ -161,35 +221,43 @@ namespace ZappCash
 
             return transactionIndex;
         }
-        private static void NewTransaction(string AccountID, Transaction Transaction)
+        
+        private static void NewTransaction(string accountId, Transaction transaction)
         {
+            //if (GetAccount(accountId).IsPlaceholder)
+            if (false)
+            {
+                throw new InvalidOperationException($"Account {accountId} is a placeholder account and cannot contain any transactions.");
+            } //no transactions in placeholders
+            
             List<Account> accounts = GetAccounts(); //import from database
+            int accountIndex = GetAccountIndex(accountId);
 
-            Transaction mirrorTransaction = Transaction;
-            mirrorTransaction.TransferId = AccountID;
-            mirrorTransaction.Amount = -Transaction.Amount;
-
-            int primaryAccountIndex = GetAccountIndex(AccountID); 
-            int mirrorAccountIndex = GetAccountIndex(Transaction.TransferId);
-
-            accounts[primaryAccountIndex].Transactions.Add(mirrorTransaction);
-            accounts[mirrorAccountIndex].Transactions.Add(Transaction);
-
+            accounts[accountIndex].Transactions.Add(transaction);
+            
             setAccounts(accounts); //export to database
             UpdateBalances();
-        }
-        private static void NewTransaction(string AccountID, string TransactionID, string TransferAccountId, DateTime Date, string Number = "", string Description = "", long Amount = 0)
+        } //raw new transaction
+        
+        private static void NewTransaction(string AccountID, string TransactionID, string TransferAccountId, DateTime Date, string Number = "", string Description = "", long Amount = 0) //with transaction id
         {
             Transaction transaction = new Transaction(Id: TransactionID, TransferId: TransferAccountId, Date: Date, Number: Number, Description: Description, Amount: Amount);
-
             NewTransaction(AccountID, transaction);
-        }
-        public static void NewTransaction(string AccountID, string TransferAccountId, DateTime Date, string Number = "", string Description = "", long Amount = 0)
-        {
-            string transactionId = IdGenerator.GenerateID(AccountID);
 
-            NewTransaction(AccountID: AccountID, TransactionID: transactionId, TransferAccountId: TransferAccountId, Date: Date, Number: Number, Description: Description, Amount: Amount);
+            Transaction mirrorTransaction = new Transaction(Id: TransactionID, TransferId: AccountID, Date: Date, Number: Number, Description: Description, Amount: -Amount);
+            NewTransaction(TransferAccountId, mirrorTransaction);
         }
+        
+        public static void NewTransaction(string AccountID, string TransferAccountId, DateTime? Date = null, string Number = "", string Description = "", long Amount = 0)
+        {
+            DateTime date = (DateTime)Date;
+            if (Date == null) { date = DateTime.Now; }
+            
+            string transactionId = IdGenerator.GenerateID(AccountID);
+            NewTransaction(AccountID: AccountID, TransactionID: transactionId, TransferAccountId: TransferAccountId, Date: date, Number: Number, Description: Description, Amount: Amount);
+            UpdateBalances();
+        } //no transaction id
+        
         public static void DeleteTransaction(string TransactionId)
         {
             List<Account> accounts = GetAccounts(); //import from database
@@ -224,6 +292,7 @@ namespace ZappCash
             db_ZappCash.Accounts = accounts; //export to database
             UpdateBalances();
         }
+        
         public static void EditTransaction(string AccountId, string TransactionId, DateTime? Date = null, string Number = null, string Description = null, string TransferId = null, long? Amount = null)
         {            
             Transaction transaction = GetTransaction(AccountId: AccountId, TransactionId: TransactionId);
@@ -235,7 +304,8 @@ namespace ZappCash
             if (Amount != null) { transaction.Amount = (long)Amount; }
 
             DeleteTransaction(TransactionId);
-            NewTransaction(AccountID: AccountId, Transaction: transaction);
+            NewTransaction(AccountID: AccountId, TransactionID: TransactionId, TransferAccountId: transaction.TransferId, Date: transaction.Date, Number: transaction.Number, Description: transaction.Description, Amount: transaction.Amount);
+
             UpdateBalances();
         }
 

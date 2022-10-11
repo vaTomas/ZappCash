@@ -62,7 +62,6 @@ namespace ZappCash.forms
 
         private void frmDebugConsole_Load(object sender, EventArgs e)
         {
-            FileManager.OpenFile();
         }
 
         private void btnTempSave_Click(object sender, EventArgs e)
@@ -106,7 +105,7 @@ namespace ZappCash.forms
             string transferId = txtTransactionTransferAccountId.Text;
             long amount = Convert.ToInt64(txtTransactionAmount.Text);
 
-            AccountsManager.NewTransaction(accountId, transferId, date, number, description, amount);
+            AccountsManager.NewTransaction(AccountID: accountId, TransferAccountId: transferId, Date: date, Number: number, Description: description, Amount: amount);
 
             Account account = AccountsManager.GetAccount(accountId);
 
@@ -138,14 +137,62 @@ namespace ZappCash.forms
             txtOutput.AppendText($"Successfully Saved to {db_ZappCash.AccessFile.Path} \r\n");
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUpdateBalances_Click(object sender, EventArgs e)
         {
             AccountsManager.UpdateBalances();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            AccountsManager.New();
+        }
+
+        private void btnShowAccounts_Click(object sender, EventArgs e)
+        {
+            foreach (Account account in AccountsManager.GetAccounts())
+            {
+                txtOutput.AppendText($"{account.Id} | {account.ParentId} | {account.Attributes.Name} \r\n");
+            }
+        }
+
+        private void btnShowTransactions_Click(object sender, EventArgs e)
+        {
+            string accountId = txtShowTransactionsAccountId.Text;
+            List<Transaction> transactions = AccountsManager.GetTransactions(accountId);
+
+            foreach (Transaction transaction in transactions)
+            {
+                txtOutput.AppendText($"{transaction.Id} | {transaction.Description} | {transaction.Amount} \r\n");
+            }
+        }
+
+        private void btnEditTransaction_Click(object sender, EventArgs e)
+        {
+            string accountId = txtTransactionAccountId.Text;
+            DateTime date = dateTransactionDate.Value.Date;
+            string number = txtTransactionNumber.Text;
+            string description = txtTransactionDescription.Text;
+            string transferId = txtTransactionTransferAccountId.Text;
+            long amount = Convert.ToInt64(txtTransactionAmount.Text);
+            string transactionId = txtTransactionId.Text;
+
+            AccountsManager.EditTransaction(AccountId: accountId, TransactionId: transactionId, Date: date, Number: number, Description: description, TransferId: transferId, Amount: amount);
+
+            txtOutput.AppendText($"Transaction {transactionId} successfuly Edited \r\n");
+        }
+
+        private void btnTransactionGet_Click(object sender, EventArgs e)
+        {
+            string transactionId = txtTransactionId.Text;
+            string accountId = txtTransactionAccountId.Text;
+            Transaction transaction = AccountsManager.GetTransaction(AccountId: accountId, TransactionId: transactionId);
+
+            dateTransactionDate.Value = transaction.Date;
+            txtTransactionNumber.Text = transaction.Number;
+            txtTransactionDescription.Text = transaction.Description;
+            txtTransactionTransferAccountId.Text = transaction.TransferId;
+            txtTransactionAmount.Text = transaction.Amount.ToString();
+
         }
     }
 }

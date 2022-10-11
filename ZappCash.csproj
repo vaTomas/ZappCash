@@ -80,6 +80,8 @@
     </Compile>
     <Compile Include="classes\account.cs" />
     <Compile Include="classes\file.cs" />
+    <Compile Include="packages\encryption.cs" />
+    <Compile Include="packages\stringToDateTime.cs" />
     <Compile Include="src\FileManager.cs" />
     <Compile Include="src\AccountsManager.cs" />
     <Compile Include="packages\id.cs" />
@@ -114,6 +116,7 @@
     <None Include="test_output\save.tmp" />
     <None Include="test_output\save.zappcash" />
     <None Include="test_output\save_test.zappcash" />
+    <None Include="test_output\test 3000.zappcash" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
