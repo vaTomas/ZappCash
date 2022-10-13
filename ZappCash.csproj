@@ -66,6 +66,18 @@
   <ItemGroup>
     <Compile Include="classes\defaults.cs" />
     <Compile Include="data\Database.cs" />
+    <Compile Include="forms\AccountsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AccountsPage.Designer.cs">
+      <DependentUpon>AccountsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AddTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddTransactions.Designer.cs">
+      <DependentUpon>AddTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmDebugConsole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,24 @@
     </Compile>
     <Compile Include="classes\account.cs" />
     <Compile Include="classes\file.cs" />
+    <Compile Include="forms\MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MakeAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MakeAcc.Designer.cs">
+      <DependentUpon>MakeAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\TransactionsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\TransactionsPage.Designer.cs">
+      <DependentUpon>TransactionsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="packages\encryption.cs" />
     <Compile Include="packages\stringToDateTime.cs" />
     <Compile Include="src\FileManager.cs" />
@@ -88,8 +118,23 @@
     <Compile Include="classes\transaction.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\AccountsPage.resx">
+      <DependentUpon>AccountsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AddTransactions.resx">
+      <DependentUpon>AddTransactions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmDebugConsole.resx">
       <DependentUpon>frmDebugConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MakeAcc.resx">
+      <DependentUpon>MakeAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\TransactionsPage.resx">
+      <DependentUpon>TransactionsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +144,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="data\ZappCash.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -132,6 +178,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\ZAPPCASH LOGO LATEST LATEST.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
