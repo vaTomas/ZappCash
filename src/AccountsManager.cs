@@ -21,7 +21,7 @@ namespace ZappCash
         {
             db_ZappCash.Accounts = accounts;
         }
-
+        //NOT WORKING 
         public static void New()
         {
             db_ZappCash.CheckIntegrity();
