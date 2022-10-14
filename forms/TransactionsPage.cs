@@ -12,7 +12,8 @@ namespace ZappCash.forms
 {
     public partial class TransactionsPage : Form
     {
-
+        private bool mouseDown;
+        private Point lastLocation;
         public TransactionsPage()
         {
             InitializeComponent();
@@ -35,6 +36,48 @@ namespace ZappCash.forms
             this.Hide();
             AddTransactions AddTransactions = new AddTransactions();
             AddTransactions.Show();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FileManager.OpenFile();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FileManager.Save();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FileManager.SaveAs();
         }
     }
 }

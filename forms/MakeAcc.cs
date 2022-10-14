@@ -12,6 +12,8 @@ namespace ZappCash.forms
 {
     public partial class MakeAcc : Form
     {
+        private bool mouseDown;
+        private Point lastLocation;
         public MakeAcc()
         {
             InitializeComponent();
@@ -43,6 +45,28 @@ namespace ZappCash.forms
             this.Hide();
             AccountsPage AccountsPage = new AccountsPage();
             AccountsPage.Show();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

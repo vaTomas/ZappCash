@@ -34,11 +34,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.checkBoxPlaceholder = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,10 +52,15 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
             this.panel1.Controls.Add(this.btnBack);
-            this.panel1.Location = new System.Drawing.Point(-1, -5);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(977, 46);
+            this.panel1.Size = new System.Drawing.Size(1205, 46);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // btnBack
             // 
@@ -58,9 +69,9 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Gilroy ExtraBold", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnBack.Location = new System.Drawing.Point(0, 3);
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(51, 43);
+            this.btnBack.Size = new System.Drawing.Size(54, 46);
             this.btnBack.TabIndex = 14;
             this.btnBack.Text = "←";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -73,9 +84,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Gilroy ExtraBold", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(925, -2);
+            this.button2.Location = new System.Drawing.Point(1151, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 43);
+            this.button2.Size = new System.Drawing.Size(54, 46);
             this.button2.TabIndex = 5;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
@@ -86,59 +97,48 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(31, 56);
+            this.label1.Location = new System.Drawing.Point(47, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 49);
+            this.label1.Size = new System.Drawing.Size(117, 49);
             this.label1.TabIndex = 6;
-            this.label1.Text = "NAME:";
+            this.label1.Text = "DATE";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(31, 206);
+            this.label2.Location = new System.Drawing.Point(47, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(391, 49);
+            this.label2.Size = new System.Drawing.Size(339, 49);
             this.label2.TabIndex = 7;
-            this.label2.Text = "OPENING BALANCE:";
+            this.label2.Text = "ACCOUNT  NAME";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(31, 362);
+            this.label3.Location = new System.Drawing.Point(47, 420);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 49);
+            this.label3.Size = new System.Drawing.Size(275, 49);
             this.label3.TabIndex = 8;
-            this.label3.Text = "PARENT ACC:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(40, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(905, 41);
-            this.textBox1.TabIndex = 9;
+            this.label3.Text = "DESCRIPTION";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(81, 258);
+            this.textBox2.Location = new System.Drawing.Point(582, 350);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(864, 41);
+            this.textBox2.Size = new System.Drawing.Size(513, 41);
             this.textBox2.TabIndex = 10;
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(40, 413);
+            this.textBox3.Location = new System.Drawing.Point(582, 420);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(905, 41);
+            this.textBox3.Size = new System.Drawing.Size(513, 41);
             this.textBox3.TabIndex = 11;
             // 
             // btnCreateAccount
@@ -149,9 +149,9 @@
             this.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateAccount.Font = new System.Drawing.Font("Gilroy ExtraBold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateAccount.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCreateAccount.Location = new System.Drawing.Point(40, 529);
+            this.btnCreateAccount.Location = new System.Drawing.Point(56, 592);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(411, 98);
+            this.btnCreateAccount.Size = new System.Drawing.Size(427, 71);
             this.btnCreateAccount.TabIndex = 12;
             this.btnCreateAccount.Text = "CREATE ACCOUNT";
             this.btnCreateAccount.UseVisualStyleBackColor = false;
@@ -162,29 +162,110 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(32, 255);
+            this.label4.Location = new System.Drawing.Point(480, 350);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 49);
+            this.label4.Size = new System.Drawing.Size(96, 49);
             this.label4.TabIndex = 13;
-            this.label4.Text = "₱";
+            this.label4.Text = "PHP";
             // 
-            // MakeAccGIT1
+            // textBox4
             // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.Black;
+            this.textBox4.Location = new System.Drawing.Point(582, 140);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(513, 41);
+            this.textBox4.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(47, 350);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(380, 49);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "OPENING BALANCE";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Window;
+            this.label6.Location = new System.Drawing.Point(47, 210);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(364, 49);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "PARENT ACCOUNT";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(582, 210);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(513, 42);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // checkBoxPlaceholder
+            // 
+            this.checkBoxPlaceholder.AutoSize = true;
+            this.checkBoxPlaceholder.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPlaceholder.Location = new System.Drawing.Point(582, 280);
+            this.checkBoxPlaceholder.Name = "checkBoxPlaceholder";
+            this.checkBoxPlaceholder.Size = new System.Drawing.Size(312, 53);
+            this.checkBoxPlaceholder.TabIndex = 19;
+            this.checkBoxPlaceholder.Text = "PLACEHOLDER";
+            this.checkBoxPlaceholder.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Gilroy", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
+            this.label7.Location = new System.Drawing.Point(577, 482);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(232, 48);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "(OPTIONAL)";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(582, 70);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(513, 41);
+            this.dateTimePicker1.TabIndex = 28;
+            // 
+            // MakeAcc
+            // 
+            this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(975, 707);
+            this.ClientSize = new System.Drawing.Size(1205, 707);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.checkBoxPlaceholder);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MakeAccGIT1";
+            this.Name = "MakeAcc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage1";
             this.panel1.ResumeLayout(false);
@@ -200,12 +281,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBoxPlaceholder;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
