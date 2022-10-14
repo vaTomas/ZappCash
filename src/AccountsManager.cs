@@ -21,7 +21,7 @@ namespace ZappCash
         {
             db_ZappCash.Accounts = accounts;
         }
-        //NOT WORKING 
+
         public static void New()
         {
             db_ZappCash.CheckIntegrity();
@@ -72,7 +72,12 @@ namespace ZappCash
         private static int GetAccountIndex(string accountId)
         {
             List<Account> accounts = GetAccounts();
-            return accounts.FindIndex(x => x.Id.Equals(accountId));
+            int accountIndex = accounts.FindIndex(x => x.Id.Equals(accountId));
+            if (accountIndex < 0)
+            {
+                return 0;
+            }
+            return accountIndex;
         }
         private static string GetAccountId(string accountName)
         {
@@ -308,6 +313,21 @@ namespace ZappCash
 
             UpdateBalances();
         }
+
+        public static string GetLongAccountName(string Id)
+        {
+            Account account = GetAccount(Id);
+            string parentLongAccountName = "";
+
+            if (account.ParentId != null)
+            {
+                parentLongAccountName = GetLongAccountName(account.ParentId);
+                return $"{parentLongAccountName}:{account.Attributes.Name}";
+            }
+            
+            return $"{account.Attributes.Name}";
+        }
+
 
     }
 }
