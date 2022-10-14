@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace ZappCash.forms
 {
-    public partial class TransactionsPage : Form
+    public partial class EditAccount : Form
     {
         private bool mouseDown;
         private Point lastLocation;
-        public TransactionsPage()
+        public EditAccount()
         {
             InitializeComponent();
         }
@@ -24,18 +24,27 @@ namespace ZappCash.forms
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAccounts_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainPage MainPage = new MainPage();
-            MainPage.Show();
+
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddTransactions AddTransactions = new AddTransactions();
-            AddTransactions.Show();
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            AccountsPage AccountsPage = new AccountsPage();
+            AccountsPage.Show();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -60,24 +69,9 @@ namespace ZappCash.forms
             mouseDown = false;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void MakeAcc_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            FileManager.OpenFile();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FileManager.Save();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            FileManager.SaveAs();
         }
 
 

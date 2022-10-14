@@ -105,11 +105,29 @@
     <Compile Include="forms\MakeAcc.Designer.cs">
       <DependentUpon>MakeAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\SuccessfulAccountCreationMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SuccessfulAccountCreationMB.Designer.cs">
+      <DependentUpon>SuccessfulAccountCreationMB.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\TransactionsPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\TransactionsPage.Designer.cs">
       <DependentUpon>TransactionsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\EditTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\EditTransaction.Designer.cs">
+      <DependentUpon>EditTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\EditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\EditAccount.Designer.cs">
+      <DependentUpon>EditAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="packages\encryption.cs" />
     <Compile Include="packages\stringToDateTime.cs" />
@@ -134,8 +152,17 @@
     <EmbeddedResource Include="forms\MakeAcc.resx">
       <DependentUpon>MakeAcc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\SuccessfulAccountCreationMB.resx">
+      <DependentUpon>SuccessfulAccountCreationMB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\TransactionsPage.resx">
       <DependentUpon>TransactionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\EditTransaction.resx">
+      <DependentUpon>EditTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\EditAccount.resx">
+      <DependentUpon>EditAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,9 +207,17 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\edit button purple.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ZAPPCASH LOGO LATEST LATEST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

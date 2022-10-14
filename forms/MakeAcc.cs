@@ -68,5 +68,10 @@ namespace ZappCash.forms
         {
             mouseDown = false;
         }
+
+        private void MakeAcc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
