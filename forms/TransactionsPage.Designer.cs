@@ -52,6 +52,10 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnSaveAs);
+            this.panel1.Controls.Add(this.btnNew);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnOpen);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -201,7 +205,7 @@
             this.btnSaveAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveAs.Font = new System.Drawing.Font("Gilroy", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveAs.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSaveAs.Location = new System.Drawing.Point(183, 47);
+            this.btnSaveAs.Location = new System.Drawing.Point(255, 0);
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(61, 46);
             this.btnSaveAs.TabIndex = 20;
@@ -216,7 +220,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Gilroy", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSave.Location = new System.Drawing.Point(122, 47);
+            this.btnSave.Location = new System.Drawing.Point(194, 0);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(55, 46);
             this.btnSave.TabIndex = 19;
@@ -231,7 +235,7 @@
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpen.Font = new System.Drawing.Font("Gilroy", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpen.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnOpen.Location = new System.Drawing.Point(61, 47);
+            this.btnOpen.Location = new System.Drawing.Point(133, 0);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(55, 46);
             this.btnOpen.TabIndex = 18;
@@ -246,7 +250,7 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Gilroy", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnNew.Location = new System.Drawing.Point(0, 47);
+            this.btnNew.Location = new System.Drawing.Point(72, 0);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(55, 46);
             this.btnNew.TabIndex = 17;
@@ -289,10 +293,6 @@
             this.ClientSize = new System.Drawing.Size(1765, 947);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnSaveAs);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

@@ -105,11 +105,17 @@
     <Compile Include="forms\MakeAcc.Designer.cs">
       <DependentUpon>MakeAcc.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\SuccessfulAccountCreationMB.cs">
+    <Compile Include="forms\MessageBoxForms\SuccessfulAccountCreationMB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\SuccessfulAccountCreationMB.Designer.cs">
+    <Compile Include="forms\MessageBoxForms\SuccessfulAccountCreationMB.Designer.cs">
       <DependentUpon>SuccessfulAccountCreationMB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\MakeAccPage\NoNameMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\MakeAccPage\NoNameMB.Designer.cs">
+      <DependentUpon>NoNameMB.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\TransactionsPage.cs">
       <SubType>Form</SubType>
@@ -128,6 +134,12 @@
     </Compile>
     <Compile Include="forms\EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\SuccessfulTransactionAdditionMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\SuccessfulTransactionAdditionMB.Designer.cs">
+      <DependentUpon>SuccessfulTransactionAdditionMB.cs</DependentUpon>
     </Compile>
     <Compile Include="packages\encryption.cs" />
     <Compile Include="packages\stringToDateTime.cs" />
@@ -152,8 +164,11 @@
     <EmbeddedResource Include="forms\MakeAcc.resx">
       <DependentUpon>MakeAcc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\SuccessfulAccountCreationMB.resx">
+    <EmbeddedResource Include="forms\MessageBoxForms\SuccessfulAccountCreationMB.resx">
       <DependentUpon>SuccessfulAccountCreationMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForms\MakeAccPage\NoNameMB.resx">
+      <DependentUpon>NoNameMB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\TransactionsPage.resx">
       <DependentUpon>TransactionsPage.cs</DependentUpon>
@@ -163,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\EditAccount.resx">
       <DependentUpon>EditAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForms\SuccessfulTransactionAdditionMB.resx">
+      <DependentUpon>SuccessfulTransactionAdditionMB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -218,6 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\check icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error Icon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,7 +24,7 @@ namespace ZappCash
 
             if (!DebugMode)
             {
-                Application.Run(new SuccessfulAccountCreationMB());
+                Application.Run(new TransactionsPage());
             }
             else
             {

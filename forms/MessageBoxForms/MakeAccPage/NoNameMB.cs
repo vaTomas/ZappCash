@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ZappCash.forms
+namespace ZappCash.forms.MessageBoxForms
 {
-    public partial class SuccessfulAccountCreationMB : Form
+    public partial class NoNameMB : Form
     {
-        public SuccessfulAccountCreationMB()
+        public NoNameMB()
         {
             InitializeComponent();
         }
@@ -13,8 +13,8 @@ namespace ZappCash.forms
         private void btnAccounts_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AccountsPage AccountsPage = new AccountsPage();
-            AccountsPage.Show();
+            MakeAcc MakeAcc = new MakeAcc();
+            MakeAcc.Show();
         }
     }
 }
