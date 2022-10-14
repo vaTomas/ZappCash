@@ -27,10 +27,10 @@ namespace ZappCash.forms
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
-            this.Hide();
             AccountsManager.New();
             AccountsPage AccountsPage = new AccountsPage();
             AccountsPage.Show();
+            this.Hide();
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)

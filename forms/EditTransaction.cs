@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ZappCash.classes;
+
 namespace ZappCash.forms
 {
     public partial class EditTransaction : Form
@@ -62,6 +64,22 @@ namespace ZappCash.forms
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditTransaction_Load(object sender, EventArgs e)
+        {
+            //dropdown load
+            List<Account> accounts = AccountsManager.GetAccounts();
+            foreach (Account account in accounts)
+            {
+                if (!account.IsPlaceholder)
+                {
+                    string accountName = account.Attributes.Name;
+                    string accountParentName = AccountsManager.GetAccount(account.ParentId).Attributes.Name;
+
+                    cmbTransferAccount.Items.Add($"{AccountsManager.GetLongAccountName(account.Id)}");
+                }
+            }
         }
     }
 }

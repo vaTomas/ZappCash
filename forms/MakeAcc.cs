@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ZappCash.classes;
+
 namespace ZappCash.forms
 {
     public partial class MakeAcc : Form
@@ -71,7 +73,16 @@ namespace ZappCash.forms
 
         private void MakeAcc_Load(object sender, EventArgs e)
         {
+            //dropdown load
+            List<Account> accounts = AccountsManager.GetAccounts();
+            foreach (Account account in accounts)
+            {
+                string accountName = account.Attributes.Name;
+                string accountParentName = AccountsManager.GetAccount(account.ParentId).Attributes.Name;
 
+                cmbParentAccount.Items.Add($"{AccountsManager.GetLongAccountName(account.Id)}");
+            }
         }
+
     }
 }

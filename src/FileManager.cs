@@ -55,7 +55,7 @@ namespace ZappCash
 
             if (tempFilePath == null)
             {
-                SaveAs();
+                //SaveAs();
                 return;
             }
 

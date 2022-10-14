@@ -85,12 +85,6 @@
     <Compile Include="forms\frmDebugConsole.Designer.cs">
       <DependentUpon>frmDebugConsole.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
-    </Compile>
     <Compile Include="classes\account.cs" />
     <Compile Include="classes\file.cs" />
     <Compile Include="forms\MainPage.cs">
