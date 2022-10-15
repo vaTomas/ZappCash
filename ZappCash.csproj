@@ -179,6 +179,7 @@
     <Compile Include="classes\transaction.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\UiManager.cs" />
     <EmbeddedResource Include="forms\AccountsPage.resx">
       <DependentUpon>AccountsPage.cs</DependentUpon>
     </EmbeddedResource>

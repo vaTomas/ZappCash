@@ -34,9 +34,7 @@ namespace ZappCash.forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TransactionsPage TransactionsPage = new TransactionsPage();
-            TransactionsPage.Show();
+            this.Close();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

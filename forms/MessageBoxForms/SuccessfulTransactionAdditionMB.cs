@@ -15,9 +15,7 @@ namespace ZappCash.forms
 
         private void btnBackToTransactions_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TransactionsPage transactionsPage = new TransactionsPage();
-            transactionsPage.Show();
+            this.Close();
         }
 
         private void SuccessfulAccountCreationMB_MouseDown(object sender, MouseEventArgs e)

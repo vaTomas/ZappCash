@@ -115,6 +115,7 @@
             this.Name = "EditOrDeleteTransactionMB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage1";
+            this.Load += new System.EventHandler(this.EditOrDeleteTransactionMB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).EndInit();

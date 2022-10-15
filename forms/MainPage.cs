@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ZappCash.database;
+
 namespace ZappCash.forms
 {
     public partial class MainPage : Form
@@ -22,22 +24,33 @@ namespace ZappCash.forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void btnNewFile_Click(object sender, EventArgs e)
         {
-            AccountsManager.New();
-            AccountsPage AccountsPage = new AccountsPage();
-            AccountsPage.Show();
             this.Hide();
+
+            AccountsManager.New();
+
+            AccountsPage accountsPage = new AccountsPage();
+            accountsPage.ShowDialog();
+
+            this.Show();
         }
         private void btnOpenFile_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
             FileManager.OpenFile();
-            TransactionsPage transactionsPage = new TransactionsPage();
-            transactionsPage.Show();
+
+            if (db_ZappCash.AccessFile.Path != null)
+            {
+                this.Hide();
+
+                AccountsPage accountsPage = new AccountsPage();
+                accountsPage.ShowDialog();
+                
+                this.Show();
+            }
         }
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {

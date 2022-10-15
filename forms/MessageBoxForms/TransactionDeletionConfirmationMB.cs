@@ -16,17 +16,14 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         private void btnYes_Click(object sender, EventArgs e)
         {
             //delete transaction method then show SuccessfulTransactionDeletionMB
-            this.Hide();
-            SuccessfulTransactionDeletionMB successfulTransactionDeletionMB = new SuccessfulTransactionDeletionMB();
-            successfulTransactionDeletionMB.Show();
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            //hide then show TransactionsPage
-            this.Hide();
-            TransactionsPage transactionsPage= new TransactionsPage();
-            transactionsPage.Show();
+            this.DialogResult = DialogResult.No;
+            this.Close();
         }
     }
 }

@@ -1,0 +1,1011 @@
+[
+  
+  {
+    "id": "00000007-E6A1002F-18E7F0FD",
+    "attributes": {
+      "name": "Assets",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": null,
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "E7F0FD07-E6A1002F-18747DE1",
+    "attributes": {
+      "name": "Current Assets",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": "00000007-E6A1002F-18E7F0FD",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "747DE107-E6A1002F-18EB14C1",
+    "attributes": {
+      "name": "Cash in Wallet",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "E7F0FD07-E6A1002F-18747DE1",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "747DE107-E6A1002F-18FD8760",
+    "attributes": {
+      "name": "Checking Account",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "E7F0FD07-E6A1002F-18747DE1",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "747DE107-E6A1002F-1828F96A",
+    "attributes": {
+      "name": "Savings Account",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "E7F0FD07-E6A1002F-18747DE1",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "28C38307-E6A1002F-18BBA4AE",
+    "attributes": {
+      "name": "Credit Cards",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "747DE107-E6A1002F-1828F96A",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "00000007-E6A1002F-18DB51EA",
+    "attributes": {
+      "name": "Equity",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": null,
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "DB51EA07-E6A1002F-185B5D41",
+    "attributes": {
+      "name": "Opening Balances",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18DB51EA",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "00000007-E6A1002F-18525450",
+    "attributes": {
+      "name": "Expenses",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": null,
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18B31356",
+    "attributes": {
+      "name": "Adjustment",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-1892EA67",
+    "attributes": {
+      "name": "Auto",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "92EA6707-E6A1002F-182EE7ED",
+    "attributes": {
+      "name": "Fees",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-1892EA67",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "92EA6707-E6A1002F-1899E2EB",
+    "attributes": {
+      "name": "Fuel",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-1892EA67",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "92EA6707-E6A1002F-186816BF",
+    "attributes": {
+      "name": "Parking",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-1892EA67",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "92EA6707-E6A1002F-183959B2",
+    "attributes": {
+      "name": "Repair and Maintenance",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-1892EA67",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18621DB4",
+    "attributes": {
+      "name": "Bank Service Charge",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-186194DF",
+    "attributes": {
+      "name": "Books",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18C0BB22",
+    "attributes": {
+      "name": "Cable",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18115772",
+    "attributes": {
+      "name": "Charity",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-1815FE2E",
+    "attributes": {
+      "name": "Clothes",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18CC12DA",
+    "attributes": {
+      "name": "Computer",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18EE980F",
+    "attributes": {
+      "name": "Dining",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-189CD4D5",
+    "attributes": {
+      "name": "Education",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-1854CD8A",
+    "attributes": {
+      "name": "Entertainment",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "54CD8A07-E6A1002F-184F6F7C",
+    "attributes": {
+      "name": "Music/Movies",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-1854CD8A",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "54CD8A07-E6A1002F-18E98CE4",
+    "attributes": {
+      "name": "Recreation",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-1854CD8A",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "54CD8A07-E6A1002F-18D8F051",
+    "attributes": {
+      "name": "Travel",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-1854CD8A",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-184DF4BD",
+    "attributes": {
+      "name": "Gifts",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18907B20",
+    "attributes": {
+      "name": "Groceries",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18691F1A",
+    "attributes": {
+      "name": "Hobbies",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18BCDFF0",
+    "attributes": {
+      "name": "Insurance",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "BCDFF007-E6A1002F-1878D85A",
+    "attributes": {
+      "name": "Auto Insurance",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18BCDFF0",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "BCDFF007-E6A1002F-18E34EF5",
+    "attributes": {
+      "name": "Health Insurance",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18BCDFF0",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "BCDFF007-E6A1002F-187F58B3",
+    "attributes": {
+      "name": "Life Insurance",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18BCDFF0",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18BB59DE",
+    "attributes": {
+      "name": "Laundry/Dry Cleaning",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-1811D911",
+    "attributes": {
+      "name": "Medical Expenses",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-1832677F",
+    "attributes": {
+      "name": "Miscellaneous",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18AE0EA2",
+    "attributes": {
+      "name": "Online Services",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-1807E07A",
+    "attributes": {
+      "name": "Phone",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-185538BF",
+    "attributes": {
+      "name": "Public Transportation",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-1866905B",
+    "attributes": {
+      "name": "Subscriptions",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18CB6AD5",
+    "attributes": {
+      "name": "Supplies",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18FB8427",
+    "attributes": {
+      "name": "Taxes",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "FB842707-E6A1002F-18C9A49E",
+    "attributes": {
+      "name": "Federal",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18FB8427",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "FB842707-E6A1002F-186D6D4D",
+    "attributes": {
+      "name": "Medicare",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18FB8427",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "FB842707-E6A1002F-188883D9",
+    "attributes": {
+      "name": "Other Tax",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18FB8427",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "FB842707-E6A1002F-1846B4A0",
+    "attributes": {
+      "name": "Social Security",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18FB8427",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "FB842707-E6A1002F-18A0A820",
+    "attributes": {
+      "name": "State/Province",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18FB8427",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "52545007-E6A1002F-18B48F23",
+    "attributes": {
+      "name": "Utilities",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": "00000007-E6A1002F-18525450",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "B48F2307-E6A1002F-180EAF29",
+    "attributes": {
+      "name": "Electric",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18B48F23",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "B48F2307-E6A1002F-189D908A",
+    "attributes": {
+      "name": "Garbage collection",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18B48F23",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "B48F2307-E6A1002F-186898C8",
+    "attributes": {
+      "name": "Gas",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18B48F23",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "B48F2307-E6A1002F-185040DC",
+    "attributes": {
+      "name": "Water",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "52545007-E6A1002F-18B48F23",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "00000007-E6A1002F-18BB85CA",
+    "attributes": {
+      "name": "Income",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": null,
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "BB85CA07-E6A1002F-18BC7E13",
+    "attributes": {
+      "name": "Bonus",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18BB85CA",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "BB85CA07-E6A1002F-18127748",
+    "attributes": {
+      "name": "Gift Received",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18BB85CA",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "BB85CA07-E6A1002F-18E2BAEE",
+    "attributes": {
+      "name": "Interest Income",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": "00000007-E6A1002F-18BB85CA",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "E2BAEE07-E6A1002F-185B77E2",
+    "attributes": {
+      "name": "Checking Interest",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "BB85CA07-E6A1002F-18E2BAEE",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "E2BAEE07-E6A1002F-1890E75E",
+    "attributes": {
+      "name": "Other Interest",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "BB85CA07-E6A1002F-18E2BAEE",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "E2BAEE07-E6A1002F-1859ADFD",
+    "attributes": {
+      "name": "Savings Interest",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "BB85CA07-E6A1002F-18E2BAEE",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "BB85CA07-E6A1002F-18CE3484",
+    "attributes": {
+      "name": "Other",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18BB85CA",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "BB85CA07-E6A1002F-1841A79B",
+    "attributes": {
+      "name": "Salary",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": false,
+    "parent": "00000007-E6A1002F-18BB85CA",
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  },
+  {
+    "id": "00000007-E6A1002F-1828C383",
+    "attributes": {
+      "name": "Liabilities",
+      "code": "",
+      "desc": "",
+      "col": "#ffffff",
+      "note": ""
+    },
+    "type": "PHP",
+    "placeholder": true,
+    "parent": null,
+    "frac": 2,
+    "bal": 0,
+    "txns": []
+  }
+]

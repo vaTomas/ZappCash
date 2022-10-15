@@ -6,11 +6,17 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
 {
     public partial class EditOrDeleteTransactionMB : Form
     {
+        private string accountId { get; set; }
+        private string transactionId { get; set; }
+
+
         private bool mouseDown;
         private Point lastLocation;
-        public EditOrDeleteTransactionMB()
+        public EditOrDeleteTransactionMB(string AccountId, string TransactionId)
         {
             InitializeComponent();
+            this.accountId = AccountId;
+            this.transactionId = TransactionId;
         }
 
 
@@ -18,8 +24,9 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         {
             // Hide then show EditTransaction page
             this.Hide();
-            EditTransaction editTransaction = new EditTransaction();
-            editTransaction.Show();
+            EditTransaction editTransaction = new EditTransaction(AccountId: accountId, TransactionId: transactionId);
+            editTransaction.ShowDialog();
+            this.Close();
         }
 
         private void pictureBoxDelete_Click(object sender, EventArgs e)
@@ -27,7 +34,20 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
             // Hide then show TransactionDeletionConfirmationMB
             this.Hide();
             TransactionDeletionConfirmationMB transactionDeletionConfirmationMB = new TransactionDeletionConfirmationMB();
-            transactionDeletionConfirmationMB.Show();
+            transactionDeletionConfirmationMB.ShowDialog();
+
+            if (transactionDeletionConfirmationMB.DialogResult == DialogResult.Yes)
+            {
+                
+                AccountsManager.DeleteTransaction(transactionId);
+
+                SuccessfulTransactionDeletionMB successfulTransactionDeletionMB = new SuccessfulTransactionDeletionMB();
+                successfulTransactionDeletionMB.ShowDialog();
+
+                this.Close();
+            }
+
+            this.Show();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -50,6 +70,11 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void EditOrDeleteTransactionMB_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,13 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnSaveChanges = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbParentAccount = new System.Windows.Forms.ComboBox();
             this.chkPlaceholder = new System.Windows.Forms.CheckBox();
-            this.txtOpeningBalance = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1205, 46);
+            this.panel1.Size = new System.Drawing.Size(1090, 46);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -81,7 +79,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Gilroy ExtraBold", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClose.Location = new System.Drawing.Point(1151, 0);
+            this.btnClose.Location = new System.Drawing.Point(1036, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(54, 46);
             this.btnClose.TabIndex = 5;
@@ -105,7 +103,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(47, 350);
+            this.label3.Location = new System.Drawing.Point(47, 287);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(275, 49);
             this.label3.TabIndex = 8;
@@ -114,7 +112,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(582, 350);
+            this.txtDescription.Location = new System.Drawing.Point(519, 287);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(513, 41);
             this.txtDescription.TabIndex = 10;
@@ -127,7 +125,7 @@
             this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChanges.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSaveChanges.Location = new System.Drawing.Point(56, 592);
+            this.btnSaveChanges.Location = new System.Drawing.Point(327, 392);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(427, 71);
             this.btnSaveChanges.TabIndex = 12;
@@ -135,24 +133,13 @@
             this.btnSaveChanges.UseVisualStyleBackColor = false;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(573, 280);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 49);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "PHP";
-            // 
             // txtAccountName
             // 
             this.txtAccountName.BackColor = System.Drawing.SystemColors.Window;
             this.txtAccountName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAccountName.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAccountName.ForeColor = System.Drawing.Color.Black;
-            this.txtAccountName.Location = new System.Drawing.Point(582, 70);
+            this.txtAccountName.Location = new System.Drawing.Point(519, 70);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Size = new System.Drawing.Size(513, 41);
             this.txtAccountName.TabIndex = 14;
@@ -162,11 +149,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(47, 280);
+            this.label5.Location = new System.Drawing.Point(47, 217);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(380, 49);
+            this.label5.Size = new System.Drawing.Size(293, 49);
             this.label5.TabIndex = 15;
-            this.label5.Text = "OPENING BALANCE";
+            this.label5.Text = "PLACEHOLDER";
             // 
             // label6
             // 
@@ -182,7 +169,7 @@
             // cmbParentAccount
             // 
             this.cmbParentAccount.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbParentAccount.Location = new System.Drawing.Point(582, 140);
+            this.cmbParentAccount.Location = new System.Drawing.Point(519, 140);
             this.cmbParentAccount.Name = "cmbParentAccount";
             this.cmbParentAccount.Size = new System.Drawing.Size(513, 42);
             this.cmbParentAccount.TabIndex = 35;
@@ -191,35 +178,24 @@
             // 
             this.chkPlaceholder.AutoSize = true;
             this.chkPlaceholder.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPlaceholder.Location = new System.Drawing.Point(582, 210);
+            this.chkPlaceholder.Location = new System.Drawing.Point(519, 217);
             this.chkPlaceholder.Name = "chkPlaceholder";
-            this.chkPlaceholder.Size = new System.Drawing.Size(312, 53);
+            this.chkPlaceholder.Size = new System.Drawing.Size(15, 14);
             this.chkPlaceholder.TabIndex = 19;
-            this.chkPlaceholder.Text = "PLACEHOLDER";
             this.chkPlaceholder.UseVisualStyleBackColor = true;
-            // 
-            // txtOpeningBalance
-            // 
-            this.txtOpeningBalance.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOpeningBalance.Location = new System.Drawing.Point(675, 280);
-            this.txtOpeningBalance.Name = "txtOpeningBalance";
-            this.txtOpeningBalance.Size = new System.Drawing.Size(420, 41);
-            this.txtOpeningBalance.TabIndex = 11;
             // 
             // EditAccount
             // 
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1205, 707);
+            this.ClientSize = new System.Drawing.Size(1090, 526);
             this.Controls.Add(this.chkPlaceholder);
             this.Controls.Add(this.cmbParentAccount);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAccountName);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSaveChanges);
-            this.Controls.Add(this.txtOpeningBalance);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -244,14 +220,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnSaveChanges;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtAccountName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbParentAccount;
         private System.Windows.Forms.CheckBox chkPlaceholder;
-        private System.Windows.Forms.TextBox txtOpeningBalance;
     }
 }
 

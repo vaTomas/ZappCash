@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ZappCash.classes;
+using ZappCash.forms.MessageBoxForms.EditOrDelete;
+using ZappCash.database;
 
 namespace ZappCash.forms
 {
@@ -16,14 +18,17 @@ namespace ZappCash.forms
     {
         private bool mouseDown;
         private Point lastLocation;
-        public EditAccount()
+        private Account account { get; set; }
+
+        public EditAccount(string AccountId)
         {
             InitializeComponent();
+            this.account = AccountsManager.GetAccount(AccountId);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void btnAccounts_Click(object sender, EventArgs e)
@@ -39,14 +44,26 @@ namespace ZappCash.forms
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             this.Hide();
+            SaveAccountChangesConfirmationMB saveAccountChangesConfirmationMB = new SaveAccountChangesConfirmationMB();
+            saveAccountChangesConfirmationMB.ShowDialog();
+            this.Show();
+
+            if (saveAccountChangesConfirmationMB.DialogResult == DialogResult.Yes)
+            {
+                string accountName = txtAccountName.Text;
+                string parentId = ((ComboBoxItem)cmbParentAccount.SelectedItem).HiddenValue;
+                bool isPlaceholder = chkPlaceholder.Checked;
+                string description = txtDescription.Text;
+
+                AccountsManager.EditAccount(AccountId: this.account.Id, Name: accountName, ParentId: parentId, IsPlaceholder: isPlaceholder, Description: description);
+                this.Close();
+            }
 
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            AccountsPage AccountsPage = new AccountsPage();
-            AccountsPage.Show();
+            this.Close();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -75,14 +92,55 @@ namespace ZappCash.forms
         {
             //dropdown load
             List<Account> accounts = AccountsManager.GetAccounts();
+            cmbParentAccount.Items.Add(new ComboBoxItem("Top level", db_ZappCash.Defaults.AccountDefaults.ParentId));
             foreach (Account account in accounts)
             {
-                string accountName = account.Attributes.Name;
-                string accountParentName = AccountsManager.GetAccount(account.ParentId).Attributes.Name;
+                if(account.Id != this.account.Id)
+                {
+                    if (account.ParentId != this.account.Id)
+                    {
+                        string accountName = AccountsManager.GetLongAccountName(account.Id);
 
-                cmbParentAccount.Items.Add($"{AccountsManager.GetLongAccountName(account.Id)}");
+                        cmbParentAccount.Items.Add(new ComboBoxItem(accountName, account.Id));
+
+                    }
+                }
+            }
+
+            //info
+            txtAccountName.Text = this.account.Attributes.Name;
+            cmbParentAccount.SelectedItem = new ComboBoxItem(AccountsManager.GetAccount(this.account.ParentId).Attributes.Name, this.account.ParentId);
+            cmbParentAccount.SelectedText = AccountsManager.GetAccount(this.account.ParentId).Attributes.Name;
+            chkPlaceholder.Checked = this.account.IsPlaceholder;
+            txtDescription.Text = this.account.Attributes.Description;
+
+        }
+
+        public class ComboBoxItem
+        {
+            private string displayValue;
+            private string hiddenValue;
+
+            public ComboBoxItem(string displayValue, string hiddenValue)
+            {
+                this.displayValue = displayValue;
+                this.hiddenValue = hiddenValue;
+            }
+
+            public string HiddenValue
+            {
+                get
+                {
+                    return this.hiddenValue;
+                }
+            }
+
+            public override string ToString()
+            {
+                return this.displayValue;
             }
         }
+
 
 
     }

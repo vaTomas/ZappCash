@@ -16,14 +16,18 @@ namespace ZappCash.forms
     {
         private bool mouseDown;
         private Point lastLocation;
-        public EditTransaction()
+        private Transaction transaction;
+        private string accountId;
+        public EditTransaction(string AccountId, string TransactionId)
         {
             InitializeComponent();
+            this.transaction = AccountsManager.GetTransaction(AccountId, TransactionId);
+            this.accountId = AccountId;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void btnAccounts_Click(object sender, EventArgs e)
@@ -34,9 +38,7 @@ namespace ZappCash.forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TransactionsPage TransactionsPage = new TransactionsPage();
-            TransactionsPage.Show();
+            this.Close();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -80,6 +82,13 @@ namespace ZappCash.forms
                     cmbTransferAccount.Items.Add($"{AccountsManager.GetLongAccountName(account.Id)}");
                 }
             }
+        }
+
+        private void LoadItems()
+        {
+            dateTimePicker1.Value = this.transaction.Date;
+            txtNumber.Text = this.transaction.Number;
+
         }
     }
 }

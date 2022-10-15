@@ -25,5 +25,12 @@ namespace ZappCash.database
             if (Accounts == null) { Accounts = new List<Account>(); }
             if (Defaults == null) { Defaults = new zc_Defaults(); }
         }
+
+        public static void Reset()
+        {
+            Accounts = new List<Account>();
+            TempFile = new fileRecord();
+            AccessFile = new fileRecord();
+        }
     }
 }

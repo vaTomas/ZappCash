@@ -39,7 +39,8 @@ namespace ZappCash
         //General Actions
         public static void UpdateBalances()
         {
-            List<Account> accounts = GetAccounts();
+            List<Account> accounts = db_ZappCash.Accounts;
+            accounts.Reverse();
 
             foreach (Account account in accounts)
             {
@@ -49,11 +50,23 @@ namespace ZappCash
                     accountBalance += transaction.Amount;
                     transaction.Balance = accountBalance;
                 }
+
+                foreach (Account child in GetAccountChildren(AccountId: account.Id))
+                {
+                    accountBalance += child.Balance;
+                }
                 account.Balance = accountBalance;
             }
-
+            accounts.Reverse();
             setAccounts(accounts);
             FileManager.TempSave();
+        }
+
+        private static void sortAccounts()
+        {
+            List<Account> accounts = db_ZappCash.Accounts;
+            accounts = accounts.OrderBy(account => GetLongAccountName(account.Id)).ToList();
+            db_ZappCash.Accounts = accounts;
         }
 
 
@@ -61,25 +74,47 @@ namespace ZappCash
         //get
         public static Account GetAccount(string AccountId)
         {
-            UpdateBalances();
             List <Account> accounts = GetAccounts(); //import from database
             
-            int accountIndex = GetAccountIndex(accountId: AccountId);
-            Account account = accounts[accountIndex];
+            int accountIndex = GetAccountIndex(AccountId: AccountId);
+
+            Account account;
+
+            if (accountIndex < 0)
+            {
+                account = new Account(id: db_ZappCash.Defaults.AccountDefaults.ParentId, attributes: new AccountAttributes("Root", "", "", "", ""), assetType: db_ZappCash.Defaults.AccountDefaults.AssetType, isPlaceholder: true, null, db_ZappCash.Defaults.AccountDefaults.Decimals);
+            }
+            else
+            {
+                account = accounts[accountIndex];
+            }
 
             return account;
         }
-        private static int GetAccountIndex(string accountId)
+        public static int GetAccountIndex(string AccountId)
         {
             List<Account> accounts = GetAccounts();
-            int accountIndex = accounts.FindIndex(x => x.Id.Equals(accountId));
-            if (accountIndex < 0)
-            {
-                return 0;
-            }
+            int accountIndex = accounts.FindIndex(x => x.Id.Equals(AccountId));
             return accountIndex;
         }
-        private static string GetAccountId(string accountName)
+
+        public static List<Account> GetAccountChildren(string AccountId)
+        {
+            List<Account> accounts = GetAccounts();
+            List<Account> childAccounts = new List<Account>();
+            foreach (Account account in accounts)
+            {
+                if (account.ParentId == AccountId)
+                {
+                    childAccounts.Add(account);
+                }
+            }
+
+            return childAccounts;
+        }
+
+
+        public static string GetAccountId(string accountName)
         {
             List<Account> accounts = GetAccounts();
             foreach (Account account in accounts)
@@ -91,18 +126,46 @@ namespace ZappCash
             }
             return null;
         }
+
+
+        public static string GetAccountId(string ParentAccountId, string AccountName)
+        {
+            List<Account> accounts = GetAccountChildren(ParentAccountId);
+            foreach (Account account in accounts)
+            {
+                if (account.Attributes.Name == AccountName)
+                {
+                    return account.Id;
+                }
+            }
+            return null;
+        }
+
+
+
         //new
         private static void NewAccount(Account Account)
         {
             List<Account> accounts = GetAccounts();
             accounts.Add(Account);
             setAccounts(accounts);
+            sortAccounts();
         }
-        public static void NewAccount(string ParentId = "0000000000000000", byte Decimals = 2, string Name = "", string Code = "", string Description = "", string Color = "#ffffff", string Notes = "", string AssetType = "PHP", bool IsPlaceholder = false)
+        public static void NewAccount(string ParentId = null, byte Decimals = 2, string Name = "", string Code = "", string Description = "", string Color = "#ffffff", string Notes = "", string AssetType = "PHP", bool IsPlaceholder = false)
         {
             AccountAttributes accountAttributes = new AccountAttributes(name: Name, code: Code, description: Description, color: Color, notes: Notes);
 
-            string accountId = IdGenerator.GenerateID(ParentId);
+            string accountId;
+
+            if (ParentId == null)
+            {
+                string parentId = db_ZappCash.Defaults.AccountDefaults.ParentId;
+                accountId = IdGenerator.GenerateID(parentId);
+            }
+            else
+            {
+                accountId = IdGenerator.GenerateID(ParentId);
+            }
 
             Account account = new Account(id: accountId, attributes: accountAttributes, assetType: AssetType, isPlaceholder: IsPlaceholder, parentId: ParentId, decimals: Decimals);
 
@@ -187,9 +250,11 @@ namespace ZappCash
             if (Notes != null) { account.Attributes.Notes = Notes; }
             if (IsPlaceholder != null) { account.IsPlaceholder = (bool)IsPlaceholder; }
             if (ParentId != null) { account.ParentId = ParentId; }
+            if (ParentId == db_ZappCash.Defaults.AccountDefaults.ParentId) { account.ParentId = null; }
             if (Decimals != null) { account.Decimals = (byte)Decimals; }
 
-            DeleteAccount(AccountId, false);
+
+            DeleteAccount(AccountId, false, false);
             NewAccount(account);
             UpdateBalances();
         }
@@ -200,13 +265,14 @@ namespace ZappCash
             UpdateBalances();
             List<Account> accounts = GetAccounts(); //import from database
             
-            int accountIndex = GetAccountIndex(accountId: AccountId);
+            int accountIndex = GetAccountIndex(AccountId: AccountId);
             int transactionIndex = getTransactionIndex(accountId: AccountId, transactionId: TransactionId);
 
             Transaction transaction = accounts[accountIndex].Transactions[transactionIndex];
 
             return transaction;
         }
+
         
         public static List<Transaction> GetTransactions(string AccountId)
         {
@@ -218,7 +284,7 @@ namespace ZappCash
         private static int getTransactionIndex(string accountId, string transactionId)
         {
             List<Account> accounts = GetAccounts(); //import from database
-            int accountIndex = GetAccountIndex(accountId: accountId);
+            int accountIndex = GetAccountIndex(AccountId: accountId);
 
             Account account = accounts[accountIndex];
 
@@ -255,8 +321,9 @@ namespace ZappCash
         
         public static void NewTransaction(string AccountID, string TransferAccountId, DateTime? Date = null, string Number = "", string Description = "", long Amount = 0)
         {
-            DateTime date = (DateTime)Date;
-            if (Date == null) { date = DateTime.Now; }
+            DateTime date;
+            if (Date == null) { date = DateTime.Today; }
+            else { date = Convert.ToDateTime(Date); }
             
             string transactionId = IdGenerator.GenerateID(AccountID);
             NewTransaction(AccountID: AccountID, TransactionID: transactionId, TransferAccountId: TransferAccountId, Date: date, Number: Number, Description: Description, Amount: Amount);
@@ -327,6 +394,8 @@ namespace ZappCash
             
             return $"{account.Attributes.Name}";
         }
+
+        
 
 
     }

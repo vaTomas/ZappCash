@@ -177,5 +177,10 @@ namespace ZappCash
 
             File.Copy(tempFilePath, autoSavePath, true);
         }
+
+        public static void ResetDatabase()
+        {
+            db_ZappCash.Reset();
+        }
     }
 }

@@ -38,16 +38,14 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         private void btnYes_Click(object sender, EventArgs e)
         {
             // Save account changes method 
-            this.Hide();
-            AccountsPage accountsPage = new AccountsPage();
-            accountsPage.Show();
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            EditAccount editAccount = new EditAccount();
-            editAccount.Show();
+            this.DialogResult = DialogResult.No;
+            this.Close();
         }
     }
 }
