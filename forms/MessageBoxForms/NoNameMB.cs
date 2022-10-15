@@ -9,12 +9,5 @@ namespace ZappCash.forms.MessageBoxForms
         {
             InitializeComponent();
         }
-
-        private void btnAccounts_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MakeAcc MakeAcc = new MakeAcc();
-            MakeAcc.Show();
-        }
     }
 }

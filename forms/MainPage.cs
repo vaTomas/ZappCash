@@ -20,27 +20,25 @@ namespace ZappCash.forms
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnAccounts_Click(object sender, EventArgs e)
+        private void btnNewFile_Click(object sender, EventArgs e)
         {
             AccountsManager.New();
             AccountsPage AccountsPage = new AccountsPage();
             AccountsPage.Show();
             this.Hide();
         }
-
-        private void btnTransactions_Click(object sender, EventArgs e)
+        private void btnOpenFile_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             FileManager.OpenFile();
             TransactionsPage TransactionsPage = new TransactionsPage();
             TransactionsPage.Show();
         }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;

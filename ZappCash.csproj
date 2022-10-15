@@ -99,17 +99,53 @@
     <Compile Include="forms\MakeAcc.Designer.cs">
       <DependentUpon>MakeAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\MessageBoxForms\EditOrDeleteMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\EditOrDeleteMB.Designer.cs">
+      <DependentUpon>EditOrDeleteMB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\SuccessfulAccountDeletionMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\SuccessfulAccountDeletionMB.Designer.cs">
+      <DependentUpon>SuccessfulAccountDeletionMB.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\MessageBoxForms\SuccessfulAccountCreationMB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\MessageBoxForms\SuccessfulAccountCreationMB.Designer.cs">
       <DependentUpon>SuccessfulAccountCreationMB.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\MessageBoxForms\MakeAccPage\NoNameMB.cs">
+    <Compile Include="forms\MessageBoxForms\NoNameMB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\MessageBoxForms\MakeAccPage\NoNameMB.Designer.cs">
+    <Compile Include="forms\MessageBoxForms\NoNameMB.Designer.cs">
       <DependentUpon>NoNameMB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\SuccessfulTransactionDeletionMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\SuccessfulTransactionDeletionMB.Designer.cs">
+      <DependentUpon>SuccessfulTransactionDeletionMB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\AccountDeletionConfirmationMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\AccountDeletionConfirmationMB.Designer.cs">
+      <DependentUpon>AccountDeletionConfirmationMB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\TransactionDeletionConfirmationMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\TransactionDeletionConfirmationMB.Designer.cs">
+      <DependentUpon>TransactionDeletionConfirmationMB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\SaveChangesConfirmationMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForms\SaveChangesConfirmationMB.Designer.cs">
+      <DependentUpon>SaveChangesConfirmationMB.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\TransactionsPage.cs">
       <SubType>Form</SubType>
@@ -158,11 +194,29 @@
     <EmbeddedResource Include="forms\MakeAcc.resx">
       <DependentUpon>MakeAcc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForms\EditOrDeleteMB.resx">
+      <DependentUpon>EditOrDeleteMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForms\SuccessfulAccountDeletionMB.resx">
+      <DependentUpon>SuccessfulAccountDeletionMB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\MessageBoxForms\SuccessfulAccountCreationMB.resx">
       <DependentUpon>SuccessfulAccountCreationMB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\MessageBoxForms\MakeAccPage\NoNameMB.resx">
+    <EmbeddedResource Include="forms\MessageBoxForms\NoNameMB.resx">
       <DependentUpon>NoNameMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForms\SuccessfulTransactionDeletionMB.resx">
+      <DependentUpon>SuccessfulTransactionDeletionMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForms\AccountDeletionConfirmationMB.resx">
+      <DependentUpon>AccountDeletionConfirmationMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForms\TransactionDeletionConfirmationMB.resx">
+      <DependentUpon>TransactionDeletionConfirmationMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForms\SaveChangesConfirmationMB.resx">
+      <DependentUpon>SaveChangesConfirmationMB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\TransactionsPage.resx">
       <DependentUpon>TransactionsPage.cs</DependentUpon>
@@ -233,6 +287,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Error Icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question mark icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EDIT BUTTON V2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DELETE BUTTON2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -73,6 +73,16 @@ namespace ZappCash.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DELETE_BUTTON2 {
+            get {
+                object obj = ResourceManager.GetObject("DELETE BUTTON2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_button_purple {
             get {
                 object obj = ResourceManager.GetObject("edit button purple", resourceCulture);
@@ -83,9 +93,9 @@ namespace ZappCash.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Error_Icon {
+        internal static System.Drawing.Bitmap EDIT_BUTTON_V2 {
             get {
-                object obj = ResourceManager.GetObject("Error Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("EDIT BUTTON V2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +106,16 @@ namespace ZappCash.Properties {
         internal static System.Drawing.Bitmap Error_Icon1 {
             get {
                 object obj = ResourceManager.GetObject("Error Icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap question_mark_icon {
+            get {
+                object obj = ResourceManager.GetObject("question mark icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

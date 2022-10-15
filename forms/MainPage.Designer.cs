@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAccounts = new System.Windows.Forms.Button();
+            this.btnNewFile = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnTransactions = new System.Windows.Forms.Button();
+            this.btnOpenFile = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
@@ -47,21 +47,21 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
-            // btnAccounts
+            // btnNewFile
             // 
-            this.btnAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
-            this.btnAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccounts.FlatAppearance.BorderSize = 0;
-            this.btnAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccounts.Font = new System.Drawing.Font("Gilroy ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccounts.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAccounts.Location = new System.Drawing.Point(225, 603);
-            this.btnAccounts.Name = "btnAccounts";
-            this.btnAccounts.Size = new System.Drawing.Size(248, 50);
-            this.btnAccounts.TabIndex = 1;
-            this.btnAccounts.Text = "NEW FILE ";
-            this.btnAccounts.UseVisualStyleBackColor = false;
-            this.btnAccounts.Click += new System.EventHandler(this.btnAccounts_Click);
+            this.btnNewFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
+            this.btnNewFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewFile.FlatAppearance.BorderSize = 0;
+            this.btnNewFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewFile.Font = new System.Drawing.Font("Gilroy ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewFile.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNewFile.Location = new System.Drawing.Point(225, 603);
+            this.btnNewFile.Name = "btnNewFile";
+            this.btnNewFile.Size = new System.Drawing.Size(248, 50);
+            this.btnNewFile.TabIndex = 1;
+            this.btnNewFile.Text = "NEW FILE ";
+            this.btnNewFile.UseVisualStyleBackColor = false;
+            this.btnNewFile.Click += new System.EventHandler(this.btnNewFile_Click);
             // 
             // btnClose
             // 
@@ -76,23 +76,23 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.button2_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnTransactions
+            // btnOpenFile
             // 
-            this.btnTransactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
-            this.btnTransactions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTransactions.FlatAppearance.BorderSize = 0;
-            this.btnTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransactions.Font = new System.Drawing.Font("Gilroy ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransactions.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnTransactions.Location = new System.Drawing.Point(508, 603);
-            this.btnTransactions.Name = "btnTransactions";
-            this.btnTransactions.Size = new System.Drawing.Size(248, 50);
-            this.btnTransactions.TabIndex = 6;
-            this.btnTransactions.Text = "OPEN FILE ";
-            this.btnTransactions.UseVisualStyleBackColor = false;
-            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
+            this.btnOpenFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
+            this.btnOpenFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenFile.FlatAppearance.BorderSize = 0;
+            this.btnOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenFile.Font = new System.Drawing.Font("Gilroy ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenFile.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnOpenFile.Location = new System.Drawing.Point(508, 603);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(248, 50);
+            this.btnOpenFile.TabIndex = 6;
+            this.btnOpenFile.Text = "OPEN FILE ";
+            this.btnOpenFile.UseVisualStyleBackColor = false;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click_1);
             // 
             // Logo
             // 
@@ -110,10 +110,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(975, 707);
-            this.Controls.Add(this.btnTransactions);
+            this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.Logo);
-            this.Controls.Add(this.btnAccounts);
+            this.Controls.Add(this.btnNewFile);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -128,9 +128,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnAccounts;
+        private System.Windows.Forms.Button btnNewFile;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnTransactions;
+        private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.PictureBox Logo;
     }
 }

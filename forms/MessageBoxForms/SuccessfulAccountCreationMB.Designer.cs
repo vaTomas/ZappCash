@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRetry = new System.Windows.Forms.Button();
+            this.btnBackToAccounts = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBoxError = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnRetry
+            // btnBackToAccounts
             // 
-            this.btnRetry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
-            this.btnRetry.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRetry.FlatAppearance.BorderSize = 0;
-            this.btnRetry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRetry.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetry.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnRetry.Location = new System.Drawing.Point(0, 313);
-            this.btnRetry.Name = "btnRetry";
-            this.btnRetry.Size = new System.Drawing.Size(421, 52);
-            this.btnRetry.TabIndex = 1;
-            this.btnRetry.Text = "BACK TO ACCOUNTS";
-            this.btnRetry.UseVisualStyleBackColor = false;
-            this.btnRetry.Click += new System.EventHandler(this.btnAccounts_Click);
+            this.btnBackToAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
+            this.btnBackToAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackToAccounts.FlatAppearance.BorderSize = 0;
+            this.btnBackToAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToAccounts.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToAccounts.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnBackToAccounts.Location = new System.Drawing.Point(0, 313);
+            this.btnBackToAccounts.Name = "btnBackToAccounts";
+            this.btnBackToAccounts.Size = new System.Drawing.Size(421, 52);
+            this.btnBackToAccounts.TabIndex = 1;
+            this.btnBackToAccounts.Text = "BACK TO ACCOUNTS";
+            this.btnBackToAccounts.UseVisualStyleBackColor = false;
+            this.btnBackToAccounts.Click += new System.EventHandler(this.btnAccounts_Click);
             // 
             // label2
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBoxError);
-            this.Controls.Add(this.btnRetry);
+            this.Controls.Add(this.btnBackToAccounts);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SuccessfulAccountCreationMB";
@@ -110,7 +110,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnRetry;
+        private System.Windows.Forms.Button btnBackToAccounts;
         private System.Windows.Forms.PictureBox pictureBoxError;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

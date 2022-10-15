@@ -1,6 +1,6 @@
-﻿namespace ZappCash.forms
+﻿namespace ZappCash.forms.MessageBoxForms
 {
-    partial class SuccessfulTransactionAdditionMB
+    partial class SuccessfulTransactionDeletionMB
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,6 @@
             // btnBackToTransactions
             // 
             this.btnBackToTransactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
-            this.btnBackToTransactions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBackToTransactions.FlatAppearance.BorderSize = 0;
             this.btnBackToTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToTransactions.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,7 +59,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(399, 59);
             this.label2.TabIndex = 6;
-            this.label2.Text = "You have successfully added a transaction.";
+            this.label2.Text = "You have successfully removed a transaction.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -87,7 +86,7 @@
             this.pictureBoxError.TabIndex = 4;
             this.pictureBoxError.TabStop = false;
             // 
-            // SuccessfulTransactionAdditionMB
+            // ZappCash_SuccessMB1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
@@ -96,9 +95,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBoxError);
             this.Controls.Add(this.btnBackToTransactions);
-            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SuccessfulTransactionAdditionMB";
+            this.Name = "ZappCash_SuccessMB1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage1";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SuccessfulAccountCreationMB_MouseDown);
