@@ -13,11 +13,11 @@ namespace ZappCash.forms
             InitializeComponent();
         }
 
-        private void btnAccounts_Click(object sender, EventArgs e)
+        private void btnBackToTransactions_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TransactionsPage TransactionsPage = new TransactionsPage();
-            TransactionsPage.Show();
+            TransactionsPage transactionsPage = new TransactionsPage();
+            transactionsPage.Show();
         }
 
         private void SuccessfulAccountCreationMB_MouseDown(object sender, MouseEventArgs e)

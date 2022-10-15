@@ -48,7 +48,7 @@
             this.btnBackToTransactions.TabIndex = 1;
             this.btnBackToTransactions.Text = "BACK TO TRANSACTIONS";
             this.btnBackToTransactions.UseVisualStyleBackColor = false;
-            this.btnBackToTransactions.Click += new System.EventHandler(this.btnAccounts_Click);
+            this.btnBackToTransactions.Click += new System.EventHandler(this.btnBackToTransactions_Click);
             // 
             // label2
             // 
@@ -86,7 +86,7 @@
             this.pictureBoxError.TabIndex = 4;
             this.pictureBoxError.TabStop = false;
             // 
-            // ZappCash_SuccessMB1
+            // SuccessfulTransactionDeletionMB
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
@@ -97,7 +97,7 @@
             this.Controls.Add(this.btnBackToTransactions);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ZappCash_SuccessMB1";
+            this.Name = "SuccessfulTransactionDeletionMB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage1";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SuccessfulAccountCreationMB_MouseDown);

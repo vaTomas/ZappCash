@@ -1,6 +1,6 @@
 ﻿namespace ZappCash.forms.MessageBoxForms.EditOrDelete
 {
-    partial class EditOrDeleteMB
+    partial class EditOrDeleteTransactionMB
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditOrDeleteMB));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditOrDeleteTransactionMB));
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxDelete = new System.Windows.Forms.PictureBox();
@@ -58,10 +58,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(426, 43);
             this.panel1.TabIndex = 11;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // pictureBoxDelete
             // 
             this.pictureBoxDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxDelete.Image = global::ZappCash.Properties.Resources.DELETE_BUTTON2;
             this.pictureBoxDelete.Location = new System.Drawing.Point(240, 262);
             this.pictureBoxDelete.Name = "pictureBoxDelete";
@@ -74,6 +78,7 @@
             // pictureBoxEdit
             // 
             this.pictureBoxEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEdit.Image = global::ZappCash.Properties.Resources.EDIT_BUTTON_V2;
             this.pictureBoxEdit.Location = new System.Drawing.Point(38, 262);
             this.pictureBoxEdit.Name = "pictureBoxEdit";
@@ -95,7 +100,7 @@
             this.pictureBoxError.TabIndex = 4;
             this.pictureBoxError.TabStop = false;
             // 
-            // EditOrDeleteMB
+            // EditOrDeleteTransactionMB
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
@@ -105,9 +110,9 @@
             this.Controls.Add(this.pictureBoxEdit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBoxError);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EditOrDeleteMB";
+            this.Name = "EditOrDeleteTransactionMB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete)).EndInit();

@@ -99,11 +99,11 @@
     <Compile Include="forms\MakeAcc.Designer.cs">
       <DependentUpon>MakeAcc.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\MessageBoxForms\EditOrDeleteMB.cs">
+    <Compile Include="forms\MessageBoxForms\EditOrDeleteTransactionMB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\MessageBoxForms\EditOrDeleteMB.Designer.cs">
-      <DependentUpon>EditOrDeleteMB.cs</DependentUpon>
+    <Compile Include="forms\MessageBoxForms\EditOrDeleteTransactionMB.Designer.cs">
+      <DependentUpon>EditOrDeleteTransactionMB.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\MessageBoxForms\SuccessfulAccountDeletionMB.cs">
       <SubType>Form</SubType>
@@ -141,11 +141,11 @@
     <Compile Include="forms\MessageBoxForms\TransactionDeletionConfirmationMB.Designer.cs">
       <DependentUpon>TransactionDeletionConfirmationMB.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\MessageBoxForms\SaveChangesConfirmationMB.cs">
+    <Compile Include="forms\MessageBoxForms\SaveAccountChangesConfirmationMB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\MessageBoxForms\SaveChangesConfirmationMB.Designer.cs">
-      <DependentUpon>SaveChangesConfirmationMB.cs</DependentUpon>
+    <Compile Include="forms\MessageBoxForms\SaveAccountChangesConfirmationMB.Designer.cs">
+      <DependentUpon>SaveAccountChangesConfirmationMB.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\TransactionsPage.cs">
       <SubType>Form</SubType>
@@ -194,8 +194,8 @@
     <EmbeddedResource Include="forms\MakeAcc.resx">
       <DependentUpon>MakeAcc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\MessageBoxForms\EditOrDeleteMB.resx">
-      <DependentUpon>EditOrDeleteMB.cs</DependentUpon>
+    <EmbeddedResource Include="forms\MessageBoxForms\EditOrDeleteTransactionMB.resx">
+      <DependentUpon>EditOrDeleteTransactionMB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MessageBoxForms\SuccessfulAccountDeletionMB.resx">
       <DependentUpon>SuccessfulAccountDeletionMB.cs</DependentUpon>
@@ -215,8 +215,8 @@
     <EmbeddedResource Include="forms\MessageBoxForms\TransactionDeletionConfirmationMB.resx">
       <DependentUpon>TransactionDeletionConfirmationMB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\MessageBoxForms\SaveChangesConfirmationMB.resx">
-      <DependentUpon>SaveChangesConfirmationMB.cs</DependentUpon>
+    <EmbeddedResource Include="forms\MessageBoxForms\SaveAccountChangesConfirmationMB.resx">
+      <DependentUpon>SaveAccountChangesConfirmationMB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\TransactionsPage.resx">
       <DependentUpon>TransactionsPage.cs</DependentUpon>

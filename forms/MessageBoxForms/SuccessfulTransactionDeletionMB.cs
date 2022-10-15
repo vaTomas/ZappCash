@@ -13,13 +13,12 @@ namespace ZappCash.forms.MessageBoxForms
             InitializeComponent();
         }
 
-        private void btnAccounts_Click(object sender, EventArgs e)
+        private void btnBackToTransactions_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AccountsPage AccountsPage = new AccountsPage();
-            AccountsPage.Show();
+            TransactionsPage transactionsPage = new TransactionsPage();
+            transactionsPage.Show();
         }
-
         private void SuccessfulAccountCreationMB_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;

@@ -75,7 +75,7 @@
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "←";
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.button1_Click);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnClose
             // 
@@ -90,7 +90,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.button2_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnNew
             // 
@@ -105,7 +105,7 @@
             this.btnNew.TabIndex = 9;
             this.btnNew.Text = "NEW";
             this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnOpen
             // 
@@ -120,7 +120,7 @@
             this.btnOpen.TabIndex = 10;
             this.btnOpen.Text = "OPEN";
             this.btnOpen.UseVisualStyleBackColor = false;
-            this.btnOpen.Click += new System.EventHandler(this.button3_Click);
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSaveAs
             // 
@@ -135,7 +135,7 @@
             this.btnSaveAs.TabIndex = 12;
             this.btnSaveAs.Text = "SAVE AS";
             this.btnSaveAs.UseVisualStyleBackColor = false;
-            this.btnSaveAs.Click += new System.EventHandler(this.button5_Click);
+            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
             // 
             // btnSave
             // 
@@ -150,7 +150,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.button4_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -174,7 +174,7 @@
             this.lblAddAcc.Size = new System.Drawing.Size(69, 78);
             this.lblAddAcc.TabIndex = 7;
             this.lblAddAcc.Text = "+";
-            this.lblAddAcc.Click += new System.EventHandler(this.label2_Click);
+            this.lblAddAcc.Click += new System.EventHandler(this.lblAddAcc_Click);
             // 
             // label2
             // 

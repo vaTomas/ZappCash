@@ -49,7 +49,7 @@
             this.btnBackToTransactions.TabIndex = 1;
             this.btnBackToTransactions.Text = "BACK TO TRANSACTIONS";
             this.btnBackToTransactions.UseVisualStyleBackColor = false;
-            this.btnBackToTransactions.Click += new System.EventHandler(this.btnAccounts_Click);
+            this.btnBackToTransactions.Click += new System.EventHandler(this.btnBackToTransactions_Click);
             // 
             // label2
             // 

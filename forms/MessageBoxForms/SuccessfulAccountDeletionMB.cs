@@ -4,20 +4,20 @@ using System.Windows.Forms;
 
 namespace ZappCash.forms.MessageBoxForms.EditOrDelete
 {
-    public partial class SuccessfulAccountDeletion : Form
+    public partial class SuccessfulAccountDeletionMB : Form
     {
         private bool mouseDown;
         private Point lastLocation;
-        public SuccessfulAccountDeletion()
+        public SuccessfulAccountDeletionMB()
         {
             InitializeComponent();
         }
 
-        private void btnAccounts_Click(object sender, EventArgs e)
+        private void btnBackToAccounts_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AccountsPage AccountsPage = new AccountsPage();
-            AccountsPage.Show();
+            AccountsPage accountsPage = new AccountsPage();
+            accountsPage.Show();
         }
 
         private void SuccessfulAccountCreationMB_MouseDown(object sender, MouseEventArgs e)

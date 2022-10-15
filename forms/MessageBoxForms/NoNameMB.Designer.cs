@@ -49,6 +49,7 @@
             this.btnRetry.TabIndex = 1;
             this.btnRetry.Text = "RETRY";
             this.btnRetry.UseVisualStyleBackColor = false;
+            this.btnRetry.Click += new System.EventHandler(this.btnRetry_Click);
             // 
             // label2
             // 
@@ -85,7 +86,7 @@
             this.pictureBoxError.TabIndex = 4;
             this.pictureBoxError.TabStop = false;
             // 
-            // ZappCash_ErrorMB1
+            // NoNameMB
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
@@ -95,9 +96,12 @@
             this.Controls.Add(this.pictureBoxError);
             this.Controls.Add(this.btnRetry);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ZappCash_ErrorMB1";
+            this.Name = "NoNameMB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage1";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NoNameMB_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NoNameMB_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.NoNameMB_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

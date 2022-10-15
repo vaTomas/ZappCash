@@ -36,8 +36,8 @@ namespace ZappCash.forms
         {
             this.Hide();
             FileManager.OpenFile();
-            TransactionsPage TransactionsPage = new TransactionsPage();
-            TransactionsPage.Show();
+            TransactionsPage transactionsPage = new TransactionsPage();
+            transactionsPage.Show();
         }
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {

@@ -60,6 +60,7 @@
             // 
             this.btnYes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
+            this.btnYes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYes.FlatAppearance.BorderSize = 0;
             this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYes.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,11 +71,13 @@
             this.btnYes.TabIndex = 12;
             this.btnYes.Text = "YES";
             this.btnYes.UseVisualStyleBackColor = false;
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // btnNo
             // 
             this.btnNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(60)))), ((int)(((byte)(232)))));
+            this.btnNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNo.FlatAppearance.BorderSize = 0;
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNo.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,6 +88,7 @@
             this.btnNo.TabIndex = 13;
             this.btnNo.Text = "NO";
             this.btnNo.UseVisualStyleBackColor = false;
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
             // pictureBoxError
             // 
@@ -108,7 +112,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBoxError);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TransactionDeletionConfirmationMB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

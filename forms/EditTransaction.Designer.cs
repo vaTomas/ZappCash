@@ -217,7 +217,7 @@
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(385, 41);
             this.numAmount.TabIndex = 20;
-            this.numAmount.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numAmount.ValueChanged += new System.EventHandler(this.numAmount_ValueChanged);
             // 
             // radioButtonSend
             // 

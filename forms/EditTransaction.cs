@@ -61,7 +61,7 @@ namespace ZappCash.forms
             mouseDown = false;
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void numAmount_ValueChanged(object sender, EventArgs e)
         {
 
         }

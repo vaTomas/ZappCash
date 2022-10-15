@@ -20,19 +20,21 @@ namespace ZappCash.forms
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            MainPage mainPage = new MainPage();
+            mainPage.Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void lblAddAcc_Click(object sender, EventArgs e)
         {
             this.Hide();
             MakeAcc MakeAcc = new MakeAcc();
             MakeAcc.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             MainPage MainPage = new MainPage();
@@ -61,24 +63,24 @@ namespace ZappCash.forms
             mouseDown = false;
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnOpen_Click(object sender, EventArgs e)
         {
             FileManager.OpenFile();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             FileManager.Save();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnSaveAs_Click(object sender, EventArgs e)
         {
             FileManager.SaveAs();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

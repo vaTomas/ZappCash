@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZappCash.forms;
+using ZappCash.forms.MessageBoxForms;
+using ZappCash.forms.MessageBoxForms.EditOrDelete;
 
 namespace ZappCash
 {
@@ -24,7 +26,7 @@ namespace ZappCash
 
             if (!DebugMode)
             {
-                Application.Run(new MainPage());
+                Application.Run(new EditTransaction());
             }
             else
             {

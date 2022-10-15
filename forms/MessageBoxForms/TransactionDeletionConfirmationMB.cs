@@ -13,15 +13,20 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
             InitializeComponent();
         }
 
-
-        private void pictureBoxEdit_Click(object sender, EventArgs e)
+        private void btnYes_Click(object sender, EventArgs e)
         {
-
+            //delete transaction method then show SuccessfulTransactionDeletionMB
+            this.Hide();
+            SuccessfulTransactionDeletionMB successfulTransactionDeletionMB = new SuccessfulTransactionDeletionMB();
+            successfulTransactionDeletionMB.Show();
         }
 
-        private void pictureBoxDelete_Click(object sender, EventArgs e)
+        private void btnNo_Click(object sender, EventArgs e)
         {
-
+            //hide then show TransactionsPage
+            this.Hide();
+            TransactionsPage transactionsPage= new TransactionsPage();
+            transactionsPage.Show();
         }
     }
 }

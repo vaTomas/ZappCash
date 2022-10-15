@@ -4,29 +4,13 @@ using System.Windows.Forms;
 
 namespace ZappCash.forms.MessageBoxForms.EditOrDelete
 {
-    public partial class AccountDeletionConfirmationMB : Form
+    public partial class SaveAccountChangesConfirmationMB : Form
     {
         private bool mouseDown;
         private Point lastLocation;
-        public AccountDeletionConfirmationMB()
+        public SaveAccountChangesConfirmationMB()
         {
             InitializeComponent();
-        }
-
-        private void btnYes_Click(object sender, EventArgs e)
-        {
-            // Delete account method then show SuccessfulAccountDeletionMB
-            this.Hide();
-            SuccessfulAccountDeletionMB successfulAccountDeletionMB = new SuccessfulAccountDeletionMB();
-            successfulAccountDeletionMB.Show();
-        }
-
-        private void btnNo_Click(object sender, EventArgs e)
-        {
-            // Hide then show AccountsPage
-            this.Hide();
-            AccountsPage accountsPage = new AccountsPage();
-            accountsPage.Show();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -49,6 +33,21 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void btnYes_Click(object sender, EventArgs e)
+        {
+            // Save account changes method 
+            this.Hide();
+            AccountsPage accountsPage = new AccountsPage();
+            accountsPage.Show();
+        }
+
+        private void btnNo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditAccount editAccount = new EditAccount();
+            editAccount.Show();
         }
     }
 }

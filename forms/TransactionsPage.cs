@@ -19,9 +19,11 @@ namespace ZappCash.forms
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            MainPage mainPage = new MainPage();
+            mainPage.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
