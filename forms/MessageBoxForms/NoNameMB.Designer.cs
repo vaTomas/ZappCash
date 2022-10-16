@@ -99,6 +99,7 @@
             this.Name = "NoNameMB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage1";
+            this.Load += new System.EventHandler(this.NoNameMB_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NoNameMB_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NoNameMB_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.NoNameMB_MouseUp);

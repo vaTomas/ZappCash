@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Media;
 
 namespace ZappCash.forms.MessageBoxForms
 {
@@ -12,13 +13,13 @@ namespace ZappCash.forms.MessageBoxForms
 
         public NoNameMB()
         {
+            SystemSounds.Asterisk.Play();
             InitializeComponent();
         }
 
         private void btnRetry_Click(object sender, EventArgs e)
         {
-            // Hide form
-            this.Hide();
+            this.Close();
         }
 
         private void NoNameMB_MouseDown(object sender, MouseEventArgs e)
@@ -41,6 +42,11 @@ namespace ZappCash.forms.MessageBoxForms
         private void NoNameMB_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void NoNameMB_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

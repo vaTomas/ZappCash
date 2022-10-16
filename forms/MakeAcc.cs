@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 using ZappCash.classes;
 using ZappCash.database;
+using ZappCash.forms.MessageBoxForms;
 
 namespace ZappCash.forms
 {
@@ -31,15 +33,25 @@ namespace ZappCash.forms
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
+            if (txtAccountName.Text == "")
+            {
+                this.Hide();
+
+                NoNameMB noNameMB = new NoNameMB();
+                noNameMB.ShowDialog();
+                this.Show();
+                return;
+            }
+            
+            
             List<Account> accounts = AccountsManager.GetAccounts();
 
-            string parentId = null;
 
+            string parentId = null;
             if (cmbParentAccount.SelectedItem != null)
             {
                 parentId = ((ComboBoxItem)cmbParentAccount.SelectedItem).HiddenValue;
             }
-
 
 
             string accountName = txtAccountName.Text;
@@ -121,12 +133,11 @@ namespace ZappCash.forms
                 cmbParentAccount.Items.Add(new ComboBoxItem(accountName, account.Id));
             }
 
-            cmbParentAccount.SelectedItem = new ComboBoxItem(AccountsManager.GetAccount(parentId).Attributes.Name, parentId);
-            cmbParentAccount.SelectedText = AccountsManager.GetAccount(parentId).Attributes.Name;
+            cmbParentAccount.SelectedIndex = AccountsManager.GetAccountIndex(parentId) + 1;
 
         }
 
-        public class ComboBoxItem
+        private class ComboBoxItem
         {
             private string displayValue;
             private string hiddenValue;

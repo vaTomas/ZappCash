@@ -37,13 +37,6 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.listTransactions = new System.Windows.Forms.ListView();
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -66,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1765, 46);
+            this.panel1.Size = new System.Drawing.Size(1420, 46);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -94,7 +87,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Gilroy ExtraBold", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(1708, 0);
+            this.button2.Location = new System.Drawing.Point(1363, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(57, 46);
             this.button2.TabIndex = 5;
@@ -170,7 +163,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gilroy ExtraBold", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(41, 125);
+            this.label1.Location = new System.Drawing.Point(22, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(816, 78);
             this.label1.TabIndex = 6;
@@ -186,112 +179,13 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Gilroy ExtraBold", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(1641, 125);
+            this.label2.Location = new System.Drawing.Point(1309, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 78);
             this.label2.TabIndex = 7;
             this.label2.Text = "+";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(48, 248);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 34);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "DATE";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(594, 248);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 34);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "DESCRIPTION";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(1006, 248);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 34);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "TRANSACT";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(1401, 248);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 34);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "AMOUNT";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gilroy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(50, 219);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 19);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "10/13/2022\r\n";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(254, 248);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 34);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "NUMBER";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label10.Font = new System.Drawing.Font("Gilroy ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(1662, 249);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 33);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "···";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // listTransactions
             // 
@@ -307,10 +201,10 @@
             this.listTransactions.GridLines = true;
             this.listTransactions.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listTransactions.HideSelection = false;
-            this.listTransactions.Location = new System.Drawing.Point(54, 324);
+            this.listTransactions.Location = new System.Drawing.Point(35, 197);
             this.listTransactions.MultiSelect = false;
             this.listTransactions.Name = "listTransactions";
-            this.listTransactions.Size = new System.Drawing.Size(1343, 561);
+            this.listTransactions.Size = new System.Drawing.Size(1353, 561);
             this.listTransactions.TabIndex = 24;
             this.listTransactions.UseCompatibleStateImageBehavior = false;
             this.listTransactions.View = System.Windows.Forms.View.Details;
@@ -319,49 +213,42 @@
             // Date
             // 
             this.Date.Text = "Date";
-            this.Date.Width = 120;
+            this.Date.Width = 133;
             // 
             // Num
             // 
             this.Num.Text = "Num";
-            this.Num.Width = 100;
+            this.Num.Width = 118;
             // 
             // Description
             // 
             this.Description.Text = "Description";
-            this.Description.Width = 500;
+            this.Description.Width = 612;
             // 
             // Transfer
             // 
             this.Transfer.Text = "Transfer";
             this.Transfer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Transfer.Width = 200;
+            this.Transfer.Width = 206;
             // 
             // Amount
             // 
             this.Amount.Text = "Amount";
             this.Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Amount.Width = 120;
+            this.Amount.Width = 135;
             // 
             // Balance
             // 
             this.Balance.Text = "Balance";
             this.Balance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Balance.Width = 120;
+            this.Balance.Width = 138;
             // 
             // TransactionsPage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1765, 947);
+            this.ClientSize = new System.Drawing.Size(1420, 796);
             this.Controls.Add(this.listTransactions);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -382,18 +269,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSaveAs;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListView listTransactions;
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.ColumnHeader Num;
