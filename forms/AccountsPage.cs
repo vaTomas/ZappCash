@@ -100,6 +100,7 @@ namespace ZappCash.forms
 
         private void AccountsPage_Load(object sender, EventArgs e)
         {
+            
             LoadItems();
         }
 

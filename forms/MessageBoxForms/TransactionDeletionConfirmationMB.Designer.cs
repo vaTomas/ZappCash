@@ -119,6 +119,7 @@
             this.Name = "TransactionDeletionConfirmationMB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ZappCash - Confirmation";
+            this.Load += new System.EventHandler(this.TransactionDeletionConfirmationMB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).EndInit();
             this.ResumeLayout(false);
 

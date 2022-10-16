@@ -137,8 +137,8 @@ namespace ZappCash.forms
             this.Hide();
 
             string transactionId = listTransactions.SelectedItems[0].Name;
-            EditOrDeleteTransactionMB editOrDeleteTransactionMB = new EditOrDeleteTransactionMB(this.account.Id, transactionId);
-            editOrDeleteTransactionMB.ShowDialog();
+            EditTransaction editTransaction = new EditTransaction(this.account.Id, transactionId);
+            editTransaction.ShowDialog();
 
             LoadItems();
             this.Show();

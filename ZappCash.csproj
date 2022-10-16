@@ -172,7 +172,7 @@
       <DependentUpon>SuccessfulTransactionAdditionMB.cs</DependentUpon>
     </Compile>
     <Compile Include="packages\encryption.cs" />
-    <Compile Include="packages\stringToDateTime.cs" />
+    <Compile Include="Resources\stringToDateTime.cs" />
     <Compile Include="src\FileManager.cs" />
     <Compile Include="src\AccountsManager.cs" />
     <Compile Include="packages\id.cs" />

@@ -25,5 +25,10 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
             this.DialogResult = DialogResult.No;
             this.Close();
         }
+
+        private void TransactionDeletionConfirmationMB_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

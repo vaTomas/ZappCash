@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using ZappCash.classes;
 using ZappCash.forms.MessageBoxForms;
+using ZappCash.forms.MessageBoxForms.EditOrDelete;
 
 namespace ZappCash.forms
 {
@@ -160,8 +161,24 @@ namespace ZappCash.forms
             }
         }
 
+        private void picDelete_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TransactionDeletionConfirmationMB transactionDeletionConfirmationMB = new TransactionDeletionConfirmationMB();
+            transactionDeletionConfirmationMB.ShowDialog();
 
+            if (transactionDeletionConfirmationMB.DialogResult == DialogResult.Yes)
+            {
 
+                AccountsManager.DeleteTransaction(transaction.Id);
 
+                SuccessfulTransactionDeletionMB successfulTransactionDeletionMB = new SuccessfulTransactionDeletionMB();
+                successfulTransactionDeletionMB.ShowDialog();
+
+                this.Close();
+            }
+
+            this.Show();
+        }
     }
 }
