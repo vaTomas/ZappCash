@@ -16,20 +16,39 @@ namespace ZappCash.forms
     {
         private bool mouseDown;
         private Point lastLocation;
-        public AddTransactions()
+        private Account account;
+
+        public AddTransactions(string AccountId)
         {
+            this.account = AccountsManager.GetAccount(AccountId);
+
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
+            DateTime date = dateTimePicker1.Value;
+            string number = txtNumber.Text;
+            string transferAccountId = ((ComboBoxItem)cmbTransferAccount.SelectedItem).HiddenValue;
+            string description = txtDescription.Text;
+
+            long amount = Int64.Parse($"{numericUpDown1.Value}E{account.Decimals}", System.Globalization.NumberStyles.AllowExponent | System.Globalization.NumberStyles.AllowDecimalPoint);
+            if (radioButtonReceive.Checked)
+            {
+                amount = -amount;
+            }
+
+            AccountsManager.NewTransaction(AccountID: this.account.Id, TransferAccountId: transferAccountId, Date: date, Number: number, Description: description, Amount: amount);
+                        
             this.Hide();
-           
+            SuccessfulTransactionAdditionMB successfulTransactionAdditionMB = new SuccessfulTransactionAdditionMB();
+            successfulTransactionAdditionMB.ShowDialog();
+            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -70,13 +89,36 @@ namespace ZappCash.forms
             List<Account> accounts = AccountsManager.GetAccounts();
             foreach (Account account in accounts)
             {
-                if (!account.IsPlaceholder)
+                if (!account.IsPlaceholder && account.Id != this.account.Id)
                 {
-                    string accountName = account.Attributes.Name;
-                    string accountParentName = AccountsManager.GetAccount(account.ParentId).Attributes.Name;
-
-                    cmbTransferAccount.Items.Add($"{AccountsManager.GetLongAccountName(account.Id)}");
+                    string accountName = AccountsManager.GetLongAccountName(account.Id);
+                    cmbTransferAccount.Items.Add(new ComboBoxItem(accountName, account.Id));
                 }
+            }
+        }
+
+        private class ComboBoxItem
+        {
+            private string displayValue;
+            private string hiddenValue;
+
+            public ComboBoxItem(string displayValue, string hiddenValue)
+            {
+                this.displayValue = displayValue;
+                this.hiddenValue = hiddenValue;
+            }
+
+            public string HiddenValue
+            {
+                get
+                {
+                    return this.hiddenValue;
+                }
+            }
+
+            public override string ToString()
+            {
+                return this.displayValue;
             }
         }
     }

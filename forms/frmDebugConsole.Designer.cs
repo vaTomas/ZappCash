@@ -84,6 +84,12 @@
             this.txtShowTransactionsAccountId = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnTransactionGet = new System.Windows.Forms.Button();
+            this.btnSoundAsterisk = new System.Windows.Forms.Button();
+            this.btnSoundBeep = new System.Windows.Forms.Button();
+            this.btnSoundExclamation = new System.Windows.Forms.Button();
+            this.btnSoundHand = new System.Windows.Forms.Button();
+            this.btnSoundQuestion = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCommand
@@ -581,11 +587,76 @@
             this.btnTransactionGet.UseVisualStyleBackColor = true;
             this.btnTransactionGet.Click += new System.EventHandler(this.btnTransactionGet_Click);
             // 
+            // btnSoundAsterisk
+            // 
+            this.btnSoundAsterisk.Location = new System.Drawing.Point(994, 379);
+            this.btnSoundAsterisk.Name = "btnSoundAsterisk";
+            this.btnSoundAsterisk.Size = new System.Drawing.Size(75, 23);
+            this.btnSoundAsterisk.TabIndex = 66;
+            this.btnSoundAsterisk.Text = "Asterisk";
+            this.btnSoundAsterisk.UseVisualStyleBackColor = true;
+            this.btnSoundAsterisk.Click += new System.EventHandler(this.btnSoundAsterisk_Click);
+            // 
+            // btnSoundBeep
+            // 
+            this.btnSoundBeep.Location = new System.Drawing.Point(1076, 379);
+            this.btnSoundBeep.Name = "btnSoundBeep";
+            this.btnSoundBeep.Size = new System.Drawing.Size(75, 23);
+            this.btnSoundBeep.TabIndex = 67;
+            this.btnSoundBeep.Text = "Beep";
+            this.btnSoundBeep.UseVisualStyleBackColor = true;
+            this.btnSoundBeep.Click += new System.EventHandler(this.btnSoundBeep_Click);
+            // 
+            // btnSoundExclamation
+            // 
+            this.btnSoundExclamation.Location = new System.Drawing.Point(994, 408);
+            this.btnSoundExclamation.Name = "btnSoundExclamation";
+            this.btnSoundExclamation.Size = new System.Drawing.Size(75, 23);
+            this.btnSoundExclamation.TabIndex = 68;
+            this.btnSoundExclamation.Text = "Exclamation";
+            this.btnSoundExclamation.UseVisualStyleBackColor = true;
+            this.btnSoundExclamation.Click += new System.EventHandler(this.btnSoundExclamation_Click);
+            // 
+            // btnSoundHand
+            // 
+            this.btnSoundHand.Location = new System.Drawing.Point(1075, 408);
+            this.btnSoundHand.Name = "btnSoundHand";
+            this.btnSoundHand.Size = new System.Drawing.Size(75, 23);
+            this.btnSoundHand.TabIndex = 69;
+            this.btnSoundHand.Text = "Hand";
+            this.btnSoundHand.UseVisualStyleBackColor = true;
+            this.btnSoundHand.Click += new System.EventHandler(this.btnSoundHand_Click);
+            // 
+            // btnSoundQuestion
+            // 
+            this.btnSoundQuestion.Location = new System.Drawing.Point(1036, 437);
+            this.btnSoundQuestion.Name = "btnSoundQuestion";
+            this.btnSoundQuestion.Size = new System.Drawing.Size(75, 23);
+            this.btnSoundQuestion.TabIndex = 70;
+            this.btnSoundQuestion.Text = "Question";
+            this.btnSoundQuestion.UseVisualStyleBackColor = true;
+            this.btnSoundQuestion.Click += new System.EventHandler(this.btnSoundQuestion_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(1033, 363);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(80, 13);
+            this.label16.TabIndex = 71;
+            this.label16.Text = "System Sounds";
+            // 
             // frmDebugConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1307, 676);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.btnSoundQuestion);
+            this.Controls.Add(this.btnSoundHand);
+            this.Controls.Add(this.btnSoundExclamation);
+            this.Controls.Add(this.btnSoundBeep);
+            this.Controls.Add(this.btnSoundAsterisk);
             this.Controls.Add(this.btnTransactionGet);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtShowTransactionsAccountId);
@@ -708,5 +779,11 @@
         private System.Windows.Forms.TextBox txtShowTransactionsAccountId;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnTransactionGet;
+        private System.Windows.Forms.Button btnSoundAsterisk;
+        private System.Windows.Forms.Button btnSoundBeep;
+        private System.Windows.Forms.Button btnSoundExclamation;
+        private System.Windows.Forms.Button btnSoundHand;
+        private System.Windows.Forms.Button btnSoundQuestion;
+        private System.Windows.Forms.Label label16;
     }
 }

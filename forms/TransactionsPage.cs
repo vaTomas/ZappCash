@@ -39,9 +39,10 @@ namespace ZappCash.forms
         {
             
             this.Hide();
-            AddTransactions AddTransactions = new AddTransactions();
+            AddTransactions AddTransactions = new AddTransactions(account.Id);
             AddTransactions.ShowDialog();
             LoadItems();
+            this.Show();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

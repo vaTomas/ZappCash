@@ -88,7 +88,14 @@ namespace ZappCash.forms
         {
             dateTimePicker1.Value = this.transaction.Date;
             txtNumber.Text = this.transaction.Number;
+            txtDescription.Text = this.transaction.Description;
+
+
 
         }
+
+
+
+
     }
 }

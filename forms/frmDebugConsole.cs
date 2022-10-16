@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 using Newtonsoft.Json;
 
@@ -193,6 +194,31 @@ namespace ZappCash.forms
             txtTransactionTransferAccountId.Text = transaction.TransferId;
             txtTransactionAmount.Text = transaction.Amount.ToString();
 
+        }
+
+        private void btnSoundAsterisk_Click(object sender, EventArgs e)
+        {
+            SystemSounds.Asterisk.Play();
+        }
+
+        private void btnSoundBeep_Click(object sender, EventArgs e)
+        {
+            SystemSounds.Beep.Play();
+        }
+
+        private void btnSoundExclamation_Click(object sender, EventArgs e)
+        {
+            SystemSounds.Exclamation.Play();
+        }
+
+        private void btnSoundHand_Click(object sender, EventArgs e)
+        {
+            SystemSounds.Hand.Play();
+        }
+
+        private void btnSoundQuestion_Click(object sender, EventArgs e)
+        {
+            SystemSounds.Question.Play();
         }
     }
 }
