@@ -109,8 +109,26 @@ namespace ZappCash.forms
 
             //info
             txtAccountName.Text = this.account.Attributes.Name;
-            cmbParentAccount.SelectedItem = new ComboBoxItem(AccountsManager.GetAccount(this.account.ParentId).Attributes.Name, this.account.ParentId);
-            cmbParentAccount.SelectedText = AccountsManager.GetAccount(this.account.ParentId).Attributes.Name;
+
+            {
+                int index = 0;
+                string parentId = this.account.ParentId;
+                if (parentId == null)
+                {
+                    parentId = db_ZappCash.Defaults.AccountDefaults.ParentId;
+                }
+
+                foreach (ComboBoxItem item in cmbParentAccount.Items) {
+                    if (item.HiddenValue == parentId)
+                    {
+                        cmbParentAccount.SelectedIndex = index;
+                        break;
+                    }
+                    index++;
+                }
+            }
+
+            
             chkPlaceholder.Checked = this.account.IsPlaceholder;
             txtDescription.Text = this.account.Attributes.Description;
 
