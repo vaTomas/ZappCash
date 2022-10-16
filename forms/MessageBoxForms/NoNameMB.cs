@@ -15,6 +15,9 @@ namespace ZappCash.forms.MessageBoxForms
         {
             SystemSounds.Asterisk.Play();
             InitializeComponent();
+
+
+            
         }
 
         private void btnRetry_Click(object sender, EventArgs e)

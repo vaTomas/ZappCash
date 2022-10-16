@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using ZappCash.classes;
 using ZappCash.forms.MessageBoxForms.EditOrDelete;
+using ZappCash.forms.MessageBoxForms;
 using ZappCash.database;
 
 namespace ZappCash.forms
@@ -20,10 +21,12 @@ namespace ZappCash.forms
         private Point lastLocation;
         private Account account { get; set; }
 
+
         public EditAccount(string AccountId)
         {
             InitializeComponent();
             this.account = AccountsManager.GetAccount(AccountId);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,6 +46,16 @@ namespace ZappCash.forms
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
+            if (txtAccountName.Text == "")
+            {
+                this.Hide();
+                NoNameMB noNameMB = new NoNameMB();
+                noNameMB.ShowDialog();
+                this.Show();
+                return;
+            }
+            
+            
             this.Hide();
             SaveAccountChangesConfirmationMB saveAccountChangesConfirmationMB = new SaveAccountChangesConfirmationMB();
             saveAccountChangesConfirmationMB.ShowDialog();

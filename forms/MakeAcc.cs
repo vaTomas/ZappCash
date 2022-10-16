@@ -47,10 +47,11 @@ namespace ZappCash.forms
             List<Account> accounts = AccountsManager.GetAccounts();
 
 
-            string parentId = null;
-            if (cmbParentAccount.SelectedItem != null)
+            
+            string parentId = ((ComboBoxItem)cmbParentAccount.SelectedItem).HiddenValue;
+            if (parentId == db_ZappCash.Defaults.AccountDefaults.ParentId)
             {
-                parentId = ((ComboBoxItem)cmbParentAccount.SelectedItem).HiddenValue;
+                parentId = null;
             }
 
 
