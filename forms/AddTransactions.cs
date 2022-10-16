@@ -47,8 +47,8 @@ namespace ZappCash.forms
             string transferAccountId = ((ComboBoxItem)cmbTransferAccount.SelectedItem).HiddenValue;
             string description = txtDescription.Text;
 
-            long amount = Int64.Parse($"{numericUpDown1.Value}E{account.Decimals}", System.Globalization.NumberStyles.AllowExponent | System.Globalization.NumberStyles.AllowDecimalPoint);
-            if (radioButtonReceive.Checked)
+            long amount = (long)(long.Parse($"{numericUpDown1.Value}E{account.Decimals}", System.Globalization.NumberStyles.AllowExponent | System.Globalization.NumberStyles.AllowDecimalPoint));
+            if (radioButtonSend.Checked)
             {
                 amount = -amount;
             }

@@ -200,6 +200,7 @@
             // 
             // numAmount
             // 
+            this.numAmount.DecimalPlaces = 2;
             this.numAmount.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numAmount.Increment = new decimal(new int[] {
             100,
@@ -207,6 +208,11 @@
             0,
             0});
             this.numAmount.Location = new System.Drawing.Point(514, 362);
+            this.numAmount.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(385, 41);
             this.numAmount.TabIndex = 20;
@@ -216,6 +222,7 @@
             // radioButtonSend
             // 
             this.radioButtonSend.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonSend.Checked = true;
             this.radioButtonSend.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonSend.ForeColor = System.Drawing.Color.Transparent;
             this.radioButtonSend.Location = new System.Drawing.Point(386, 422);
@@ -246,7 +253,6 @@
             this.radioButtonReceive.Name = "radioButtonReceive";
             this.radioButtonReceive.Size = new System.Drawing.Size(197, 56);
             this.radioButtonReceive.TabIndex = 26;
-            this.radioButtonReceive.TabStop = true;
             this.radioButtonReceive.Text = "RECEIVE";
             this.radioButtonReceive.UseVisualStyleBackColor = false;
             // 

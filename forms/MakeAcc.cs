@@ -64,26 +64,30 @@ namespace ZappCash.forms
 
             //opening balance
             long amount = (long)(numOpeningBalance.Value * 100);
-
-            string openingBalanceAccountId = AccountsManager.GetAccountId("Opening Balances");
-
-            if (openingBalanceAccountId == null)
+            if (amount > 0)
             {
-                string equityAccountId = AccountsManager.GetAccountId("Equity");
+                string openingBalanceAccountId = AccountsManager.GetAccountId("Opening Balances");
 
-                if(equityAccountId == null)
+                if (openingBalanceAccountId == null)
                 {
-                    AccountsManager.NewAccount(Name: "Equity", IsPlaceholder: true);
+                    string equityAccountId = AccountsManager.GetAccountId("Equity");
+
+                    if (equityAccountId == null)
+                    {
+                        AccountsManager.NewAccount(Name: "Equity", IsPlaceholder: true);
+                    }
+
+                    equityAccountId = AccountsManager.GetAccountId("Equity");
+
+                    AccountsManager.NewAccount(ParentId: equityAccountId, Name: "Opening Balances");
                 }
 
-                equityAccountId = AccountsManager.GetAccountId("Equity");
+                openingBalanceAccountId = AccountsManager.GetAccountId("Opening Balances");
 
-                AccountsManager.NewAccount(ParentId: equityAccountId, Name: "Opening Balances");
+                AccountsManager.NewTransaction(AccountID: accountId, TransferAccountId: openingBalanceAccountId, Amount: amount, Description: "Opening Balance");
             }
 
-            openingBalanceAccountId = AccountsManager.GetAccountId("Opening Balances");
-
-            AccountsManager.NewTransaction(AccountID: accountId, TransferAccountId: openingBalanceAccountId, Amount: amount, Description: "Opening Balance");
+            
 
             //window
             this.Hide();

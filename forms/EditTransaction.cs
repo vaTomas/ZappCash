@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ZappCash.classes;
+using ZappCash.forms.MessageBoxForms;
 
 namespace ZappCash.forms
 {
@@ -16,13 +17,13 @@ namespace ZappCash.forms
     {
         private bool mouseDown;
         private Point lastLocation;
-        private Transaction transaction;
-        private string accountId;
+        private Transaction transaction { get; set; }
+        private Account account { get; set; }
         public EditTransaction(string AccountId, string TransactionId)
         {
             InitializeComponent();
             this.transaction = AccountsManager.GetTransaction(AccountId, TransactionId);
-            this.accountId = AccountId;
+            this.account = AccountsManager.GetAccount(AccountId);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -33,7 +34,27 @@ namespace ZappCash.forms
         private void btnAccounts_Click(object sender, EventArgs e)
         {
             this.Hide();
+            if (cmbTransferAccount.SelectedIndex == -1)
+            {
+                this.Hide();
+                NoNameMB noNameMB = new NoNameMB("Please select a transfer account.");
+                noNameMB.ShowDialog();
+                this.Show();
+                return;
+            }
 
+            DateTime date = dateTimePicker1.Value;
+            string number = txtNumber.Text;
+            string description = txtDescription.Text;
+            string transferId = ((ComboBoxItem)cmbTransferAccount.SelectedItem).HiddenValue;
+            long amount = (long)(long.Parse($"{numAmount.Value}E{account.Decimals}", System.Globalization.NumberStyles.AllowExponent | System.Globalization.NumberStyles.AllowDecimalPoint));
+            if (radioButtonSend.Checked)
+            {
+                amount = -amount;
+            }
+
+            AccountsManager.EditTransaction(this.account.Id, this.transaction.Id, date, number, description, transferId, amount);
+            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -70,28 +91,73 @@ namespace ZappCash.forms
 
         private void EditTransaction_Load(object sender, EventArgs e)
         {
+
+
+            dateTimePicker1.Value = transaction.Date;
+            txtNumber.Text = transaction.Number;
+            txtDescription.Text = transaction.Description;
+
+            decimal amount = transaction.Amount * Decimal.Parse($"1E-{this.account.Decimals}", System.Globalization.NumberStyles.AllowExponent | System.Globalization.NumberStyles.AllowDecimalPoint);
+
+            if (transaction.Amount > 0)
+            {
+                numAmount.Value = amount;
+                radioButtonReceive.Checked = true;
+            }
+            else
+            {
+                numAmount.Value = -amount;
+                radioButtonSend.Checked = true;
+            }
+            
             //dropdown load
             List<Account> accounts = AccountsManager.GetAccounts();
             foreach (Account account in accounts)
             {
-                if (!account.IsPlaceholder)
+                if (!account.IsPlaceholder && account.Id != this.account.Id)
                 {
-                    string accountName = account.Attributes.Name;
-                    string accountParentName = AccountsManager.GetAccount(account.ParentId).Attributes.Name;
+                    string accountName = AccountsManager.GetLongAccountName(account.Id);
+                    cmbTransferAccount.Items.Add(new ComboBoxItem(accountName, account.Id));
+                }
+            }
 
-                    cmbTransferAccount.Items.Add($"{AccountsManager.GetLongAccountName(account.Id)}");
+            {
+                int selectedTransferAccountIndex = 0;
+                foreach (ComboBoxItem comboBoxItem in cmbTransferAccount.Items)
+                {
+                    if (comboBoxItem.HiddenValue == transaction.TransferId)
+                    {
+                        cmbTransferAccount.SelectedIndex = selectedTransferAccountIndex;
+                        break;
+                    }
+                    selectedTransferAccountIndex++;
                 }
             }
         }
 
-        private void LoadItems()
+        private class ComboBoxItem
         {
-            dateTimePicker1.Value = this.transaction.Date;
-            txtNumber.Text = this.transaction.Number;
-            txtDescription.Text = this.transaction.Description;
+            private string displayValue;
+            private string hiddenValue;
 
+            public ComboBoxItem(string displayValue, string hiddenValue)
+            {
+                this.displayValue = displayValue;
+                this.hiddenValue = hiddenValue;
+            }
 
+            public string HiddenValue
+            {
+                get
+                {
+                    return this.hiddenValue;
+                }
+            }
 
+            public override string ToString()
+            {
+                return this.displayValue;
+            }
         }
 
 

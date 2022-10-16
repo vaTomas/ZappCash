@@ -69,6 +69,15 @@ namespace ZappCash
             db_ZappCash.Accounts = accounts;
         }
 
+        private static void sortTransations()
+        {
+            List<Account> accounts = db_ZappCash.Accounts;
+            foreach (Account account in accounts)
+            {
+                account.Transactions = account.Transactions.OrderBy(s => s.Date).ThenBy(s => s.Number).ToList();
+            }
+        }
+
 
         //Accounts
         //get
@@ -307,6 +316,7 @@ namespace ZappCash
             accounts[accountIndex].Transactions.Add(transaction);
             
             setAccounts(accounts); //export to database
+            sortTransations();
             UpdateBalances();
         } //raw new transaction
         
@@ -327,7 +337,6 @@ namespace ZappCash
             
             string transactionId = IdGenerator.GenerateID(AccountID);
             NewTransaction(AccountID: AccountID, TransactionID: transactionId, TransferAccountId: TransferAccountId, Date: date, Number: Number, Description: Description, Amount: Amount);
-            UpdateBalances();
         } //no transaction id
         
         public static void DeleteTransaction(string TransactionId)
@@ -378,6 +387,7 @@ namespace ZappCash
             DeleteTransaction(TransactionId);
             NewTransaction(AccountID: AccountId, TransactionID: TransactionId, TransferAccountId: transaction.TransferId, Date: transaction.Date, Number: transaction.Number, Description: transaction.Description, Amount: transaction.Amount);
 
+            sortTransations();
             UpdateBalances();
         }
 

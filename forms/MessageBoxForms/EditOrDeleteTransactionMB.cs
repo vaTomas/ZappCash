@@ -24,7 +24,7 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         {
             // Hide then show EditTransaction page
             this.Hide();
-            EditTransaction editTransaction = new EditTransaction(AccountId: accountId, TransactionId: transactionId);
+            EditTransaction editTransaction = new EditTransaction(AccountId: this.accountId, TransactionId: this.transactionId);
             editTransaction.ShowDialog();
             this.Close();
         }
