@@ -142,7 +142,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(567, 357);
+            this.label4.Location = new System.Drawing.Point(558, 357);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 49);
             this.label4.TabIndex = 13;
@@ -220,14 +220,14 @@
             0,
             0,
             0});
-            this.numOpeningBalance.Location = new System.Drawing.Point(660, 361);
+            this.numOpeningBalance.Location = new System.Drawing.Point(652, 361);
             this.numOpeningBalance.Maximum = new decimal(new int[] {
             -1,
             2147483647,
             0,
             0});
             this.numOpeningBalance.Name = "numOpeningBalance";
-            this.numOpeningBalance.Size = new System.Drawing.Size(420, 41);
+            this.numOpeningBalance.Size = new System.Drawing.Size(428, 41);
             this.numOpeningBalance.TabIndex = 21;
             this.numOpeningBalance.ThousandsSeparator = true;
             // 

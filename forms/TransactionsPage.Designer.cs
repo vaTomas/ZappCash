@@ -189,6 +189,7 @@
             // 
             // listTransactions
             // 
+            this.listTransactions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listTransactions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Date,
             this.Num,
@@ -196,7 +197,7 @@
             this.Transfer,
             this.Amount,
             this.Balance});
-            this.listTransactions.Font = new System.Drawing.Font("Gilroy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listTransactions.Font = new System.Drawing.Font("Gilroy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTransactions.FullRowSelect = true;
             this.listTransactions.GridLines = true;
             this.listTransactions.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -204,7 +205,7 @@
             this.listTransactions.Location = new System.Drawing.Point(35, 197);
             this.listTransactions.MultiSelect = false;
             this.listTransactions.Name = "listTransactions";
-            this.listTransactions.Size = new System.Drawing.Size(1353, 561);
+            this.listTransactions.Size = new System.Drawing.Size(1343, 561);
             this.listTransactions.TabIndex = 24;
             this.listTransactions.UseCompatibleStateImageBehavior = false;
             this.listTransactions.View = System.Windows.Forms.View.Details;

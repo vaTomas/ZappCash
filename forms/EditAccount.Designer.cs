@@ -40,7 +40,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbParentAccount = new System.Windows.Forms.ComboBox();
             this.chkPlaceholder = new System.Windows.Forms.CheckBox();
+            this.picDelete = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,7 +105,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(47, 287);
+            this.label3.Location = new System.Drawing.Point(47, 280);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(275, 49);
             this.label3.TabIndex = 8;
@@ -112,7 +114,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(519, 287);
+            this.txtDescription.Location = new System.Drawing.Point(519, 280);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(513, 41);
             this.txtDescription.TabIndex = 10;
@@ -149,7 +151,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(47, 217);
+            this.label5.Location = new System.Drawing.Point(47, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(293, 49);
             this.label5.TabIndex = 15;
@@ -178,11 +180,23 @@
             // 
             this.chkPlaceholder.AutoSize = true;
             this.chkPlaceholder.Font = new System.Drawing.Font("Gilroy ExtraBold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPlaceholder.Location = new System.Drawing.Point(519, 217);
+            this.chkPlaceholder.Location = new System.Drawing.Point(519, 228);
             this.chkPlaceholder.Name = "chkPlaceholder";
             this.chkPlaceholder.Size = new System.Drawing.Size(15, 14);
             this.chkPlaceholder.TabIndex = 19;
             this.chkPlaceholder.UseVisualStyleBackColor = true;
+            // 
+            // picDelete
+            // 
+            this.picDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picDelete.Image = global::ZappCash.Properties.Resources.delete_icon_v2;
+            this.picDelete.Location = new System.Drawing.Point(949, 392);
+            this.picDelete.Name = "picDelete";
+            this.picDelete.Size = new System.Drawing.Size(83, 71);
+            this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDelete.TabIndex = 36;
+            this.picDelete.TabStop = false;
             // 
             // EditAccount
             // 
@@ -190,6 +204,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1090, 526);
+            this.Controls.Add(this.picDelete);
             this.Controls.Add(this.chkPlaceholder);
             this.Controls.Add(this.cmbParentAccount);
             this.Controls.Add(this.label6);
@@ -207,6 +222,7 @@
             this.Text = "Edit Account";
             this.Load += new System.EventHandler(this.MakeAcc_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,6 +242,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbParentAccount;
         private System.Windows.Forms.CheckBox chkPlaceholder;
+        private System.Windows.Forms.PictureBox picDelete;
     }
 }
 

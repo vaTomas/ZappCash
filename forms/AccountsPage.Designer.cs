@@ -37,12 +37,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAddAcc = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.treeAccounts = new System.Windows.Forms.TreeView();
             this.picEdit = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEdit)).BeginInit();
             this.SuspendLayout();
@@ -160,7 +156,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gilroy ExtraBold", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(41, 125);
+            this.label1.Location = new System.Drawing.Point(40, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(371, 78);
             this.label1.TabIndex = 6;
@@ -172,33 +168,22 @@
             this.lblAddAcc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAddAcc.Font = new System.Drawing.Font("Gilroy ExtraBold", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddAcc.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblAddAcc.Location = new System.Drawing.Point(857, 125);
+            this.lblAddAcc.Location = new System.Drawing.Point(851, 74);
             this.lblAddAcc.Name = "lblAddAcc";
             this.lblAddAcc.Size = new System.Drawing.Size(69, 78);
             this.lblAddAcc.TabIndex = 7;
             this.lblAddAcc.Text = "+";
             this.lblAddAcc.Click += new System.EventHandler(this.lblAddAcc_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Gilroy ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(664, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 33);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "···";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // treeAccounts
             // 
             this.treeAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.treeAccounts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeAccounts.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeAccounts.ForeColor = System.Drawing.Color.White;
-            this.treeAccounts.Location = new System.Drawing.Point(54, 215);
+            this.treeAccounts.LineColor = System.Drawing.Color.White;
+            this.treeAccounts.Location = new System.Drawing.Point(53, 164);
             this.treeAccounts.Name = "treeAccounts";
             this.treeAccounts.Size = new System.Drawing.Size(879, 464);
             this.treeAccounts.TabIndex = 17;
@@ -206,47 +191,15 @@
             // 
             // picEdit
             // 
+            this.picEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picEdit.Image = global::ZappCash.Properties.Resources.edit_button_purple;
-            this.picEdit.Location = new System.Drawing.Point(418, 137);
+            this.picEdit.Location = new System.Drawing.Point(417, 86);
             this.picEdit.Name = "picEdit";
             this.picEdit.Size = new System.Drawing.Size(57, 50);
             this.picEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEdit.TabIndex = 31;
             this.picEdit.TabStop = false;
             this.picEdit.Click += new System.EventHandler(this.picEdit_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(552, 137);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(269, 34);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "ACCOUNT BALANCE";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(586, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 34);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "PHP ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(447, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 34);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "ACCOUNT NAME";
             // 
             // AccountsPage
             // 
@@ -255,14 +208,10 @@
             this.ClientSize = new System.Drawing.Size(975, 707);
             this.Controls.Add(this.picEdit);
             this.Controls.Add(this.treeAccounts);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblAddAcc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AccountsPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -286,12 +235,8 @@
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSaveAs;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TreeView treeAccounts;
         private System.Windows.Forms.PictureBox picEdit;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -298,5 +298,8 @@
   <ItemGroup>
     <None Include="Resources\DELETE BUTTON2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete icon v2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
