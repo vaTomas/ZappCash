@@ -40,14 +40,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
-            this.numAmount = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.radioButtonSend = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.radioButtonReceive = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -287,7 +287,7 @@
             this.Controls.Add(this.radioButtonReceive);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.radioButtonSend);
-            this.Controls.Add(this.numAmount);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -304,7 +304,7 @@
             this.Text = "MainPage1";
             this.Load += new System.EventHandler(this.AddTransactions_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,7 +324,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNumber;
-        private System.Windows.Forms.NumericUpDown numAmount;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.RadioButton radioButtonSend;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton radioButtonReceive;
