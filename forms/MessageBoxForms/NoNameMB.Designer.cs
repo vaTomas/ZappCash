@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoNameMB));
             this.btnRetry = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,9 +97,10 @@
             this.Controls.Add(this.pictureBoxError);
             this.Controls.Add(this.btnRetry);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NoNameMB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainPage1";
+            this.Text = "ZappCash - Error";
             this.Load += new System.EventHandler(this.NoNameMB_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NoNameMB_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NoNameMB_MouseMove);
