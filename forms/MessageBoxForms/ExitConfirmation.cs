@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Media;
 
 namespace ZappCash.forms.MessageBoxForms.EditOrDelete
 {
@@ -10,6 +11,7 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         private Point lastLocation;
         public ExitConfirmation()
         {
+            SystemSounds.Asterisk.Play();
             InitializeComponent();
         }
 
@@ -47,6 +49,12 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

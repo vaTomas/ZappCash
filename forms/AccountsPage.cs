@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ZappCash.classes;
+using ZappCash.forms.MessageBoxForms.EditOrDelete;
+using ZappCash.forms.MessageBoxForms;
 
 namespace ZappCash.forms
 {
@@ -24,7 +26,7 @@ namespace ZappCash.forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            CloseApplication();
         }
 
         private void lblAddAcc_Click(object sender, EventArgs e)
@@ -50,8 +52,7 @@ namespace ZappCash.forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FileManager.ResetDatabase();
-            this.Close();
+            CloseApplication(exitEntireApplicaiton: false);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -78,7 +79,18 @@ namespace ZappCash.forms
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            FileManager.OpenFile();
+            try
+            {
+                FileManager.OpenFile();
+            }
+            catch
+            {
+                this.Hide();
+                NoNameMB noNameMB = new NoNameMB("Unsupported File");
+                noNameMB.ShowDialog();
+                this.Show();
+            }
+
             LoadItems();
         }
 
@@ -183,10 +195,43 @@ namespace ZappCash.forms
                 this.Hide();
                 TransactionsPage transactionsPage = new TransactionsPage(accountId);
                 transactionsPage.ShowDialog();
+                
+                if (transactionsPage.DialogResult == DialogResult.Abort) { this.Close(); return; }
+
 
                 LoadItems();
                 this.Show();
             }
         }
+
+        private void CloseApplication(bool exitEntireApplicaiton = true)
+        {
+            if (!FileManager.IsAllSaved())
+            {
+                this.Hide();
+                ExitConfirmation exitConfirmation = new ExitConfirmation();
+                exitConfirmation.ShowDialog();
+
+                if (exitConfirmation.DialogResult == DialogResult.Cancel)
+                {
+                    this.Show();
+                    return;
+                }
+
+                if (exitConfirmation.DialogResult == DialogResult.Yes)
+                {
+                    FileManager.Save();
+                }
+            }
+            
+            if (exitEntireApplicaiton)
+            {
+                this.DialogResult = DialogResult.Abort;
+            }
+
+            FileManager.ResetDatabase();
+            this.Close();
+        }
+
     }
 }

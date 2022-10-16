@@ -28,7 +28,7 @@ namespace ZappCash.forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void btnAccounts_Click(object sender, EventArgs e)

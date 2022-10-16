@@ -20,6 +20,7 @@ namespace ZappCash
         private static void setAccounts(List<Account> accounts)
         {
             db_ZappCash.Accounts = accounts;
+            FileManager.TempSave();
         }
 
         public static void New()

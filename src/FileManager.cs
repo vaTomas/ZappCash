@@ -25,7 +25,6 @@ namespace ZappCash
 
                 CreateTempFile();
                 Read();
-                SaveBackup();
             }
         }
 
@@ -163,7 +162,7 @@ namespace ZappCash
 
         public static void SaveBackup()
         {
-            return;
+            //return;
             
             DatabaseIntegrityCheck();
 
@@ -182,5 +181,40 @@ namespace ZappCash
         {
             db_ZappCash.Reset();
         }
+
+        public static bool IsAllSaved()
+        {
+            if (db_ZappCash.AccessFile.Path == null || db_ZappCash.TempFile.Path == null)
+            {
+                return false;
+            }
+            
+            if (FileEquals(db_ZappCash.AccessFile.Path, db_ZappCash.TempFile.Path))
+            {
+                return true;
+            }
+
+            SaveBackup();
+            return false;
+        }
+
+        static bool FileEquals(string path1, string path2)
+        {
+            byte[] file1 = File.ReadAllBytes(path1);
+            byte[] file2 = File.ReadAllBytes(path2);
+            if (file1.Length == file2.Length)
+            {
+                for (int i = 0; i < file1.Length; i++)
+                {
+                    if (file1[i] != file2[i])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
     }
 }

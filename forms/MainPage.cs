@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ZappCash.database;
+using ZappCash.forms.MessageBoxForms;
 
 namespace ZappCash.forms
 {
@@ -36,11 +37,24 @@ namespace ZappCash.forms
             AccountsPage accountsPage = new AccountsPage();
             accountsPage.ShowDialog();
 
+            if (accountsPage.DialogResult == DialogResult.Abort) { this.Close(); return; }
+
             this.Show();
         }
         private void btnOpenFile_Click_1(object sender, EventArgs e)
         {
-            FileManager.OpenFile();
+            try
+            {
+                FileManager.OpenFile();
+            }
+            catch
+            {
+                this.Hide();
+                NoNameMB noNameMB = new NoNameMB("Unsupported File");
+                noNameMB.ShowDialog();
+                this.Show();
+                return;
+            }
 
             if (db_ZappCash.AccessFile.Path != null)
             {
@@ -48,7 +62,9 @@ namespace ZappCash.forms
 
                 AccountsPage accountsPage = new AccountsPage();
                 accountsPage.ShowDialog();
-                
+
+                if (accountsPage.DialogResult == DialogResult.Abort) { this.Close(); return; }
+
                 this.Show();
             }
         }
@@ -72,6 +88,11 @@ namespace ZappCash.forms
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

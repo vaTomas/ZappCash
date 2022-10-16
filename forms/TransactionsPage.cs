@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ZappCash.classes;
 using ZappCash.packages;
 using ZappCash.forms.MessageBoxForms.EditOrDelete;
+using ZappCash.forms.MessageBoxForms;
 
 namespace ZappCash.forms
 {
@@ -27,7 +28,7 @@ namespace ZappCash.forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            CloseApplication();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,7 +75,17 @@ namespace ZappCash.forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FileManager.OpenFile();
+            try
+            {
+                FileManager.OpenFile();
+            }
+            catch
+            {
+                this.Hide();
+                NoNameMB noNameMB = new NoNameMB("Unsupported File");
+                noNameMB.ShowDialog();
+                this.Show();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -140,8 +151,35 @@ namespace ZappCash.forms
             EditTransaction editTransaction = new EditTransaction(this.account.Id, transactionId);
             editTransaction.ShowDialog();
 
+            if (editTransaction.DialogResult == DialogResult.Abort) { this.Close(); return; }
+
             LoadItems();
             this.Show();
+        }
+
+        private void CloseApplication()
+        {
+            if (!FileManager.IsAllSaved())
+            {
+                this.Hide();
+                ExitConfirmation exitConfirmation = new ExitConfirmation();
+                exitConfirmation.ShowDialog();
+
+                if (exitConfirmation.DialogResult == DialogResult.Cancel)
+                {
+                    this.Show();
+                    return;
+                }
+
+                if (exitConfirmation.DialogResult == DialogResult.Yes)
+                {
+                    FileManager.Save();
+                }
+            }
+
+
+            this.DialogResult = DialogResult.Abort;
+            this.Close();
         }
     }
 }
