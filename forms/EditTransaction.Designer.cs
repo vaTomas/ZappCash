@@ -47,8 +47,10 @@
             this.radioButtonReceive = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.picDelete = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -159,11 +161,11 @@
             // 
             this.txtDescription.BackColor = System.Drawing.SystemColors.Window;
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.ForeColor = System.Drawing.Color.Black;
             this.txtDescription.Location = new System.Drawing.Point(386, 227);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(513, 38);
+            this.txtDescription.Size = new System.Drawing.Size(513, 41);
             this.txtDescription.TabIndex = 12;
             // 
             // label6
@@ -277,11 +279,24 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "ACTION";
             // 
+            // picDelete
+            // 
+            this.picDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picDelete.Image = global::ZappCash.Properties.Resources.delete_icon_v2;
+            this.picDelete.Location = new System.Drawing.Point(816, 502);
+            this.picDelete.Name = "picDelete";
+            this.picDelete.Size = new System.Drawing.Size(83, 71);
+            this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDelete.TabIndex = 37;
+            this.picDelete.TabStop = false;
+            // 
             // EditTransaction
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(949, 616);
+            this.Controls.Add(this.picDelete);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.radioButtonReceive);
@@ -306,6 +321,7 @@
             this.Load += new System.EventHandler(this.EditTransaction_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,6 +347,7 @@
         private System.Windows.Forms.RadioButton radioButtonReceive;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox picDelete;
     }
 }
 
