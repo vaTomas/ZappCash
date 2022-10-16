@@ -213,6 +213,7 @@
             // 
             // numOpeningBalance
             // 
+            this.numOpeningBalance.BackColor = System.Drawing.Color.White;
             this.numOpeningBalance.DecimalPlaces = 2;
             this.numOpeningBalance.Increment = new decimal(new int[] {
             1000,

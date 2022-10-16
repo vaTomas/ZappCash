@@ -40,14 +40,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numAmount = new System.Windows.Forms.NumericUpDown();
             this.radioButtonSend = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.lblPositiveNegative = new System.Windows.Forms.Label();
             this.radioButtonReceive = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -198,14 +198,15 @@
             this.txtNumber.Size = new System.Drawing.Size(513, 41);
             this.txtNumber.TabIndex = 19;
             // 
-            // numericUpDown1
+            // numAmount
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(710, 350);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(385, 41);
-            this.numericUpDown1.TabIndex = 20;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numAmount.DecimalPlaces = 2;
+            this.numAmount.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numAmount.Location = new System.Drawing.Point(710, 350);
+            this.numAmount.Name = "numAmount";
+            this.numAmount.Size = new System.Drawing.Size(385, 41);
+            this.numAmount.TabIndex = 20;
+            this.numAmount.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // radioButtonSend
             // 
@@ -275,7 +276,7 @@
             this.Controls.Add(this.lblPositiveNegative);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.radioButtonSend);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numAmount);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -292,7 +293,7 @@
             this.Text = "MainPage1";
             this.Load += new System.EventHandler(this.AddTransactions_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,7 +313,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNumber;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numAmount;
         private System.Windows.Forms.RadioButton radioButtonSend;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblPositiveNegative;

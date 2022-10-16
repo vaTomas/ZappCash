@@ -302,7 +302,7 @@
             this.Transfer,
             this.Amount,
             this.Balance});
-            this.listTransactions.Font = new System.Drawing.Font("Gilroy", 12F);
+            this.listTransactions.Font = new System.Drawing.Font("Gilroy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTransactions.FullRowSelect = true;
             this.listTransactions.GridLines = true;
             this.listTransactions.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;

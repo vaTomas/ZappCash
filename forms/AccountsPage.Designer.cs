@@ -194,7 +194,10 @@
             // 
             // treeAccounts
             // 
+            this.treeAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.treeAccounts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeAccounts.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeAccounts.ForeColor = System.Drawing.Color.White;
             this.treeAccounts.Location = new System.Drawing.Point(54, 215);
             this.treeAccounts.Name = "treeAccounts";
             this.treeAccounts.Size = new System.Drawing.Size(879, 464);
@@ -217,7 +220,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gilroy", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(533, 81);
+            this.label4.Location = new System.Drawing.Point(552, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(269, 34);
             this.label4.TabIndex = 15;
@@ -259,6 +262,7 @@
             this.Controls.Add(this.lblAddAcc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AccountsPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
