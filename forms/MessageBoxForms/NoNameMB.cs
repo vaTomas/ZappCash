@@ -10,14 +10,13 @@ namespace ZappCash.forms.MessageBoxForms
 
         private bool mouseDown;
         private Point lastLocation;
+        private string errorMessage { get; set; }
 
-        public NoNameMB()
+        public NoNameMB(string ErrorMessage)
         {
             SystemSounds.Asterisk.Play();
             InitializeComponent();
-
-
-            
+            this.errorMessage = ErrorMessage;
         }
 
         private void btnRetry_Click(object sender, EventArgs e)
@@ -49,7 +48,8 @@ namespace ZappCash.forms.MessageBoxForms
 
         private void NoNameMB_Load(object sender, EventArgs e)
         {
-           
+            label2.Text = errorMessage;
         }
+
     }
 }

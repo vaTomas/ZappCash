@@ -122,6 +122,11 @@ namespace ZappCash.forms
 
                 string[] row = { zc_dateTime.dateTimeToString(transaction.Date), transaction.Number, transaction.Description, AccountsManager.GetAccount(transaction.TransferId).Attributes.Name, amount, balance};
                 ListViewItem listViewItem = new ListViewItem(row);
+                if (transaction.Balance < 0)
+                {
+                    listViewItem.SubItems[5].ForeColor = Color.Red;
+                    listViewItem.UseItemStyleForSubItems = false;
+                }
                 listViewItem.Name = transaction.Id;
                 listTransactions.Items.Add(listViewItem);
             }

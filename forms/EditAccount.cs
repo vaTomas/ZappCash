@@ -49,7 +49,7 @@ namespace ZappCash.forms
             if (txtAccountName.Text == "")
             {
                 this.Hide();
-                NoNameMB noNameMB = new NoNameMB();
+                NoNameMB noNameMB = new NoNameMB("Please enter an account name.");
                 noNameMB.ShowDialog();
                 this.Show();
                 return;
@@ -172,7 +172,18 @@ namespace ZappCash.forms
             }
         }
 
+        private void picDelete_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AccountDeletionConfirmationMB accountDeletionConfirmationMB = new AccountDeletionConfirmationMB();
+            accountDeletionConfirmationMB.ShowDialog();
+            this.Show();
 
-
+            if (accountDeletionConfirmationMB.DialogResult == DialogResult.Yes)
+            {
+                AccountsManager.DeleteAccount(this.account.Id);
+                this.Close();
+            }
+        }
     }
 }

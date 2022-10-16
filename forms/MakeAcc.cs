@@ -37,7 +37,7 @@ namespace ZappCash.forms
             {
                 this.Hide();
 
-                NoNameMB noNameMB = new NoNameMB();
+                NoNameMB noNameMB = new NoNameMB("Please enter an account name.");
                 noNameMB.ShowDialog();
                 this.Show();
                 return;

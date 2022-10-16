@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ZappCash.forms.MessageBoxForms;
 using ZappCash.classes;
 
 namespace ZappCash.forms
@@ -32,6 +33,15 @@ namespace ZappCash.forms
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
+            if (cmbTransferAccount.SelectedIndex == -1)
+            {
+                this.Hide();
+                NoNameMB noNameMB = new NoNameMB("Please select a transfer account.");
+                noNameMB.ShowDialog();
+                this.Show();
+                return;
+            }
+            
             DateTime date = dateTimePicker1.Value;
             string number = txtNumber.Text;
             string transferAccountId = ((ComboBoxItem)cmbTransferAccount.SelectedItem).HiddenValue;

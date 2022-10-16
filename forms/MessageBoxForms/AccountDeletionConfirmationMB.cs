@@ -16,17 +16,15 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
         private void btnYes_Click(object sender, EventArgs e)
         {
             // Delete account method then show SuccessfulAccountDeletionMB
-            this.Hide();
-            SuccessfulAccountDeletionMB successfulAccountDeletionMB = new SuccessfulAccountDeletionMB();
-            successfulAccountDeletionMB.Show();
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
             // Hide then show AccountsPage
-            this.Hide();
-            AccountsPage accountsPage = new AccountsPage();
-            accountsPage.Show();
+            this.DialogResult = DialogResult.No;
+            this.Close();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
