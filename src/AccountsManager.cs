@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using ZappCash.packages;
 using ZappCash.classes;
 using ZappCash.database;
+using ZappCash.packages;
 
 namespace ZappCash
 {
@@ -84,8 +81,8 @@ namespace ZappCash
         //get
         public static Account GetAccount(string AccountId)
         {
-            List <Account> accounts = GetAccounts(); //import from database
-            
+            List<Account> accounts = GetAccounts(); //import from database
+
             int accountIndex = GetAccountIndex(AccountId: AccountId);
 
             Account account;
@@ -191,12 +188,12 @@ namespace ZappCash
             setAccounts(accounts); //write to database
             UpdateBalances();
         }
-        
+
         private static void deleteAccounts()
         {
             db_ZappCash.Accounts = new List<Account>();
         } //delete all acocunts
-        
+
         private static void deleteAccounts(string[] accountIds)
         {
             foreach (string accountId in accountIds)
@@ -219,7 +216,7 @@ namespace ZappCash
                         selectedAccounts.Add(account.Id);
                     }
                 }
-                
+
                 foreach (string accountId in selectedAccounts)
                 {
                     DeleteAccount(AccountId: accountId, DeleteTransactions = true, DeleteChildren = true);
@@ -245,7 +242,7 @@ namespace ZappCash
 
             deleteAccount(AccountId);
         }
-        
+
 
         //edit
         public static void EditAccount(string AccountId, string Name = null, string Code = null, string Description = null, string Color = null, string Notes = null, bool? IsPlaceholder = null, string ParentId = null, byte? Decimals = null)
@@ -268,13 +265,13 @@ namespace ZappCash
             NewAccount(account);
             UpdateBalances();
         }
-        
+
         //Transactions
-        public static Transaction GetTransaction(string AccountId,string TransactionId)
+        public static Transaction GetTransaction(string AccountId, string TransactionId)
         {
             UpdateBalances();
             List<Account> accounts = GetAccounts(); //import from database
-            
+
             int accountIndex = GetAccountIndex(AccountId: AccountId);
             int transactionIndex = getTransactionIndex(accountId: AccountId, transactionId: TransactionId);
 
@@ -283,14 +280,14 @@ namespace ZappCash
             return transaction;
         }
 
-        
+
         public static List<Transaction> GetTransactions(string AccountId)
         {
             Account account = GetAccount(AccountId);
             List<Transaction> transactions = account.Transactions;
             return transactions;
         }
-        
+
         private static int getTransactionIndex(string accountId, string transactionId)
         {
             List<Account> accounts = GetAccounts(); //import from database
@@ -302,7 +299,7 @@ namespace ZappCash
 
             return transactionIndex;
         }
-        
+
         private static void NewTransaction(string accountId, Transaction transaction)
         {
             //if (GetAccount(accountId).IsPlaceholder)
@@ -310,17 +307,17 @@ namespace ZappCash
             {
                 throw new InvalidOperationException($"Account {accountId} is a placeholder account and cannot contain any transactions.");
             } //no transactions in placeholders
-            
+
             List<Account> accounts = GetAccounts(); //import from database
             int accountIndex = GetAccountIndex(accountId);
 
             accounts[accountIndex].Transactions.Add(transaction);
-            
+
             setAccounts(accounts); //export to database
             sortTransations();
             UpdateBalances();
         } //raw new transaction
-        
+
         private static void NewTransaction(string AccountID, string TransactionID, string TransferAccountId, DateTime Date, string Number = "", string Description = "", long Amount = 0) //with transaction id
         {
             Transaction transaction = new Transaction(Id: TransactionID, TransferId: TransferAccountId, Date: Date, Number: Number, Description: Description, Amount: Amount);
@@ -329,17 +326,17 @@ namespace ZappCash
             Transaction mirrorTransaction = new Transaction(Id: TransactionID, TransferId: AccountID, Date: Date, Number: Number, Description: Description, Amount: -Amount);
             NewTransaction(TransferAccountId, mirrorTransaction);
         }
-        
+
         public static void NewTransaction(string AccountID, string TransferAccountId, DateTime? Date = null, string Number = "", string Description = "", long Amount = 0)
         {
             DateTime date;
             if (Date == null) { date = DateTime.Today; }
             else { date = Convert.ToDateTime(Date); }
-            
+
             string transactionId = IdGenerator.GenerateID(AccountID);
             NewTransaction(AccountID: AccountID, TransactionID: transactionId, TransferAccountId: TransferAccountId, Date: date, Number: Number, Description: Description, Amount: Amount);
         } //no transaction id
-        
+
         public static void DeleteTransaction(string TransactionId)
         {
             List<Account> accounts = GetAccounts(); //import from database
@@ -374,9 +371,9 @@ namespace ZappCash
             db_ZappCash.Accounts = accounts; //export to database
             UpdateBalances();
         }
-        
+
         public static void EditTransaction(string AccountId, string TransactionId, DateTime? Date = null, string Number = null, string Description = null, string TransferId = null, long? Amount = null)
-        {            
+        {
             Transaction transaction = GetTransaction(AccountId: AccountId, TransactionId: TransactionId);
 
             if (Date != null) { transaction.Date = (DateTime)Date; }
@@ -402,11 +399,11 @@ namespace ZappCash
                 parentLongAccountName = GetLongAccountName(account.ParentId);
                 return $"{parentLongAccountName}:{account.Attributes.Name}";
             }
-            
+
             return $"{account.Attributes.Name}";
         }
 
-        
+
 
 
     }

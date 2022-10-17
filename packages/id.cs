@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using ZappCash.database;
 
@@ -32,7 +28,7 @@ namespace ZappCash.packages
 
 
             string generatedID = $"{parent}{year}{month}{day}{seconds}{random}";
-            generatedID = $"{generatedID.Substring(0,8)}-{generatedID.Substring(8, 8)}-{generatedID.Substring(16,8)}";
+            generatedID = $"{generatedID.Substring(0, 8)}-{generatedID.Substring(8, 8)}-{generatedID.Substring(16, 8)}";
             return generatedID;
         }
 

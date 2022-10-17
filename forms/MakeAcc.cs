@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -42,12 +37,12 @@ namespace ZappCash.forms
                 this.Show();
                 return;
             }
-            
-            
+
+
             List<Account> accounts = AccountsManager.GetAccounts();
 
 
-            
+
             string parentId = ((ComboBoxItem)cmbParentAccount.SelectedItem).HiddenValue;
             if (parentId == db_ZappCash.Defaults.AccountDefaults.ParentId)
             {
@@ -87,7 +82,7 @@ namespace ZappCash.forms
                 AccountsManager.NewTransaction(AccountID: accountId, TransferAccountId: openingBalanceAccountId, Amount: amount, Description: "Opening Balance");
             }
 
-            
+
 
             //window
             this.Hide();
@@ -95,7 +90,7 @@ namespace ZappCash.forms
             SuccessfulAccountCreationMB.ShowDialog();
             this.Close();
 
-           
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)

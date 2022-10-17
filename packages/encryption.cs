@@ -103,7 +103,7 @@ namespace ZappCash.packages.encryption
 
             byte[] encryptedObject = EncryptStringToBytes_Aes(Original);
             string encrypted = Convert.ToBase64String(encryptedObject);
-            
+
 
             return encrypted;
         }
@@ -115,7 +115,7 @@ namespace ZappCash.packages.encryption
             byte[] encryptedObject = Convert.FromBase64String(Encrypted);
             string decrypted = DecryptStringFromBytes_Aes(encryptedObject);
 
-            
+
             return decrypted;
         }
     }

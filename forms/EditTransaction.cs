@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ZappCash.classes;
@@ -110,7 +105,7 @@ namespace ZappCash.forms
                 numAmount.Value = -amount;
                 radioButtonSend.Checked = true;
             }
-            
+
             //dropdown load
             List<Account> accounts = AccountsManager.GetAccounts();
             foreach (Account account in accounts)

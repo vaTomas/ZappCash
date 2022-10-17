@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using ZappCash.classes;
-using ZappCash.packages;
-using ZappCash.forms.MessageBoxForms.EditOrDelete;
 using ZappCash.forms.MessageBoxForms;
+using ZappCash.forms.MessageBoxForms.EditOrDelete;
+using ZappCash.packages;
 
 namespace ZappCash.forms
 {
@@ -38,7 +31,7 @@ namespace ZappCash.forms
 
         private void label2_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
             AddTransactions AddTransactions = new AddTransactions(account.Id);
             AddTransactions.ShowDialog();
@@ -75,8 +68,8 @@ namespace ZappCash.forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            
+
+
             try
             {
                 FileManager.OpenFile();
@@ -104,7 +97,7 @@ namespace ZappCash.forms
         {
             label1.Text = $"{account.Attributes.Name} Transactions";
             LoadItems();
-            
+
         }
 
         private void LoadItems()
@@ -124,7 +117,7 @@ namespace ZappCash.forms
                 }
 
                 string balance;
-                if(transaction.Balance < 0)
+                if (transaction.Balance < 0)
                 {
                     balance = String.Format("Php ({0:n})", Convert.ToDouble($"{-transaction.Balance}e-{account.Decimals}"));
                 }
@@ -133,7 +126,7 @@ namespace ZappCash.forms
                     balance = String.Format("Php {0:n}", Convert.ToDouble($"{transaction.Balance}e-{account.Decimals}"));
                 }
 
-                string[] row = { zc_dateTime.dateTimeToString(transaction.Date), transaction.Number, transaction.Description, AccountsManager.GetAccount(transaction.TransferId).Attributes.Name, amount, balance};
+                string[] row = { zc_dateTime.dateTimeToString(transaction.Date), transaction.Number, transaction.Description, AccountsManager.GetAccount(transaction.TransferId).Attributes.Name, amount, balance };
                 ListViewItem listViewItem = new ListViewItem(row);
                 if (transaction.Balance < 0)
                 {

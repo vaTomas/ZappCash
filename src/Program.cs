@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZappCash.forms;
-using ZappCash.forms.MessageBoxForms;
-using ZappCash.forms.MessageBoxForms.EditOrDelete;
-
-using System.Media;
 
 namespace ZappCash
 {
@@ -23,7 +16,7 @@ namespace ZappCash
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
+
             bool DebugMode = false;
 
             if (!DebugMode)

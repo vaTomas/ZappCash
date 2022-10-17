@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using ZappCash.forms.MessageBoxForms;
 using ZappCash.classes;
+using ZappCash.forms.MessageBoxForms;
 
 namespace ZappCash.forms
 {
@@ -41,7 +35,7 @@ namespace ZappCash.forms
                 this.Show();
                 return;
             }
-            
+
             DateTime date = dateTimePicker1.Value;
             string number = txtNumber.Text;
             string transferAccountId = ((ComboBoxItem)cmbTransferAccount.SelectedItem).HiddenValue;
@@ -54,7 +48,7 @@ namespace ZappCash.forms
             }
 
             AccountsManager.NewTransaction(AccountID: this.account.Id, TransferAccountId: transferAccountId, Date: date, Number: number, Description: description, Amount: amount);
-                        
+
             this.Hide();
             SuccessfulTransactionAdditionMB successfulTransactionAdditionMB = new SuccessfulTransactionAdditionMB();
             successfulTransactionAdditionMB.ShowDialog();

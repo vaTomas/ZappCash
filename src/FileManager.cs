@@ -1,5 +1,5 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -163,7 +163,7 @@ namespace ZappCash
         public static void SaveBackup()
         {
             //return;
-            
+
             DatabaseIntegrityCheck();
 
             string tempFilePath = db_ZappCash.AccessFile.Path; //import from database
@@ -188,7 +188,7 @@ namespace ZappCash
             {
                 return false;
             }
-            
+
             if (FileEquals(db_ZappCash.AccessFile.Path, db_ZappCash.TempFile.Path))
             {
                 return true;

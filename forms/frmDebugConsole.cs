@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
-
-using Newtonsoft.Json;
-
-using ZappCash.database;
+using System.Windows.Forms;
 using ZappCash.classes;
-using ZappCash;
+using ZappCash.database;
 
 namespace ZappCash.forms
 {

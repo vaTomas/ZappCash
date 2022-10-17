@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using ZappCash.classes;
-using ZappCash.forms.MessageBoxForms.EditOrDelete;
 using ZappCash.forms.MessageBoxForms;
+using ZappCash.forms.MessageBoxForms.EditOrDelete;
 
 namespace ZappCash.forms
 {
@@ -32,7 +26,7 @@ namespace ZappCash.forms
         private void lblAddAcc_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
+
             if (treeAccounts.SelectedNode != null)
             {
                 MakeAcc MakeAcc = new MakeAcc(treeAccounts.SelectedNode.Name);
@@ -112,7 +106,7 @@ namespace ZappCash.forms
 
         private void AccountsPage_Load(object sender, EventArgs e)
         {
-            
+
             LoadItems();
         }
 
@@ -163,11 +157,11 @@ namespace ZappCash.forms
                 this.Hide();
                 EditAccount editAccount = new EditAccount(AccountId: accountId);
                 editAccount.ShowDialog();
-                
+
                 LoadItems();
                 this.Show();
             }
-            
+
 
         }
 
@@ -195,7 +189,7 @@ namespace ZappCash.forms
                 this.Hide();
                 TransactionsPage transactionsPage = new TransactionsPage(accountId);
                 transactionsPage.ShowDialog();
-                
+
                 if (transactionsPage.DialogResult == DialogResult.Abort) { this.Close(); return; }
 
 
@@ -223,7 +217,7 @@ namespace ZappCash.forms
                     FileManager.Save();
                 }
             }
-            
+
             if (exitEntireApplicaiton)
             {
                 this.DialogResult = DialogResult.Abort;

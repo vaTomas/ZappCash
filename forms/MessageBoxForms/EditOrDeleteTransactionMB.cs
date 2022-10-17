@@ -38,7 +38,7 @@ namespace ZappCash.forms.MessageBoxForms.EditOrDelete
 
             if (transactionDeletionConfirmationMB.DialogResult == DialogResult.Yes)
             {
-                
+
                 AccountsManager.DeleteTransaction(transactionId);
 
                 SuccessfulTransactionDeletionMB successfulTransactionDeletionMB = new SuccessfulTransactionDeletionMB();

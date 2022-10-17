@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-
-namespace ZappCash.classes
+﻿namespace ZappCash.classes
 {
     internal class fileRecord
     {
         public string Path { get; set; }
         public string Directory { get; set; }
         public string FileName { get; set; }
-        public string Name { get; set; } 
+        public string Name { get; set; }
         public string Extension { get; set; }
 
         public fileRecord(string path)
         {
             Path = path;
-            
+
             int indexSlash = Path.LastIndexOf(@"\");
             if (indexSlash >= 0)
             {

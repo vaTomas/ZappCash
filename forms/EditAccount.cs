@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using ZappCash.classes;
-using ZappCash.forms.MessageBoxForms.EditOrDelete;
-using ZappCash.forms.MessageBoxForms;
 using ZappCash.database;
+using ZappCash.forms.MessageBoxForms;
+using ZappCash.forms.MessageBoxForms.EditOrDelete;
 
 namespace ZappCash.forms
 {
@@ -54,8 +48,8 @@ namespace ZappCash.forms
                 this.Show();
                 return;
             }
-            
-            
+
+
             this.Hide();
             SaveAccountChangesConfirmationMB saveAccountChangesConfirmationMB = new SaveAccountChangesConfirmationMB();
             saveAccountChangesConfirmationMB.ShowDialog();
@@ -108,7 +102,7 @@ namespace ZappCash.forms
             cmbParentAccount.Items.Add(new ComboBoxItem("Top level", db_ZappCash.Defaults.AccountDefaults.ParentId));
             foreach (Account account in accounts)
             {
-                if(account.Id != this.account.Id)
+                if (account.Id != this.account.Id)
                 {
                     if (account.ParentId != this.account.Id)
                     {
@@ -131,7 +125,8 @@ namespace ZappCash.forms
                     parentId = db_ZappCash.Defaults.AccountDefaults.ParentId;
                 }
 
-                foreach (ComboBoxItem item in cmbParentAccount.Items) {
+                foreach (ComboBoxItem item in cmbParentAccount.Items)
+                {
                     if (item.HiddenValue == parentId)
                     {
                         cmbParentAccount.SelectedIndex = index;
@@ -141,7 +136,7 @@ namespace ZappCash.forms
                 }
             }
 
-            
+
             chkPlaceholder.Checked = this.account.IsPlaceholder;
             txtDescription.Text = this.account.Attributes.Description;
 

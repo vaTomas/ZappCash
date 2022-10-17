@@ -1,10 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Newtonsoft.Json;
 
 namespace ZappCash.classes
 {
@@ -18,7 +13,7 @@ namespace ZappCash.classes
     {
         [JsonProperty("name")]
         public string Name { get; set; }
-        
+
         [JsonProperty("code")]
         public string Code { get; set; }
 
@@ -51,10 +46,10 @@ namespace ZappCash.classes
     {
         [JsonProperty("name")]
         public string name { get; set; }
-        
+
         [JsonProperty("parent")]
         public string parent { get; set; }
-        
+
         [JsonProperty("placeholder")]
         public bool isPlaceholder { get; set; }
 

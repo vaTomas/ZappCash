@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Newtonsoft.Json;
 using System;
-using System.Data.SqlClient;
-
-using Newtonsoft.Json;
+using System.Collections.Generic;
 
 
 namespace ZappCash.classes
@@ -22,25 +15,25 @@ namespace ZappCash.classes
     {
         [JsonProperty("id")]
         public string Id { get; set; }
-        
+
         [JsonProperty("attributes")]
         public AccountAttributes Attributes { get; set; }
 
         [JsonProperty("type")]
         public string AssetType { get; set; }
-        
-        
+
+
         [JsonProperty("placeholder")]
         public bool IsPlaceholder { get; set; }
-        
+
         [JsonProperty("parent")]
         public string ParentId { get; set; }
-        
-        
+
+
         [JsonProperty("frac")]
         public byte Decimals { get; set; }
-        
-        
+
+
         [JsonProperty("bal")]
         public long Balance { get; set; }
 
@@ -63,7 +56,7 @@ namespace ZappCash.classes
     {
         [JsonProperty("name")]
         public string Name { get; set; }
-        
+
         [JsonProperty("code")]
         public string Code { get; set; }
 
